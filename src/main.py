@@ -25,6 +25,9 @@ from mappers.revista_open_alex_to_journal import RevistaOpenAlex2JournalMapper
 # Importando o novo writer
 from writers.xml_writer import XMLWriter # Importa o novo writer
 
+# Importando os dictionary builders
+from dictionary_builders.journal_dictionary import JournalDictionaryBuilder
+
 # Mapeia strings de configuração para as classes reais
 READER_FACTORY = {
     'csv': CSVReader,
@@ -40,6 +43,10 @@ WRITER_FACTORY = {
 MAPPER_FACTORY = {
     'sucupira_to_program_and_course_mapper':Sucupira2ProgramAndCourseMapper,
     'revista_open_alex_to_journal_mapper': RevistaOpenAlex2JournalMapper,
+}
+
+DICTIONARY_BUILDERS = {
+    'Journal':JournalDictionaryBuilder,
 }
 
 
@@ -84,6 +91,12 @@ def process_transformation(config_section: str):
         writer.write(mapper.get_source(), transformed_data, output_dir)
 
     print(f"Transformação '{config_section}' concluída. Arquivos salvos em '{output_dir}'.")
+    
 
+def dictionary_builder(entity, source_path, output_path):
+    builder = DICTIONARY_BUILDERS.get(entity)()
+    builder.process_xml_files(source_path, output_path)
+    
 if __name__ == "__main__":
-    process_transformation('SUCUPIRA_TO_PROGRAM_AND_COURSE')
+    process_transformation('PUBLICACOES_OPEN_ALEX_ORCID')
+    # dictionary_builder(entity='Journal',output_path='.\data\output',source_path=r"C:\DATABASE-IBICT\Finalizados\2025\Journal")
