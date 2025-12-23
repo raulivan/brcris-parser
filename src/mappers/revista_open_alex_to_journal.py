@@ -67,8 +67,8 @@ class RevistaOpenAlex2JournalMapper(BaseMapper):
                     journal_SemanticIdentifiers_tupla.append(("brcris", f"brcris::{brcris_id_v1}"))
                     journal_fields_identifier_tupla.append(("identifier.brcris", brcris_id_v1))
                     if brcris_id_v1 != brcris_id_v2:
-                        journal_SemanticIdentifiers_tupla.append(("brcris", f"brcris::{brcris_id_v1}v2"))
-                        journal_fields_identifier_tupla.append(("identifier.brcris", f"{brcris_id_v1}v2"))
+                        journal_SemanticIdentifiers_tupla.append(("brcris", f"brcris::{brcris_id_v2}v2"))
+                        journal_fields_identifier_tupla.append(("identifier.brcris", f"{brcris_id_v2}v2"))
 
                     journal_SemanticIdentifiers_tupla.append(("issn", f"issn::{item_issn_sem_espacos}"))
                     journal_fields_identifier_tupla.append(("identifier.issn", item_issn_sem_espacos))

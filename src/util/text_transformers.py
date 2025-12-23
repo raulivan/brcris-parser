@@ -69,6 +69,8 @@ def capitalizar_nome(nome_completo: str) -> str:
     Returns:
         A string capitalizada corretamente (ex: 'Universidade Federal do Parana').
     """
+    if nome_completo is None:
+        return ''
     
 
     nome_completo = nome_completo.lower()
@@ -132,3 +134,128 @@ def trata_string(txt) -> str:
     stxt = str(txt).strip()
     # return  unidecode(stxt)
     return stxt
+
+def translate_type_of_publication(type_of_publication: str) -> str:
+    if type_of_publication is None:
+        return ''
+    
+    clean_type = type_of_publication.strip().lower()
+
+    # Pesquisa Primária
+    if clean_type == 'article' or clean_type == 'original research':
+        return 'Artigo'
+    
+    elif clean_type == 'case report' or clean_type == 'case study':
+        return 'Relato de Caso'
+    
+    elif clean_type == 'clinical trial':
+        return 'Ensaio Clínico'
+    
+    elif clean_type == 'short communication' or clean_type == 'brief report':
+        return 'Comunicação Breve'
+    
+    elif clean_type == 'data paper':
+        return 'Artigo'
+
+    # Pesquisa Secundária
+    elif clean_type == 'review article' or clean_type == 'review':
+        return 'Artigo'
+    
+    elif clean_type == 'systematic review':
+        return 'Revisão Sistemática'
+    
+    elif clean_type == 'meta-analysis':
+        return 'Metanálise'
+    
+    elif clean_type == 'book review':
+        return 'Resenha de Livro'
+
+    # Opinião
+    elif clean_type == 'editorial':
+        return 'Editorial'
+    
+    elif clean_type == 'letter to the editor':
+        return 'Carta ao Editor'
+    
+    elif clean_type == 'commentary' or clean_type == 'perspective':
+        return 'Comentário / Perspectiva'
+
+    # Acadêmico / Eventos
+    elif clean_type == 'conference paper' or clean_type == 'proceedings':
+        return 'Artigo'
+    
+    elif clean_type == 'meeting abstract':
+        return 'Artigo'
+    
+    elif clean_type == 'dissertation':
+        return 'Dissertação'
+    
+    elif clean_type == 'thesis':
+        return 'Tese'
+    
+    # Outros
+    elif clean_type == 'preprint':
+        return 'Pré-publicação'
+    
+    elif clean_type == 'erratum' or clean_type == 'correction':
+        return 'Errata'
+    
+    elif clean_type == 'retraction':
+        return 'Retratação'
+
+    
+    return type_of_publication
+
+def translate_language(language: str) -> str:
+    # Proteção caso a entrada seja nula
+    if language is None:
+        return ''
+
+    # Normalização da string
+    clean_lang = language.strip().lower()
+
+    # --- Início da estrutura de comparação ---
+
+    # Inglês
+    if clean_lang == 'english' or clean_lang == 'en':
+        return 'Inglês'
+    
+    # Português
+    elif clean_lang == 'portuguese' or clean_lang == 'pt' or clean_lang == 'pt-br':
+        return 'Português'
+    
+    # Espanhol
+    elif clean_lang == 'spanish' or clean_lang == 'es':
+        return 'Espanhol'
+    
+    # Francês
+    elif clean_lang == 'french' or clean_lang == 'fr':
+        return 'Francês'
+    
+    # Alemão
+    elif clean_lang == 'german' or clean_lang == 'de':
+        return 'Alemão'
+    
+    # Italiano
+    elif clean_lang == 'italian' or clean_lang == 'it':
+        return 'Italiano'
+    
+    # Chinês
+    elif clean_lang == 'chinese' or clean_lang == 'zh':
+        return 'Chinês'
+    
+    # Russo
+    elif clean_lang == 'russian' or clean_lang == 'ru':
+        return 'Russo'
+    
+    # Japonês
+    elif clean_lang == 'japanese' or clean_lang == 'ja':
+        return 'Japonês'
+
+    # Latim 
+    elif clean_lang == 'latin' or clean_lang == 'la':
+        return 'Latim'
+
+    else:
+        # Retorna o próprio valor original capitalizado se não souber traduzir
+        return clean_lang.capitalize()

@@ -10,16 +10,19 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Importando os validators
+from validators.journal_validator import JournalValidator
 from validators.orgunit_validator import OrgUnitValidator
 
 # Importando os readers
 from readers.csv_reader import CSVReader
 from readers.json_reader import JSONReader
 from readers.jsonl_reader import JSONLReader
+from readers.jsonl_gz_reader import JSONLGZReader
 
 # Importando os mappersa
 from mappers.sucupira_to_program_and_course import Sucupira2ProgramAndCourseMapper
 from mappers.revista_open_alex_to_journal import RevistaOpenAlex2JournalMapper
+from mappers.publication_open_alex_to_publication import PublicationOpenAlex2PublicationMapper
 
 
 # Importando o novo writer
@@ -33,6 +36,7 @@ READER_FACTORY = {
     'csv': CSVReader,
     'json': JSONReader,
     'jsonl': JSONLReader,
+    'jsonl.gz': JSONLGZReader,
     
 }
 
@@ -43,6 +47,7 @@ WRITER_FACTORY = {
 MAPPER_FACTORY = {
     'sucupira_to_program_and_course_mapper':Sucupira2ProgramAndCourseMapper,
     'revista_open_alex_to_journal_mapper': RevistaOpenAlex2JournalMapper,
+    'publication_open_alex_to_publication_mapper': PublicationOpenAlex2PublicationMapper,
 }
 
 DICTIONARY_BUILDERS = {
@@ -53,7 +58,10 @@ DICTIONARY_BUILDERS = {
 def process_transformation(config_section: str):
     #Carrega conjuntos de dado externos de validação
     orgUnitValidator = OrgUnitValidator()
-    orgUnitValidator.load_dataset('data\\orgunit.json')
+    orgUnitValidator.load_dataset(r'.\src\data\orgunit.json')
+
+    journalValidator = JournalValidator()
+    journalValidator.load_dataset(r'.\src\data\journals.json')
     
     #Carrega o arquivo de configuração da  estrategia de carga dos dados
     config = configparser.ConfigParser()
@@ -99,4 +107,4 @@ def dictionary_builder(entity, source_path, output_path):
     
 if __name__ == "__main__":
     process_transformation('PUBLICACOES_OPEN_ALEX_ORCID')
-    # dictionary_builder(entity='Journal',output_path='.\data\output',source_path=r"C:\DATABASE-IBICT\Finalizados\2025\Journal")
+    # dictionary_builder(entity='Journal',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\Journal")
