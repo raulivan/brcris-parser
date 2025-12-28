@@ -36,6 +36,9 @@ class BaseMapper(ABC):
         if node is None:
             return False
         
+        if node == None:
+            return False
+        
         # 2. Checagem para Strings (CORRIGIDO com isinstance)
         if isinstance(node, str):
             # Converte para string e limpa espaços antes de checar 'null' ou vazio

@@ -29,20 +29,22 @@ class JournalDictionaryBuilder(BaseDictionaryBuilder):
                             for entity in xml_root.findall(".//entity[@type='Journal']"):
                                 
                                 # Recupera o semanticIdentifier
-                                semantic_id_elem = entity.find("semanticIdentifier")
-                                code = semantic_id_elem.text if semantic_id_elem is not None else None
-                                
-                                # Recupera o field onde name="title"
-                                # Usamos [@name='title'] para filtrar diretamente no XML
-                                title_elem = entity.find("./field[@name='title']")
-                                name = title_elem.get("value") if title_elem is not None else None
+                                semantic_id_list = entity.findall("semanticIdentifier")
+                                for semantic_id_elem in semantic_id_list:
+                                    code = semantic_id_elem.text if semantic_id_elem is not None else None
+                                    
+                                    # Recupera o field onde name="title"
+                                    # Usamos [@name='title'] para filtrar diretamente no XML
+                                    title_elem = entity.find("./field[@name='title']")
+                                    name = title_elem.get("value") if title_elem is not None else None
 
-                                # Só adiciona se ambos os campos existirem
-                                if code and name:
-                                    all_journals.append({
-                                        "code": code.strip(),
-                                        "name": name.strip()
-                                    })
+                                    # Só adiciona se ambos os campos existirem
+                                    if code and name:
+                                        if str(code).strip().startswith("issn::"):
+                                            all_journals.append({
+                                                "code": code.strip(),
+                                                "name": name.strip()
+                                            })
 
                         except Exception as e:
                             print(f"Erro ao processar arquivo {file_path}: {e}")

@@ -202,8 +202,28 @@ def translate_type_of_publication(type_of_publication: str) -> str:
     
     elif clean_type == 'retraction':
         return 'Retratação'
-
     
+    elif clean_type == 'book-chapter':
+        return 'Capítulo de Livro'
+    
+    elif clean_type == 'book':
+        return 'Livro'
+
+    elif clean_type == 'dataset':
+        return 'Conjunto de dados'
+
+    elif clean_type == 'peer-review':
+        return 'Revisão por pares'
+
+    elif clean_type == 'report':
+        return 'Relatório'
+    
+    elif clean_type == 'letter':
+        return 'Carta'
+    
+    elif clean_type == 'other':
+        return 'Outro'
+
     return type_of_publication
 
 def translate_language(language: str) -> str:
@@ -255,7 +275,84 @@ def translate_language(language: str) -> str:
     # Latim 
     elif clean_lang == 'latin' or clean_lang == 'la':
         return 'Latim'
+    
+    # Catalão 
+    elif clean_lang == 'català' or clean_lang == 'ca':
+        return 'Catalão'
+    
+     # Polonês 
+    elif clean_lang == 'polski' or clean_lang == 'pl':
+        return 'Polonês'
+    
+     # Dinamarquês 
+    elif clean_lang == 'dansk' or clean_lang == 'da':
+        return 'Dinamarquês'
+
+     # Sueco 
+    elif clean_lang == 'svenska' or clean_lang == 'sv':
+        return 'Sueco'
+    
+    # Croata
+    elif clean_lang == 'croatian' or clean_lang == 'hr':
+        return 'Croata'
+    
+    #Romeno
+    elif clean_lang == 'romanian' or clean_lang == 'ro':
+        return 'Romeno'
+    
+    # Holandês
+    elif clean_lang == 'dutch' or clean_lang == 'nl':
+        return 'Holandês'
+    
+    # Africâner
+    elif clean_lang == 'afrikaans' or clean_lang == 'af':
+        return 'Africâner'
+    
+    # Indonésio
+    elif clean_lang == 'indonesian' or clean_lang == 'id':
+        return 'Indonésio'
+
+     # Tcheco
+    elif clean_lang == 'čeština' or clean_lang == 'cs':
+        return 'Tcheco'
 
     else:
         # Retorna o próprio valor original capitalizado se não souber traduzir
         return clean_lang.capitalize()
+    
+
+def get_code_for_url(url: str) -> str:
+    """
+    Rcupera o codigo na URL, funcina bem para ORCID e OpenAlex ID
+    
+    :param url: https://orcid.org/0000-0003-3366-4287
+    :type url: str
+    :return: 0000-0003-3366-4287
+    :rtype: str
+    """
+    codigo = url.rstrip('/').split('/')[-1]
+    
+    
+    return codigo
+
+def extract_doi_from_url(url:str) -> str:
+    """
+    Docstring for extract_doi_from_url
+    
+    :param url: https://doi.org/10.1016/j.scs.2015.02.005
+    :type url: str
+    :return: 10.1016/j.scs.2015.02.005
+    :rtype: str
+    """
+    if not url:
+        return None
+    
+    if url.strip() == '':
+        return None
+    
+    # Procura pelo padrão que começa com '10.' e vai até o final da string
+    match = re.search(r'10\.\d{4,9}/[-._;()/:A-Z0-9]+', url, re.IGNORECASE)
+    
+    if match:
+        return match.group(0).rstrip('/') 
+    return None

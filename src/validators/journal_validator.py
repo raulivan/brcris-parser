@@ -28,14 +28,8 @@ class JournalValidator(BaseValidator):
                 code = item.get("code")
                 
                 if name and code:
-                    cleaned_name = name.strip().lower() 
-                    
-                    if cleaned_name.startswith('´'):
-                        cleaned_name = cleaned_name[1:]
-                    if cleaned_name.startswith('|'):
-                        cleaned_name = cleaned_name[1:]
-                         
-                    mapping[cleaned_name] = code
+                    cleaned_code = code.strip().lower() 
+                    mapping[cleaned_code] = name
             
             self._dataset = mapping
             print(f"Journal carregadas com sucesso. Total de {len(self._dataset)} entradas.")

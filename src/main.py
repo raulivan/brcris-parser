@@ -95,7 +95,7 @@ def process_transformation(config_section: str):
 
         print(f"  Processando: {input_path}")
         source_data = reader.read(input_path)
-        transformed_data = mapper.transform(records=source_data,validators=[orgUnitValidator])
+        transformed_data = mapper.transform(records=source_data,validators=[orgUnitValidator, journalValidator])
         writer.write(mapper.get_source(), transformed_data, output_dir)
 
     print(f"Transformação '{config_section}' concluída. Arquivos salvos em '{output_dir}'.")
@@ -106,5 +106,5 @@ def dictionary_builder(entity, source_path, output_path):
     builder.process_xml_files(source_path, output_path)
     
 if __name__ == "__main__":
-    process_transformation('PUBLICACOES_OPEN_ALEX_ORCID')
-    # dictionary_builder(entity='Journal',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\Journal")
+    # process_transformation('PUBLICACOES_OPEN_ALEX_ORCID')
+    dictionary_builder(entity='Journal',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\Journal")
