@@ -1,10 +1,13 @@
 import json
+import os
 from typing import List
+from util.helper_nbr_rene import nbr_title
+from validators.language_validator import LanguageValidator
 from validators.journal_validator import JournalValidator
 from validators.base_validator import BaseValidator
 from util.extracao import extrair_id_openalex
 from util.unique_identifier_generator import brcrisid_generator
-from util.text_transformers import capitalizar_nome, get_code_for_url, translate_language, translate_type_of_publication, trata_string, extract_doi_from_url
+from util.text_transformers import capitalizar_nome, get_code_for_url, translate_type_of_publication, trata_string, extract_doi_from_url
 from .base_mapper import BaseMapper
 
 
@@ -20,14 +23,19 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
         """
         if records is None:
             return None
-                
+
+            
+        language_validator = self.retrieve_validator_by_type(validators,LanguageValidator)
+        
         # Relacionamento com cursos
         transformed_records = []
 
+        
         for record_string in records:
             
             if record_string == None or len(record_string.strip()) == 0:
                 continue
+
 
             # Identificador semanticos 
             publication_SemanticIdentifiers_tupla = []
@@ -133,13 +141,20 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
             publication_fields_tupla.append(("type", publication_type))
 
             # <field name="language"/> <!-- validar na lista de autoridade de idiomas e gravar no idima PT -->
-            publication_language = translate_language(self.get_field_value(record, "language"))
+            publication_language = self.get_field_value(record, "language")
+            if language_validator is not None:
+                language_is_valid, key_language = language_validator.is_valid(publication_language)
+                if language_is_valid:
+                    publication_language = key_language
+
             publication_fields_tupla.append(("language", publication_language))
 
             # <field name="title"/> <!-- testar api de padronizacao do Rene -->
             publication_title = self.get_field_value(record, "title")
             if publication_title is not None:
-                publication_title = capitalizar_nome(publication_title)
+                # publication_title = capitalizar_nome(publication_title)
+                publication_title = nbr_title(publication_title)
+                
                 publication_fields_tupla.append(("title", publication_title))
 			
             # <field name="subtitle"/>
@@ -148,7 +163,8 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
             # <field name="alternativeTitle"/>
             publication_alternative_title = self.get_field_value(record, "display_name")
             if publication_alternative_title is not None:
-                publication_alternative_title = capitalizar_nome(publication_alternative_title)
+                # publication_alternative_title = capitalizar_nome(publication_alternative_title)
+                publication_alternative_title = nbr_title(publication_alternative_title)
                 if publication_alternative_title != publication_title:
                     publication_fields_tupla.append(("alternativeTitle", publication_alternative_title))
             
@@ -337,17 +353,6 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
         author_SemanticIdentifiers_tupla = []
         author_fields_identifier_tupla = []
         author_fields_tupla = []
-        
-        autho_name = self.get_field_value(author_dict, "display_name")
-        
-        if autho_name is None:
-            return None, None
-        
-        if trata_string(autho_name) == "":
-            return None, None
-        
-        autho_name = capitalizar_nome(autho_name)
-        author_fields_tupla.append(("name", trata_string(autho_name)))
 
         openalex_id = self.get_field_value(author_dict, "id")
         if not openalex_id is None:
@@ -388,8 +393,7 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
         
         
         return new_entity_person, author_ref
-    
-    
+      
     def __transform_journal(self, journal_dict: dict, validator: JournalValidator = None) -> tuple[dict, str]:
         """
         Converte registros  de Revistas  
@@ -405,7 +409,6 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
         if len(lista_issn) == 0:
             return None, None
         
-        journal_nome = self.get_field_value(source_node, "display_name")
 
         journal_SemanticIdentifiers_tupla = []
         journal_fields_identifier_tupla = []
@@ -418,16 +421,11 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
             journal_is_valid, key_orgunit = validator.is_valid(f"issn::{item_issn}")
             if not journal_is_valid:
                 return None, None
-
-            if not journal_nome is None:
-                journal_nome = capitalizar_nome(journal_nome)
             
                    
             journal_SemanticIdentifiers_tupla.append(("issn", f"issn::{item_issn}"))
             journal_fields_identifier_tupla.append(("identifier.issn", item_issn))
-        
-
-            journal_fields_tupla.append(("title", trata_string(journal_nome)))			
+        		
         
             # Gerando a referência deste registro para relacionamentos
             journal_ref = self.creat_ref_identifier()

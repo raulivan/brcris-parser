@@ -1,11 +1,10 @@
-import hashlib
 import json
 import os
-from typing import Dict, List, Tuple
+from typing import Tuple
 
 from .base_validator import BaseValidator, DatasetType
 
-class OrgUnitValidator(BaseValidator):
+class LanguageValidator(BaseValidator):
     def __init__(self):
         super().__init__()
         
@@ -20,31 +19,25 @@ class OrgUnitValidator(BaseValidator):
         try:
             with open(path, 'r', encoding='utf-8') as f:
                 # O arquivo é um JSON array de objetos
-                data= json.load(f)
+                data = json.load(f)
             
-            # Constrói o Dicionário de Mapeamento: {name_limpo: code}
+            # Constrói o Dicionário de Mapeamento: {sigla: name}
             mapping: DatasetType = {}
             for item in data:
-                name = item.get("name")
-                code = item.get("code")
+                sigla = item.get("sigla")
+                name = item.get("name_pt")
                 
-                if name and code:
-                    cleaned_name = name.strip().lower() 
-                    
-                    if cleaned_name.startswith('´'):
-                        cleaned_name = cleaned_name[1:]
-                    if cleaned_name.startswith('|'):
-                        cleaned_name = cleaned_name[1:]
-                         
-                    mapping[cleaned_name] = code
+                if name and sigla:
+                    cleaned_code = sigla.strip().lower() 
+                    mapping[cleaned_code] = name
             
             self._dataset = mapping
-            print(f"OrgUnits carregadas com sucesso. Total de {len(self._dataset)} entradas.")
+            print(f"Idiomas carregadas com sucesso. Total de {len(self._dataset)} entradas.")
 
         except json.JSONDecodeError:
-            raise ValueError("Erro ao decodificar o arquivo JSON de Orgunits. Verifique o formato.")
+            raise ValueError("Erro ao decodificar o arquivo JSON de Idiomas. Verifique o formato.")
         except Exception as e:
-            raise RuntimeError(f"Erro inesperado no carregamento de dados de Orgunits: {e}")
+            raise RuntimeError(f"Erro inesperado no carregamento de dados de Idiomas: {e}")
     
     def is_valid(self, description: str) -> Tuple[bool, str]:
         """

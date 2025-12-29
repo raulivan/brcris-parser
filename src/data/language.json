@@ -1,0 +1,236 @@
+[
+  {
+    "name_original": "English",
+    "sigla": "en",
+    "name_pt": "Inglês",
+    "name_en": "English"
+  },
+  {
+    "name_original": "Português",
+    "sigla": "pt",
+    "name_pt": "Português",
+    "name_en": "Portuguese"
+  },
+  {
+    "name_original": "Português",
+    "sigla": "pt-br",
+    "name_pt": "Português",
+    "name_en": "Portuguese"
+  },
+  {
+    "name_original": "Español",
+    "sigla": "es",
+    "name_pt": "Espanhol",
+    "name_en": "Spanish"
+  },
+  {
+    "name_original": "Français",
+    "sigla": "fr",
+    "name_pt": "Francês",
+    "name_en": "French"
+  },
+  {
+    "name_original": "Deutsch",
+    "sigla": "de",
+    "name_pt": "Alemão",
+    "name_en": "German"
+  },
+  {
+    "name_original": "Italiano",
+    "sigla": "it",
+    "name_pt": "Italiano",
+    "name_en": "Italian"
+  },
+  {
+    "name_original": "中文",
+    "sigla": "zh",
+    "name_pt": "Chinês",
+    "name_en": "Chinese"
+  },
+  {
+    "name_original": "Русский",
+    "sigla": "ru",
+    "name_pt": "Russo",
+    "name_en": "Russian"
+  },
+  {
+    "name_original": "日本語",
+    "sigla": "ja",
+    "name_pt": "Japonês",
+    "name_en": "Japanese"
+  },
+  {
+    "name_original": "Latina",
+    "sigla": "la",
+    "name_pt": "Latim",
+    "name_en": "Latin"
+  },
+  {
+    "name_original": "Català",
+    "sigla": "ca",
+    "name_pt": "Catalão",
+    "name_en": "Catalan"
+  },
+  {
+    "name_original": "Polski",
+    "sigla": "pl",
+    "name_pt": "Polonês",
+    "name_en": "Polish"
+  },
+  {
+    "name_original": "Dansk",
+    "sigla": "da",
+    "name_pt": "Dinamarquês",
+    "name_en": "Danish"
+  },
+  {
+    "name_original": "Svenska",
+    "sigla": "sv",
+    "name_pt": "Sueco",
+    "name_en": "Swedish"
+  },
+  {
+    "name_original": "Hrvatski",
+    "sigla": "hr",
+    "name_pt": "Croata",
+    "name_en": "Croatian"
+  },
+  {
+    "name_original": "Română",
+    "sigla": "ro",
+    "name_pt": "Romeno",
+    "name_en": "Romanian"
+  },
+  {
+    "name_original": "Nederlands",
+    "sigla": "nl",
+    "name_pt": "Holandês",
+    "name_en": "Dutch"
+  },
+  {
+    "name_original": "Afrikaans",
+    "sigla": "af",
+    "name_pt": "Africâner",
+    "name_en": "Afrikaans"
+  },
+  {
+    "name_original": "Bahasa Indonesia",
+    "sigla": "id",
+    "name_pt": "Indonésio",
+    "name_en": "Indonesian"
+  },
+  {
+    "name_original": "Čeština",
+    "sigla": "cs",
+    "name_pt": "Tcheco",
+    "name_en": "Czech"
+  },
+  {
+    "name_original": "Türkçe",
+    "sigla": "tr",
+    "name_pt": "Turco",
+    "name_en": "Turkish"
+  },
+  {
+    "name_original": "한국어",
+    "sigla": "ko",
+    "name_pt": "Coreano",
+    "name_en": "Korean"
+  },
+  {
+    "name_original": "العربية",
+    "sigla": "ar",
+    "name_pt": "Árabe",
+    "name_en": "Arabic"
+  },
+  {
+    "name_original": "Ελληνικά",
+    "sigla": "el",
+    "name_pt": "Grego",
+    "name_en": "Greek"
+  },
+  {
+    "name_original": "Tiếng Việt",
+    "sigla": "vi",
+    "name_pt": "Vietnamita",
+    "name_en": "Vietnamese"
+  },
+  {
+    "name_original": "हिन्दी",
+    "sigla": "hi",
+    "name_pt": "Hindi",
+    "name_en": "Hindi"
+  },
+  {
+    "name_original": "Suomi",
+    "sigla": "fi",
+    "name_pt": "Finlandês",
+    "name_en": "Finnish"
+  },
+  {
+    "name_original": "Norsk",
+    "sigla": "no",
+    "name_pt": "Norueguês",
+    "name_en": "Norwegian"
+  },
+  {
+    "name_original": "Magyar",
+    "sigla": "hu",
+    "name_pt": "Húngaro",
+    "name_en": "Hungarian"
+  },
+  {
+    "name_original": "ไทย",
+    "sigla": "th",
+    "name_pt": "Tailandês",
+    "name_en": "Thai"
+  },
+  {
+    "name_original": "Українська",
+    "sigla": "uk",
+    "name_pt": "Ucraniano",
+    "name_en": "Ukrainian"
+  },
+  {
+    "name_original": "বাংলা",
+    "sigla": "bn",
+    "name_pt": "Bengali",
+    "name_en": "Bengali"
+   },
+   {
+    "name_original": "اردو",
+    "sigla": "ur",
+    "name_pt": "Urdu",
+    "name_en": "Urdu"
+  },
+  {
+    "name_original": "मराठी",
+    "sigla": "mr",
+    "name_pt": "Marata",
+    "name_en": "Marathi"
+  },
+  {
+    "name_original": "తెలుగు",
+    "sigla": "te",
+    "name_pt": "Telugo",
+    "name_en": "Telugu"
+  },
+  {
+    "name_original": "தமிழ்",
+    "sigla": "ta",
+    "name_pt": "Tâmil",
+    "name_en": "Tamil"
+  },
+  {
+    "name_original": "فارسی",
+    "sigla": "fa",
+    "name_pt": "Persa",
+    "name_en": "Persian"
+  },
+  {
+    "name_original": "普通话",
+    "sigla": "zh",
+    "name_pt": "Mandarim",
+    "name_en": "Mandarin"
+  }
+]
