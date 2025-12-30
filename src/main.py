@@ -25,6 +25,7 @@ from readers.jsonl_gz_reader import JSONLGZReader
 from mappers.sucupira_to_program_and_course import Sucupira2ProgramAndCourseMapper
 from mappers.revista_open_alex_to_journal import RevistaOpenAlex2JournalMapper
 from mappers.publication_open_alex_to_publication import PublicationOpenAlex2PublicationMapper
+from mappers.orientacao_lattes_to_publication import OrientacaoPlataformaLattes2PublicationMapper
 
 
 # Importando o novo writer
@@ -50,6 +51,7 @@ MAPPER_FACTORY = {
     'sucupira_to_program_and_course_mapper':Sucupira2ProgramAndCourseMapper,
     'revista_open_alex_to_journal_mapper': RevistaOpenAlex2JournalMapper,
     'publication_open_alex_to_publication_mapper': PublicationOpenAlex2PublicationMapper,
+    'orientacao_lattes_to_publication_mapper': OrientacaoPlataformaLattes2PublicationMapper
 }
 
 DICTIONARY_BUILDERS = {
@@ -135,4 +137,5 @@ def dictionary_builder(entity, source_path, output_path):
     
 if __name__ == "__main__":
     process_transformation('PUBLICACOES_OPEN_ALEX_ORCID')
+    # process_transformation('ORIENTACOES_PLATAFORMA_LATTES')
     # dictionary_builder(entity='Journal',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\Journal")
