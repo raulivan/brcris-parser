@@ -1,9 +1,8 @@
 import json
 from typing import List
 from validators.base_validator import BaseValidator
-from util.extracao import extrair_id_openalex
 from util.unique_identifier_generator import brcrisid_generator
-from util.text_transformers import capitalizar_nome, trata_string
+from util.text_transformers import capitalizar_nome, get_code_for_url, trata_string
 from .base_mapper import BaseMapper
 
 
@@ -131,8 +130,8 @@ class RevistaOpenAlex2JournalMapper(BaseMapper):
                     if item_ids_key == 'openalex':
                         if not self.has_value(item_ids_value):
                              continue
-                        journal_fields_identifier_tupla.append(("identifier.openalex", extrair_id_openalex(trata_string(item_ids_value))))
-                        journal_SemanticIdentifiers_tupla.append(("openalex", f"openalex::{extrair_id_openalex(trata_string(item_ids_value))}"))
+                        journal_fields_identifier_tupla.append(("identifier.openalex", get_code_for_url(trata_string(item_ids_value))))
+                        journal_SemanticIdentifiers_tupla.append(("openalex", f"openalex::{get_code_for_url(trata_string(item_ids_value))}"))
                         
    
             #********************** <field name="title" description="título da revista"/> <!-- testar api de padronizacao do Rene?? -->

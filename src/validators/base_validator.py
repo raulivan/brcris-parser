@@ -20,7 +20,7 @@ class BaseValidator(ABC):
         """Verifica se o valor está presente no dataset carregado."""
         pass
  
-    def find_key_value(self,target_key:str , target_value:str) -> bool:
+    def find_key_value(self,dataset, target_key:str , target_value:str) -> bool:
         """
         Pesquisa recursivamente em um JSON (dict ou list) por uma chave e valor específicos.
         Retorna True se encontrar, caso contrário, False.
@@ -45,10 +45,14 @@ class BaseValidator(ABC):
         
         if target_key.strip() == '' or target_value.strip() == '':
             return False
+        
+        if dataset == None:
+            dataset = self._dataset
+        
 
         # Caso 1: Se for um dicionário
-        if isinstance(self._dataset, dict):
-            for key, value in self._dataset.items():
+        if isinstance(dataset, dict):
+            for key, value in dataset.items():
                 # Verifica se é a chave e o valor que buscamos
                 if str(key).lower() == target_key.lower() and str(value).lower() == target_value.lower():
                     return True
@@ -59,11 +63,46 @@ class BaseValidator(ABC):
                         return True
 
         # Caso 2: Se for uma lista
-        elif isinstance(self._dataset, list):
-            for item in self._dataset:
+        elif isinstance(dataset, list):
+            for item in dataset:
                 # Se o item for outra estrutura, mergulha nela
                 if isinstance(item, (dict, list)):
                     if self.find_key_value(item, target_key, target_value):
+                        return True
+                        
+        return False
+    
+    def contains(self,dataset, target_value:str) -> bool:
+        """
+        
+        """
+        if  target_value == None:
+            return False
+        
+        if target_value.strip() == '':
+            return False
+
+        if dataset == None:
+            dataset = self._dataset
+
+        # Caso 1: Se for um dicionário
+        if isinstance(dataset, dict):
+            for key, value in dataset.items():
+                # Verifica se é a chave e o valor que buscamos
+                if str(value).lower() == target_value.lower():
+                    return True
+                
+                # Se o valor for outra estrutura (dict ou list), mergulha nela
+                if isinstance(value, (dict, list)):
+                    if self.find_key_value(value,target_value):
+                        return True
+
+        # Caso 2: Se for uma lista
+        elif isinstance(dataset, list):
+            for item in dataset:
+                # Se o item for outra estrutura, mergulha nela
+                if isinstance(item, (dict, list)):
+                    if self.find_key_value(item, target_value):
                         return True
                         
         return False

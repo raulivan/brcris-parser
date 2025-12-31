@@ -1,5 +1,6 @@
 import re
 from unicodedata import normalize
+from urllib.parse import urlparse
 
 # Lista de palavras curtas que geralmente não são capitalizadas no Title Case
 PALAVRAS_DE_EXCECAO = {
@@ -237,10 +238,19 @@ def get_code_for_url(url: str) -> str:
     :return: 0000-0003-3366-4287
     :rtype: str
     """
-    codigo = url.rstrip('/').split('/')[-1]
+
+    parsed_url = urlparse(url)
+
+    path = parsed_url.path
     
+
+    segments = [s for s in path.split('/') if s]
     
-    return codigo
+
+    if segments:
+        return segments[-1]
+    
+    return None
 
 def extract_doi_from_url(url:str) -> str:
     """

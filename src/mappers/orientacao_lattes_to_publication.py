@@ -5,7 +5,6 @@ from util.helper_nbr_rene import nbr_title
 from validators.language_validator import LanguageValidator
 from validators.journal_validator import JournalValidator
 from validators.base_validator import BaseValidator
-from util.extracao import extrair_id_openalex
 from util.unique_identifier_generator import brcrisid_generator
 from util.text_transformers import capitalizar_nome, get_code_for_url, translate_type_of_publication, trata_string, extract_doi_from_url
 from .base_mapper import BaseMapper
@@ -57,7 +56,7 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
             #<field name="identifier.brcris" description="hash gerado com título + ano de publicação + tipo"/>
             part1 = self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__titulo")
             part2 = self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__ano")
-            part3 = translate_type_of_publication(self.get_field_value(record, "type"))
+            part3 = translate_type_of_publication(self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__natureza"))
 
             brcris_id_v1 = brcrisid_generator(part1,str(part2),part3)
             brcris_id_v2 = brcrisid_generator(part1,str(part2),part3,useReplaceHtmlChars=True)
@@ -121,11 +120,9 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
             # <field name="language"/> <!-- validar na lista de autoridade de idiomas e gravar no idima PT -->
             publication_language = self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__idioma")
             if language_validator is not None:
-                language_is_valid, key_language = language_validator.find_key_value(target_key='name_pt',target_value=publication_language)
+                language_is_valid = language_validator.contains(dataset=None, target_value=publication_language)
                 if language_is_valid:
-                    publication_language = key_language
-
-            publication_fields_tupla.append(("language", publication_language))
+                    publication_fields_tupla.append(("language", publication_language))
 
             # <field name="title"/> <!-- testar api de padronizacao do Rene -->
             publication_title = self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__titulo")
@@ -176,9 +173,9 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
             # TODO
 
             # <field name="author"/>
-            for autor in record_node_authorships:
-                autor_name = self.get_field_value(autor, "nome")
-                publication_fields_tupla.append(("author", autor_name))
+          
+            autor_name = self.get_field_value(record_node_authorships, "nome")
+            publication_fields_tupla.append(("author", autor_name))
 
             # <field name="advisor"/>
             orientador_name = self.get_field_value(record, "nome_completo")
@@ -253,56 +250,24 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
                 "relations":[]
             }
 
-            # Relacionamento com os autores
-            for item in record_node_authorships:
-                # Somente com autores que tem ORCID
-                autor_node = self.get_field_value(item, "author")
-                orcid = self.get_field_value(autor_node, "orcid")
-                if orcid is not None:
-                    new_author, author_ref  = self.__transform_person(item["author"])
-                    if new_author is None:
-                        continue
+            # Relacionamento com o orientador
+            new_author, author_ref  = self.__transform_person(record)
+            if new_author is None:
+                continue
 
-                    order = self.get_field_value(item, "author_position")
-
-                    affiliation = None
-                    institutions = self.get_field_value(item, "institutions")
-
-                    if not institutions is None:
-                        if len(institutions) > 0:
-                            affiliation = self.get_field_value(institutions[0], "display_name")
-                            if not affiliation is None:
-                                affiliation = capitalizar_nome(affiliation)   
-
-                    new_relation = {
-                        "type": "Authorship",
-                        "fromEntityRef": publication_ref, # fromEntity="Publication"
-                        "toEntityRef":  author_ref, # toEntity="Person"
-                        "attributes":[
-                            {"name": "order", "value": order} if order is not None else None,
-                            {"name": "affiliation", "value": affiliation} if affiliation is not None else None
-                        ]
-                    } 
-                    
-                    new_record["relations"].append(new_relation)
-                    new_record["entities"].append(new_author)
+            new_relation = {
+                "type": "Adivisoring",
+                "fromEntityRef": publication_ref, # fromEntity="Publication"
+                "toEntityRef":  author_ref, # toEntity="Person"
+                # "attributes":[
+                    # {"name": "order", "value": order} if order is not None else None,
+                    # {"name": "affiliation", "value": affiliation} if affiliation is not None else None,
+                    # {"name": "cnpqCodOrgUnit", "value": affiliation} if affiliation is not None else None
+                # ]
+            } 
             
-            # Relacionamento com a revista
-            journal_validator = self.retrieve_validator_by_type(validators,JournalValidator)
-            for item in record_node_locations:     
-
-                new_journal, journal_ref = self.__transform_journal(item, journal_validator)
-                if new_journal is None:
-                    continue
-                    
-                new_relation = {
-                    "type": "PublisherJournal",
-                    "fromEntityRef": publication_ref, # fromEntity="Publication" 
-                    "toEntityRef":  journal_ref # toEntity="Journal"
-                } 
-                
-                new_record["relations"].append(new_relation)
-                new_record["entities"].append(new_journal)
+            new_record["relations"].append(new_relation)
+            new_record["entities"].append(new_author)
             
             transformed_records.append(new_record)
         return transformed_records
@@ -316,19 +281,13 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
         author_fields_identifier_tupla = []
         author_fields_tupla = []
 
-        openalex_id = self.get_field_value(author_dict, "id")
-        if not openalex_id is None:
-            openalex_id = get_code_for_url(openalex_id)
         
-        orcid_id = self.get_field_value(author_dict, "orcid")
-        if not orcid_id is None:
-            orcid_id = get_code_for_url(orcid_id)
+        lattes_id = self.get_field_value(author_dict, "id")
+        if lattes_id is None:
+            return None, None
 
-        author_SemanticIdentifiers_tupla.append(("openalex", f"openalex::{openalex_id}"))
-        author_fields_identifier_tupla.append(("identifier.openalex", openalex_id))
-
-        author_SemanticIdentifiers_tupla.append(("orcid", f"orcid::{orcid_id}"))
-        author_fields_identifier_tupla.append(("identifier.orcid", orcid_id))
+        author_SemanticIdentifiers_tupla.append(("lattes", f"lattes::{lattes_id}"))
+        author_fields_identifier_tupla.append(("identifier.lattes", lattes_id))
 
         # Gerando a referência deste registro para relacionamentos
         author_ref = self.creat_ref_identifier()
@@ -356,61 +315,4 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
         
         return new_entity_person, author_ref
       
-    def __transform_journal(self, journal_dict: dict, validator: JournalValidator = None) -> tuple[dict, str]:
-        """
-        Converte registros  de Revistas  
-        """
-        if validator is None:
-            return None, None
-        
-        source_node = self.get_field_value(journal_dict, "source")
-        lista_issn = self.get_field_value(source_node, "issn")
-        if lista_issn is None:
-            return None, None
-        
-        if len(lista_issn) == 0:
-            return None, None
-        
-
-        journal_SemanticIdentifiers_tupla = []
-        journal_fields_identifier_tupla = []
-        journal_fields_tupla = []
-        
-        for item_issn in lista_issn:
-            if not self.has_value(item_issn):
-                continue
-
-            journal_is_valid, key_orgunit = validator.is_valid(f"issn::{item_issn}")
-            if not journal_is_valid:
-                return None, None
-            
-                   
-            journal_SemanticIdentifiers_tupla.append(("issn", f"issn::{item_issn}"))
-            journal_fields_identifier_tupla.append(("identifier.issn", item_issn))
-        		
-        
-            # Gerando a referência deste registro para relacionamentos
-            journal_ref = self.creat_ref_identifier()
-
-        
-            new_entity_journal= {
-                "entity_attribs": {
-                    "type": "Journal",
-                    "ref": journal_ref
-                },
-                "semantic_identifiers":[
-                    {"name": name, "value": value} for name, value in journal_SemanticIdentifiers_tupla if value is not None
-                ],
-                "fields_identifier": [
-                    {"name": name, "value": value} for name, value in journal_fields_identifier_tupla if value is not None
-                ],
-                "fields": [
-                    {"name": name, "value": value} for name, value in journal_fields_tupla if value is not None
-                ]
-            }
-            
-            if len(journal_SemanticIdentifiers_tupla) == 0:
-                return None, None
-            
-            
-            return new_entity_journal, journal_ref
+    

@@ -1,13 +1,13 @@
 import json
 import os
 from typing import List
+from util.publication_type_mapping import PublicationTypeMapping
 from util.helper_nbr_rene import nbr_title
 from validators.language_validator import LanguageValidator
 from validators.journal_validator import JournalValidator
 from validators.base_validator import BaseValidator
-from util.extracao import extrair_id_openalex
 from util.unique_identifier_generator import brcrisid_generator
-from util.text_transformers import capitalizar_nome, get_code_for_url, translate_type_of_publication, trata_string, extract_doi_from_url
+from util.text_transformers import capitalizar_nome, get_code_for_url, trata_string, extract_doi_from_url
 from .base_mapper import BaseMapper
 
 
@@ -62,7 +62,13 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
             #<field name="identifier.brcris" description="hash gerado com título + ano de publicação + tipo"/>
             part1 = self.get_field_value(record, "title")
             part2 = self.get_field_value(record, "publication_year")
-            part3 = translate_type_of_publication(self.get_field_value(record, "type"))
+            temp_tipo = self.get_field_value(record, "type")
+            part3 = PublicationTypeMapping.get_brcris_type(temp_tipo, "OPENALEX")
+
+            if part3 is None:
+                # Não tem um tipo válido de publicação... pula pro próximo
+                continue
+
 
             brcris_id_v1 = brcrisid_generator(part1,str(part2),part3)
             brcris_id_v2 = brcrisid_generator(part1,str(part2),part3,useReplaceHtmlChars=True)
@@ -137,7 +143,10 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
                 publication_fields_identifier_tupla.append(("identifier.other", id_open_alex_ids))
 
             # <field name="type"/> <!-- validar na lista de autoridade de tipos e gravar no idima PT (anteriormente era no coar)-->
-            publication_type = translate_type_of_publication(self.get_field_value(record, "type"))
+            publication_type = PublicationTypeMapping.get_brcris_type(self.get_field_value(record, "type"), "OPENALEX")
+            if publication_type is None:
+                continue
+
             publication_fields_tupla.append(("type", publication_type))
 
             # <field name="language"/> <!-- validar na lista de autoridade de idiomas e gravar no idima PT -->
@@ -362,7 +371,7 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
         if not orcid_id is None:
             orcid_id = get_code_for_url(orcid_id)
 
-        author_SemanticIdentifiers_tupla.append(("openalex", f"openalex::{openalex_id}"))
+        # author_SemanticIdentifiers_tupla.append(("openalex", f"openalex::{openalex_id}"))
         author_fields_identifier_tupla.append(("identifier.openalex", openalex_id))
 
         author_SemanticIdentifiers_tupla.append(("orcid", f"orcid::{orcid_id}"))
@@ -405,6 +414,9 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
         lista_issn = self.get_field_value(source_node, "issn")
         if lista_issn is None:
             return None, None
+        
+        if not isinstance(lista_issn, list):
+            lista_issn = [lista_issn]
         
         if len(lista_issn) == 0:
             return None, None

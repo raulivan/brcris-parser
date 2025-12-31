@@ -12,6 +12,16 @@ class JSONLReader(BaseReader):
             with open(file_path, 'r', encoding='utf-8') as arq:
                 for linha in arq:
                     linha = linha.strip()
+
+                    # temp = arq.readline()
+                    # record =  json.loads(temp)
+                    # with open(f"orientacao_lattes.json", 'w', encoding='utf-8') as json_file:
+                    #         json.dump(
+                    #             record, 
+                    #             json_file, 
+                    #             ensure_ascii=False
+                    #         )
+
                     if linha:  # Ignora linhas vazias
                         yield linha
         except FileNotFoundError:
