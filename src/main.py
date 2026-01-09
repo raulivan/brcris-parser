@@ -3,13 +3,11 @@ import sys
 import os
 
 
-
-
-
 # Adiciona o diretório 'src' ao path para permitir importações relativas e não erro de caminhos
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Importando os validators
+from validators.person_validator import PersonValidator
 from validators.journal_validator import JournalValidator
 from validators.orgunit_validator import OrgUnitValidator
 from validators.language_validator import LanguageValidator
@@ -20,13 +18,14 @@ from readers.csv_reader import CSVReader
 from readers.json_reader import JSONReader
 from readers.jsonl_reader import JSONLReader
 from readers.jsonl_gz_reader import JSONLGZReader
+from readers.xml_reader import XMLReader
 
 # Importando os mappersa
 from mappers.sucupira_to_program_and_course import Sucupira2ProgramAndCourseMapper
 from mappers.revista_open_alex_to_journal import RevistaOpenAlex2JournalMapper
 from mappers.publication_open_alex_to_publication import PublicationOpenAlex2PublicationMapper
 from mappers.orientacao_lattes_to_publication import OrientacaoPlataformaLattes2PublicationMapper
-
+from mappers.patentes_brcris_to_patent import PatentBrcris2PatentMapper
 
 # Importando o novo writer
 from writers.xml_writer import XMLWriter # Importa o novo writer
@@ -40,6 +39,7 @@ READER_FACTORY = {
     'json': JSONReader,
     'jsonl': JSONLReader,
     'jsonl.gz': JSONLGZReader,
+    'xml': XMLReader,
     
 }
 
@@ -51,7 +51,8 @@ MAPPER_FACTORY = {
     'sucupira_to_program_and_course_mapper':Sucupira2ProgramAndCourseMapper,
     'revista_open_alex_to_journal_mapper': RevistaOpenAlex2JournalMapper,
     'publication_open_alex_to_publication_mapper': PublicationOpenAlex2PublicationMapper,
-    'orientacao_lattes_to_publication_mapper': OrientacaoPlataformaLattes2PublicationMapper
+    'orientacao_lattes_to_publication_mapper': OrientacaoPlataformaLattes2PublicationMapper,
+    'patentes_brcris_to_patent_mapper': PatentBrcris2PatentMapper
 }
 
 DICTIONARY_BUILDERS = {
@@ -69,6 +70,9 @@ def process_transformation(config_section: str):
 
     languageValidator = LanguageValidator()
     languageValidator.load_dataset(r'.\src\data\language.json')
+
+    personValidator = PersonValidator()
+    personValidator.load_dataset(r'.\src\data\ids_lattes.csv')
 
     
     #Carrega o arquivo de configuração da  estrategia de carga dos dados
@@ -115,7 +119,7 @@ def process_transformation(config_section: str):
 
             print(f"  Processando: {input_path}")
             source_data = reader.read(input_path)
-            transformed_data = mapper.transform(records=source_data,validators=[orgUnitValidator, journalValidator, languageValidator])
+            transformed_data = mapper.transform(records=source_data,validators=[orgUnitValidator, journalValidator, languageValidator, personValidator])
             writer.write(mapper.get_source(), transformed_data, output_dir)
 
             # --- SUCESSO: Registrar no checkpoint ---
@@ -136,6 +140,6 @@ def dictionary_builder(entity, source_path, output_path):
     builder.process_xml_files(source_path, output_path)
     
 if __name__ == "__main__":
-    process_transformation('PUBLICACOES_OPEN_ALEX_DOI')
+    process_transformation('PATENTES_BRCRIS')
     # process_transformation('ORIENTACOES_PLATAFORMA_LATTES')
     # dictionary_builder(entity='Journal',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\Journal")

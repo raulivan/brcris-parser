@@ -257,7 +257,7 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
 
             new_relation = {
                 "type": "Adivisoring",
-                "fromEntityRef": publication_ref, # fromEntity="Publication"
+                "fromEntity": publication_ref, # fromEntity="Publication"
                 "toEntityRef":  author_ref, # toEntity="Person"
                 # "attributes":[
                     # {"name": "order", "value": order} if order is not None else None,
@@ -267,7 +267,7 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
             } 
             
             new_record["relations"].append(new_relation)
-            new_record["entities"].append(new_author)
+            new_record["toEntity"].append(new_author)
             
             transformed_records.append(new_record)
         return transformed_records

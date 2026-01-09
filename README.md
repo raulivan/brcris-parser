@@ -24,7 +24,21 @@ O fluxo de transformação é orquestrado pelo `src/main.py` e configurado atrav
     pip install -r requirements.txt
     ```
 
-2.  **Coloque os arquivos de entrada** na pasta `data/input/`.
+2. **Corrigir erro**
+
+    .\venv\Scripts\Activate : O arquivo C:\workspace\IBICT\brcris-parser\venv\Scripts\Activate.ps1 não pode ser carregado porque a execução de scripts foi desabilitada neste 
+    sistema. Para obter mais informações, consulte about_Execution_Policies em https://go.microsoft.com/fwlink/?LinkID=135170.
+    No linha:1 caractere:1
+    + .\venv\Scripts\Activate
+    + ~~~~~~~~~~~~~~~~~~~~~~~
+        + CategoryInfo          : ErrodeSegurança: (:) [], PSSecurityException
+        + FullyQualifiedErrorId : UnauthorizedAccess
+
+
+> No terminal do PowerShell onde deu o erro, digite o comando abaixo:
+
+
+3.  **Coloque os arquivos de entrada** na pasta `data/input/`.
 
 3.  **Execute o script principal:**
 

@@ -323,8 +323,8 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
 
                     new_relation = {
                         "type": "Authorship",
-                        "fromEntityRef": publication_ref, # fromEntity="Publication"
-                        "toEntityRef":  author_ref, # toEntity="Person"
+                        "fromEntity": publication_ref, # fromEntity="Publication"
+                        "toEntity":  author_ref, # toEntity="Person"
                         "attributes":[
                             {"name": "order", "value": order} if order is not None else None,
                             {"name": "affiliation", "value": affiliation} if affiliation is not None else None

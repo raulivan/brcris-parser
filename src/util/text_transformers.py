@@ -273,3 +273,31 @@ def extract_doi_from_url(url:str) -> str:
     if match:
         return match.group(0).rstrip('/') 
     return None
+
+def formart_date_str_eng_to_ptbr(data:str) -> str:
+    """
+    Fromata uma data ingles no formato ptbr
+    
+    :param data: 2011-02-03
+    :type data: str
+    :return: 03/02/2011
+    :rtype: str
+    """
+    if not data:
+        return None, None
+    
+    if data.strip() == '':
+        return None, None
+    
+    partes = data.split('-')
+    if len(partes) != 3:
+        return None, None
+    
+    if len(partes[0]) != 4:
+        return None, None
+    
+    dia = partes[2]
+    mes = partes[1]
+    ano = partes[0]
+    
+    return f"{dia}/{mes}/{ano}", ano
