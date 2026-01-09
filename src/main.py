@@ -136,6 +136,6 @@ def dictionary_builder(entity, source_path, output_path):
     builder.process_xml_files(source_path, output_path)
     
 if __name__ == "__main__":
-    process_transformation('PUBLICACOES_OPEN_ALEX_ORCID')
+    process_transformation('PUBLICACOES_OPEN_ALEX_DOI')
     # process_transformation('ORIENTACOES_PLATAFORMA_LATTES')
     # dictionary_builder(entity='Journal',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\Journal")
