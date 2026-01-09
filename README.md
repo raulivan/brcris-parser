@@ -1,4 +1,4 @@
-# BRCris Parser
+# BRCris Parser 1.0
 
 Este projeto é uma ferramenta de ETL (Extração, Transformação e Carga) para converter conjuntos de dados para entidades do modelo BrCris.
 
