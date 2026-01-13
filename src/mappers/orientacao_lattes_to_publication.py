@@ -1,6 +1,7 @@
 import json
 import os
 from typing import List
+from util.publication_type_mapping import PublicationTypeMapping
 from util.helper_nbr_rene import nbr_title
 from validators.language_validator import LanguageValidator
 from validators.journal_validator import JournalValidator
@@ -48,15 +49,21 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
             print(f"Processando registro: {publication_ref}")
             
             record =  json.loads(record_string)
+            # with open('meu_arquivo.json', 'w') as f:
+            #     json.dump(record, f)
+            #     continue
 
             record_node_authorships = self.get_field_value(record, "orientado")
- 
-           
-             
+
             #<field name="identifier.brcris" description="hash gerado com título + ano de publicação + tipo"/>
             part1 = self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__titulo")
             part2 = self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__ano")
-            part3 = translate_type_of_publication(self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__natureza"))
+            temp_tipo = self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__tipo")
+            part3 = PublicationTypeMapping.get_brcris_type(temp_tipo, "LATTES")
+
+            if part3 is None:
+                # Não tem um tipo válido de publicação... pula pro próximo
+                continue
 
             brcris_id_v1 = brcrisid_generator(part1,str(part2),part3)
             brcris_id_v2 = brcrisid_generator(part1,str(part2),part3,useReplaceHtmlChars=True)
@@ -114,7 +121,8 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
             # TODO
 
             # <field name="type"/> <!-- validar na lista de autoridade de tipos e gravar no idima PT (anteriormente era no coar)-->
-            publication_type = translate_type_of_publication(self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__natureza"))
+            temp_tipo = self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__tipo")
+            publication_type = PublicationTypeMapping.get_brcris_type(temp_tipo, "LATTES")
             publication_fields_tupla.append(("type", publication_type))
 
             # <field name="language"/> <!-- validar na lista de autoridade de idiomas e gravar no idima PT -->
@@ -145,11 +153,12 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
             publication_fields_tupla.append(("defenceDay", trata_string(publication_defenceDay)))
 
             # <field name="publicationDate"/> <!-- somente ano -->
-            publication_publicationDate = self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__ano")
-            publication_fields_tupla.append(("publicationDate", trata_string(publication_publicationDate)))
+            # TODO
 
             # <field name="degreeDate"/>
-            # TODO
+            publication_degreeDate = self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__ano")
+            publication_fields_tupla.append(("degreeDate", trata_string(publication_degreeDate)))
+
 
             # <field name="number"/>
             # TODO
@@ -257,7 +266,7 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
 
             new_relation = {
                 "type": "Adivisoring",
-                "fromEntity": publication_ref, # fromEntity="Publication"
+                "fromEntityRef": publication_ref, # fromEntity="Publication"
                 "toEntityRef":  author_ref, # toEntity="Person"
                 # "attributes":[
                     # {"name": "order", "value": order} if order is not None else None,
@@ -265,9 +274,8 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
                     # {"name": "cnpqCodOrgUnit", "value": affiliation} if affiliation is not None else None
                 # ]
             } 
-            
             new_record["relations"].append(new_relation)
-            new_record["toEntity"].append(new_author)
+            new_record["entities"].append(new_author)
             
             transformed_records.append(new_record)
         return transformed_records

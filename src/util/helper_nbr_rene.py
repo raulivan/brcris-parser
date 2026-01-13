@@ -165,6 +165,11 @@ def nbr_corporate(n: Optional[str], rows=None) -> str:
     return s
 
 def nbr_title(n,rows=[]):
+    if n is None:
+        return ""
+    if n == None:
+        return ""
+    
     n2 = n.lower()
     n2 = n2.replace(chr(13),' ')
     n2 = n2.replace(chr(10),' ')

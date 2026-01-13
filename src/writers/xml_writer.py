@@ -57,22 +57,23 @@ class XMLWriter(BaseWriter):
                 
                 
                 # TAG Relacionamentos
-                relations_node = ET.SubElement(root, "relations")
+                if ('relations' in record) and (len(record["relations"]) > 0):
+                    relations_node = ET.SubElement(root, "relations")
 
-                for current_relation in record["relations"]:
-                    
-                    if not "attributes" in current_relation:
-                        relation_node = ET.SubElement(relations_node, "relation", attrib=current_relation)
-                    else:
-                        current_relation_edit = current_relation.copy()
-                        current_relation_edit.pop("attributes")
+                    for current_relation in record["relations"]:
+                        
+                        if not "attributes" in current_relation:
+                            relation_node = ET.SubElement(relations_node, "relation", attrib=current_relation)
+                        else:
+                            current_relation_edit = current_relation.copy()
+                            current_relation_edit.pop("attributes")
 
-                        relation_node = ET.SubElement(relations_node, "relation", attrib=current_relation_edit)
-                        relation_node_attributes = ET.SubElement(relation_node, "attributes")
-                        for item in current_relation["attributes"]:
-                            if item is None:
-                                continue
-                            relation_node_atributo_item = ET.SubElement(relation_node_attributes, "field", attrib=item)
+                            relation_node = ET.SubElement(relations_node, "relation", attrib=current_relation_edit)
+                            relation_node_attributes = ET.SubElement(relation_node, "attributes")
+                            for item in current_relation["attributes"]:
+                                if item is None:
+                                    continue
+                                ET.SubElement(relation_node_attributes, "field", attrib=item)
                     
 
                     

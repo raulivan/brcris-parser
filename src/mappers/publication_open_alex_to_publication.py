@@ -1,6 +1,7 @@
 import json
 import os
 from typing import List
+from validators.orcid_validator import OrcidValidator
 from util.publication_type_mapping import PublicationTypeMapping
 from util.helper_nbr_rene import nbr_title
 from validators.language_validator import LanguageValidator
@@ -26,6 +27,12 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
 
             
         language_validator = self.retrieve_validator_by_type(validators,LanguageValidator)
+        if language_validator is None:
+            raise "LanguageValidator não encontrado."
+        
+        orcid_validator = self.retrieve_validator_by_type(validators,OrcidValidator)
+        if orcid_validator is None:
+            raise "OrcidValidator não encontrado."
         
         # Relacionamento com cursos
         transformed_records = []
@@ -305,7 +312,13 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
                 # Somente com autores que tem ORCID
                 autor_node = self.get_field_value(item, "author")
                 orcid = self.get_field_value(autor_node, "orcid")
+                # Verifica se tem orcid informado
                 if orcid is not None:
+                    # Agora verifica se esse ORCID é de uma person valida
+                    orcid_is_valid, key_orcid = orcid_validator.is_valid(get_code_for_url(orcid))
+                    if orcid_is_valid == False:
+                        continue
+
                     new_author, author_ref  = self.__transform_person(item["author"])
                     if new_author is None:
                         continue
@@ -323,8 +336,8 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
 
                     new_relation = {
                         "type": "Authorship",
-                        "fromEntity": publication_ref, # fromEntity="Publication"
-                        "toEntity":  author_ref, # toEntity="Person"
+                        "fromEntityRef": publication_ref, # fromEntity="Publication"
+                        "toEntityRef":  author_ref, # toEntity="Person"
                         "attributes":[
                             {"name": "order", "value": order} if order is not None else None,
                             {"name": "affiliation", "value": affiliation} if affiliation is not None else None

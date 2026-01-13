@@ -7,6 +7,7 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Importando os validators
+from validators.orcid_validator import OrcidValidator
 from validators.person_validator import PersonValidator
 from validators.journal_validator import JournalValidator
 from validators.orgunit_validator import OrgUnitValidator
@@ -32,6 +33,7 @@ from writers.xml_writer import XMLWriter # Importa o novo writer
 
 # Importando os dictionary builders
 from dictionary_builders.journal_dictionary import JournalDictionaryBuilder
+from dictionary_builders.orcid_csv_builder import OrcidCSVBuilder
 
 # Mapeia strings de configuração para as classes reais
 READER_FACTORY = {
@@ -73,6 +75,11 @@ def process_transformation(config_section: str):
 
     personValidator = PersonValidator()
     personValidator.load_dataset(r'.\src\data\ids_lattes.csv')
+
+    orcidValidator = OrcidValidator()
+    orcidValidator.load_dataset(r'.\src\data\orcid_autoridade.csv')
+
+    
 
     
     #Carrega o arquivo de configuração da  estrategia de carga dos dados
@@ -119,7 +126,7 @@ def process_transformation(config_section: str):
 
             print(f"  Processando: {input_path}")
             source_data = reader.read(input_path)
-            transformed_data = mapper.transform(records=source_data,validators=[orgUnitValidator, journalValidator, languageValidator, personValidator])
+            transformed_data = mapper.transform(records=source_data,validators=[orgUnitValidator, journalValidator, languageValidator, personValidator, orcidValidator])
             writer.write(mapper.get_source(), transformed_data, output_dir)
 
             # --- SUCESSO: Registrar no checkpoint ---
@@ -140,6 +147,7 @@ def dictionary_builder(entity, source_path, output_path):
     builder.process_xml_files(source_path, output_path)
     
 if __name__ == "__main__":
-    process_transformation('PATENTES_BRCRIS')
-    # process_transformation('ORIENTACOES_PLATAFORMA_LATTES')
+    process_transformation('ORIENTACOES_PLATAFORMA_LATTES')
     # dictionary_builder(entity='Journal',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\Journal")
+    # OrcidCSVBuilder().make_csv_dataset(r'.\src\data\cabecalho_2024_20250110.csv')
+

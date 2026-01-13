@@ -136,8 +136,8 @@ class Sucupira2ProgramAndCourseMapper(BaseMapper):
                     
                     new_relation = {
                         "type": "OrgUnitProgram",
-                        "fromEntity": orgunit_ref, # fromEntity="OrgUnit"
-                        "toEntity": program_ref  # toEntity="Program"
+                        "fromEntityRef": orgunit_ref, # fromEntity="OrgUnit"
+                        "toEntityRef": program_ref  # toEntity="Program"
                     } 
                     
                     new_record["relations"].append(new_relation)

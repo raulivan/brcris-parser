@@ -3,9 +3,11 @@ import os
 import csv
 from typing import Dict, List, Tuple
 
+from util.text_transformers import get_code_for_url
+
 from .base_validator import BaseValidator, DatasetType
 
-class PersonValidator(BaseValidator):
+class OrcidValidator(BaseValidator):
     def __init__(self):
         super().__init__()
         
@@ -23,19 +25,23 @@ class PersonValidator(BaseValidator):
                 # O arquivo é um JSON array de objetos
                 temp = list(csv.DictReader(f))
             
-            # Constrói o Dicionário de Mapeamento: {name_limpo: code}
+
             mapping: DatasetType = {}
             for item in temp:
-                code = item['id']
-                mapping[code] = True
+                code = item['orcid']
+                if code is None or code.strip() == '':
+                    continue
+                # code = get_code_for_url(code)
+                id = item['id']
+                mapping[code] = id
             
             self._dataset = mapping
-            print(f"Person carregadas com sucesso. Total de {len(self._dataset)} entradas.")
+            print(f"ORCID carregadas com sucesso. Total de {len(self._dataset)} entradas.")
 
         except json.JSONDecodeError:
-            raise ValueError("Erro ao decodificar o arquivo JSON de Person. Verifique o formato.")
+            raise ValueError("Erro ao decodificar o arquivo JSON de ORCID. Verifique o formato.")
         except Exception as e:
-            raise RuntimeError(f"Erro inesperado no carregamento de dados de Person: {e}")
+            raise RuntimeError(f"Erro inesperado no carregamento de dados de ORCID: {e}")
     
     def is_valid(self, description: str) -> Tuple[bool, str]:
         """

@@ -19,8 +19,12 @@ class PublicationTypeMapping:
         "livros publicados/organizados ou edições": BrCrisTypes.LIVRO,
         "capítulos de livros publicados": BrCrisTypes.CAPITULO,
         "dissertação de mestrado": BrCrisTypes.DISSERTACAO,
-        "tese de doutorado": BrCrisTypes.TESE
+        "tese de doutorado": BrCrisTypes.TESE,
+        "MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO": BrCrisTypes.OUTRO,
+        "TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO": BrCrisTypes.OUTRO,
+        "ORIENTACAO-DE-OUTRA-NATUREZA": BrCrisTypes.OUTRO,
     }
+
 
     # Mapeamento OpenAlex -> BrCris
     OPENALEX_MAP = {
