@@ -2,6 +2,8 @@ import re
 from unicodedata import normalize
 from urllib.parse import urlparse
 
+from .helper_nbr_rene import nbr_title
+
 # Lista de palavras curtas que geralmente não são capitalizadas no Title Case
 PALAVRAS_DE_EXCECAO = {
     'de', 'do', 'da', 'dos', 'das', 'e', 'em', 'para', 'por', 'o', 'a', 'os', 'as', 'com', 'sem'
@@ -301,3 +303,43 @@ def formart_date_str_eng_to_ptbr(data:str) -> str:
     ano = partes[0]
     
     return f"{dia}/{mes}/{ano}", ano
+
+def monta_areas_do_conhecimento(grande_area:str, area_do_conhecimento:str, sub_area:str, especialidade:str) -> str:
+    """
+    Ex.: Grande Area / Area / Sub-area / Especialidade
+    
+    :param grande_area: Description
+    :type grande_area: str
+    :param area_do_conhecimento: Description
+    :type area_do_conhecimento: str
+    :param sub_area: Description
+    :type sub_area: str
+    :param especialidade: Description
+    :type especialidade: str
+    :return: Description
+    :rtype: str
+    """
+    retorno = None
+    if grande_area is None or grande_area.strip() == '':
+        
+        return retorno
+    
+    retorno = nbr_title(grande_area.replace("_", " "))
+    
+    if area_do_conhecimento is None or area_do_conhecimento.strip() == '':
+        return retorno
+    
+    retorno = f"{retorno} / {nbr_title(area_do_conhecimento.replace("_", " "))}"
+    
+    if sub_area is None or sub_area.strip() == '':
+        return retorno
+    
+    retorno = f"{retorno} / {nbr_title(sub_area.replace("_", " "))}"
+
+    if especialidade is None or especialidade.strip() == '':
+        return retorno
+    
+    retorno = f"{retorno} / {nbr_title(especialidade.replace("_", " "))}"
+
+    
+    return retorno

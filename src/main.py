@@ -7,12 +7,12 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Importando os validators
+
 from validators.orcid_validator import OrcidValidator
 from validators.person_validator import PersonValidator
 from validators.journal_validator import JournalValidator
 from validators.orgunit_validator import OrgUnitValidator
 from validators.language_validator import LanguageValidator
-
 
 # Importando os readers
 from readers.csv_reader import CSVReader
@@ -27,6 +27,7 @@ from mappers.revista_open_alex_to_journal import RevistaOpenAlex2JournalMapper
 from mappers.publication_open_alex_to_publication import PublicationOpenAlex2PublicationMapper
 from mappers.orientacao_lattes_to_publication import OrientacaoPlataformaLattes2PublicationMapper
 from mappers.patentes_brcris_to_patent import PatentBrcris2PatentMapper
+from mappers.livros_lattes_to_publication import LivroPlataformaLattes2PublicationMapper
 
 # Importando o novo writer
 from writers.xml_writer import XMLWriter # Importa o novo writer
@@ -54,7 +55,8 @@ MAPPER_FACTORY = {
     'revista_open_alex_to_journal_mapper': RevistaOpenAlex2JournalMapper,
     'publication_open_alex_to_publication_mapper': PublicationOpenAlex2PublicationMapper,
     'orientacao_lattes_to_publication_mapper': OrientacaoPlataformaLattes2PublicationMapper,
-    'patentes_brcris_to_patent_mapper': PatentBrcris2PatentMapper
+    'patentes_brcris_to_patent_mapper': PatentBrcris2PatentMapper,
+    'livros_lattes_to_publication_mapper': LivroPlataformaLattes2PublicationMapper
 }
 
 DICTIONARY_BUILDERS = {
@@ -65,23 +67,20 @@ DICTIONARY_BUILDERS = {
 def process_transformation(config_section: str):
     #Carrega conjuntos de dado externos de validação
     orgUnitValidator = OrgUnitValidator()
-    orgUnitValidator.load_dataset(r'.\src\data\orgunit.json')
+    orgUnitValidator.load_dataset(r'.\src\data\orgunit2026.json')
 
     journalValidator = JournalValidator()
-    journalValidator.load_dataset(r'.\src\data\journals.json')
+    journalValidator.load_dataset(r'.\src\data\journals2026.json')
 
     languageValidator = LanguageValidator()
-    languageValidator.load_dataset(r'.\src\data\language.json')
+    languageValidator.load_dataset(r'.\src\data\language2026.json')
 
     personValidator = PersonValidator()
-    personValidator.load_dataset(r'.\src\data\ids_lattes.csv')
+    personValidator.load_dataset(r'.\src\data\ids_lattes2026.csv')
 
     orcidValidator = OrcidValidator()
-    orcidValidator.load_dataset(r'.\src\data\orcid_autoridade.csv')
+    orcidValidator.load_dataset(r'.\src\data\orcid_autoridade2026.csv')
 
-    
-
-    
     #Carrega o arquivo de configuração da  estrategia de carga dos dados
     config = configparser.ConfigParser()
     config.read('config.ini')
@@ -147,7 +146,7 @@ def dictionary_builder(entity, source_path, output_path):
     builder.process_xml_files(source_path, output_path)
     
 if __name__ == "__main__":
-    process_transformation('ORIENTACOES_PLATAFORMA_LATTES')
+    process_transformation('LIVROS_PLATAFORMA_LATTES')
     # dictionary_builder(entity='Journal',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\Journal")
     # OrcidCSVBuilder().make_csv_dataset(r'.\src\data\cabecalho_2024_20250110.csv')
 

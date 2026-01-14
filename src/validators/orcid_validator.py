@@ -54,10 +54,14 @@ class OrcidValidator(BaseValidator):
         if not description:
             return False, None
         
-        search_key = description.strip().lower()
+        search_key = description.strip().upper()
 
         # self._dataset é o dict {name: code}
         found_code = self._dataset.get(search_key)
+
+        is_valid = found_code is not None
+        if is_valid == False:
+            return is_valid, None
         
         # Retorna o código (str) ou None
-        return found_code is not None, found_code
+        return is_valid, found_code
