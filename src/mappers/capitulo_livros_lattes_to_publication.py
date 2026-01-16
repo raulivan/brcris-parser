@@ -2,7 +2,7 @@ import json
 import os
 from typing import List
 from util.text_validator import validar_url_regex
-from util.publication_type_mapping import PublicationTypeMapping
+from util.publication_type_mapping import BrCrisTypes, PublicationTypeMapping
 from util.helper_nbr_rene import nbr_title
 from validators.language_validator import LanguageValidator
 from validators.journal_validator import JournalValidator
@@ -12,9 +12,9 @@ from util.text_transformers import capitalizar_nome, get_code_for_url, monta_are
 from .base_mapper import BaseMapper
 
 
-STANDARD_PUBLICATION_TYPE = "Livro"
+STANDARD_PUBLICATION_TYPE = BrCrisTypes.CAPITULO
 
-class LivroPlataformaLattes2PublicationMapper(BaseMapper):
+class CapituloLivroPlataformaLattes2PublicationMapper(BaseMapper):
     def get_source(self) -> str:
         return "PlataformaLattes"
 
@@ -60,7 +60,7 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
             palavras_chave  = self.get_field_value(record, "palavras_chave")
 
             # <field name="identifier.brcris" description="hash gerado com título + ano de publicação + tipo"/>
-            part1 = self.get_field_value(record, "dados_basicos__titulo_do_livro")
+            part1 = self.get_field_value(record, "dados_basicos__titulo_do_capitulo_do_livro")
             if part1 is None:
                 continue
             part2 = self.get_field_value(record, "dados_basicos__ano")
@@ -137,7 +137,7 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
                     publication_fields_tupla.append(("language", publication_language))
 
             # <field name="title"/> <!-- testar api de padronizacao do Rene -->
-            publication_title = self.get_field_value(record, "dados_basicos__titulo_do_livro")
+            publication_title = self.get_field_value(record, "dados_basicos__titulo_do_capitulo_do_livro")
             if publication_title is not None:
                 publication_title = nbr_title(publication_title)
                 publication_fields_tupla.append(("title", publication_title))
@@ -146,7 +146,7 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
             # TODO
 
             # <field name="alternativeTitle"/>
-            publication_alternative_title = self.get_field_value(record, "dados_basicos__titulo_do_livro_ingles")
+            publication_alternative_title = self.get_field_value(record, "dados_basicos__titulo_do_capitulo_do_livro_ingles")
             if publication_alternative_title is not None and publication_alternative_title.strip() != "":
                 publication_alternative_title = nbr_title(publication_alternative_title)
                 if publication_alternative_title != publication_title:
@@ -181,10 +181,12 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
             publication_fields_tupla.append(("edition", trata_string(publication_edtion)))
 
             # <field name="startPage"/>
-            # TODO
+            publication_startPage = self.get_field_value(record, "detalhamento__pagina_inicial")
+            publication_fields_tupla.append(("startPage", trata_string(publication_startPage)))
 
             # <field name="endPage"/>
-            # TODO
+            publication_endPage = self.get_field_value(record, "detalhamento__pagina_final")
+            publication_fields_tupla.append(("endPage", trata_string(publication_endPage)))
 
             # <field name="author"/>
             if record_node_authorships is not None:
@@ -313,7 +315,6 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
                     new_record["entities"].append(new_author)
 
             if gerou_para_dono_Curriculo == False:
-                # publication_fields_tupla.append(("author", self.get_field_value(record, "nome_completo")))
                 new_author, author_ref, id_lattes_autor, order_autoria = self.__transform_person(record)
                 if new_author is not None:
                     new_relation = {

@@ -7,7 +7,6 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Importando os validators
-
 from validators.orcid_validator import OrcidValidator
 from validators.person_validator import PersonValidator
 from validators.journal_validator import JournalValidator
@@ -28,6 +27,8 @@ from mappers.publication_open_alex_to_publication import PublicationOpenAlex2Pub
 from mappers.orientacao_lattes_to_publication import OrientacaoPlataformaLattes2PublicationMapper
 from mappers.patentes_brcris_to_patent import PatentBrcris2PatentMapper
 from mappers.livros_lattes_to_publication import LivroPlataformaLattes2PublicationMapper
+from mappers.artigos_lattes_to_publication import ArtigoPlataformaLattes2PublicationMapper
+from mappers.capitulo_livros_lattes_to_publication import CapituloLivroPlataformaLattes2PublicationMapper
 
 # Importando o novo writer
 from writers.xml_writer import XMLWriter # Importa o novo writer
@@ -56,7 +57,9 @@ MAPPER_FACTORY = {
     'publication_open_alex_to_publication_mapper': PublicationOpenAlex2PublicationMapper,
     'orientacao_lattes_to_publication_mapper': OrientacaoPlataformaLattes2PublicationMapper,
     'patentes_brcris_to_patent_mapper': PatentBrcris2PatentMapper,
-    'livros_lattes_to_publication_mapper': LivroPlataformaLattes2PublicationMapper
+    'livros_lattes_to_publication_mapper': LivroPlataformaLattes2PublicationMapper,
+    'artigos_lattes_to_publication_mapper':ArtigoPlataformaLattes2PublicationMapper,
+    'capitulo_livro_lattes_to_publication_mapper': CapituloLivroPlataformaLattes2PublicationMapper
 }
 
 DICTIONARY_BUILDERS = {
@@ -146,7 +149,7 @@ def dictionary_builder(entity, source_path, output_path):
     builder.process_xml_files(source_path, output_path)
     
 if __name__ == "__main__":
-    process_transformation('LIVROS_PLATAFORMA_LATTES')
+    process_transformation('CAPITULO_LIVRO_PLATAFORMA_LATTES')
     # dictionary_builder(entity='Journal',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\Journal")
     # OrcidCSVBuilder().make_csv_dataset(r'.\src\data\cabecalho_2024_20250110.csv')
 

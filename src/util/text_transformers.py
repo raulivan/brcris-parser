@@ -135,6 +135,10 @@ def trata_string(txt) -> str:
     if txt is None:
         return None
     stxt = str(txt).strip()
+    
+    if stxt == '':
+        return None
+    
     # return  unidecode(stxt)
     return stxt
 
