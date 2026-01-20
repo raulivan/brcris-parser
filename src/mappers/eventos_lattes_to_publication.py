@@ -12,9 +12,9 @@ from util.text_transformers import capitalizar_nome, get_code_for_url, monta_are
 from .base_mapper import BaseMapper
 
 
-STANDARD_PUBLICATION_TYPE = BrCrisTypes.LIVRO
+PUBLICATION_TYPE_ARTIGO = BrCrisTypes.CONFERENCIA
 
-class LivroPlataformaLattes2PublicationMapper(BaseMapper):
+class EventosPlataformaLattes2PublicationMapper(BaseMapper):
     def get_source(self) -> str:
         return "PlataformaLattes"
 
@@ -32,7 +32,6 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
         # Relacionamento com cursos
         transformed_records = []
 
-        
         for record_string in records:
             
             if record_string == None or len(record_string.strip()) == 0:
@@ -60,14 +59,14 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
             palavras_chave  = self.get_field_value(record, "palavras_chave")
 
             # <field name="identifier.brcris" description="hash gerado com título + ano de publicação + tipo"/>
-            part1 = self.get_field_value(record, "dados_basicos__titulo_do_livro")
+            part1 = self.get_field_value(record, "dados_basicos__titulo_do_trabalho")
             if validar_titulo(part1) == False:
                 continue
-            part2 = self.get_field_value(record, "dados_basicos__ano")
+            part2 = self.get_field_value(record, "dados_basicos__ano_do_trabalho")
             if part2 is None:
                 continue
 
-            part3 = STANDARD_PUBLICATION_TYPE
+            part3 = PUBLICATION_TYPE_ARTIGO
 
 
             brcris_id_v1 = brcrisid_generator(part1,str(part2),part3)
@@ -127,7 +126,7 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
             # TODO
 
             # <field name="type"/> <!-- validar na lista de autoridade de tipos e gravar no idima PT (anteriormente era no coar)-->
-            publication_fields_tupla.append(("type", STANDARD_PUBLICATION_TYPE))
+            publication_fields_tupla.append(("type", PUBLICATION_TYPE_ARTIGO))
 
             # <field name="language"/> <!-- validar na lista de autoridade de idiomas e gravar no idima PT -->
             publication_language = self.get_field_value(record, "dados_basicos__idioma")
@@ -137,7 +136,7 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
                     publication_fields_tupla.append(("language", publication_language))
 
             # <field name="title"/> <!-- testar api de padronizacao do Rene -->
-            publication_title = self.get_field_value(record, "dados_basicos__titulo_do_livro")
+            publication_title = self.get_field_value(record, "dados_basicos__titulo_do_trabalho")
             if publication_title is not None:
                 publication_title = nbr_title(publication_title)
                 publication_fields_tupla.append(("title", publication_title))
@@ -146,7 +145,7 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
             # TODO
 
             # <field name="alternativeTitle"/>
-            publication_alternative_title = self.get_field_value(record, "dados_basicos__titulo_do_livro_ingles")
+            publication_alternative_title = self.get_field_value(record, "dados_basicos__titulo_do_trabalho_ingles")
             if publication_alternative_title is not None and publication_alternative_title.strip() != "":
                 publication_alternative_title = nbr_title(publication_alternative_title)
                 if publication_alternative_title != publication_title:
@@ -156,7 +155,7 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
             # TODO
 
             # <field name="publicationDate"/> <!-- somente ano -->
-            publication_publicationDate = self.get_field_value(record, "dados_basicos__ano")
+            publication_publicationDate = self.get_field_value(record, "dados_basicos__ano_do_trabalho")
             publication_fields_tupla.append(("publicationDate", trata_string(publication_publicationDate)))
 
             # <field name="degreeDate"/>
@@ -166,25 +165,26 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
             # TODO
 
             # <field name="volume"/>
-            publication_volume = self.get_field_value(record, "detalhamento__numero_de_volumes")
+            publication_volume = self.get_field_value(record, "detalhamento__volume")
             publication_fields_tupla.append(("volume", trata_string(publication_volume)))
 
             # <field name="issue"/>
             # TODO
 
             # <field name="series"/>
-            publication_series = self.get_field_value(record, "detalhamento__numero_da_serie")
+            publication_series = self.get_field_value(record, "detalhamento__serie")
             publication_fields_tupla.append(("series", trata_string(publication_series)))
 
             # <field name="edition"/>
-            publication_edtion = self.get_field_value(record, "detalhamento__numero_da_edicao_revisao")
-            publication_fields_tupla.append(("edition", trata_string(publication_edtion)))
+            # TODO
 
             # <field name="startPage"/>
-            # TODO
+            publication_startPage = self.get_field_value(record, "detalhamento__pagina_inicial")
+            publication_fields_tupla.append(("startPage", trata_string(publication_startPage)))
 
             # <field name="endPage"/>
-            # TODO
+            publication_endPage = self.get_field_value(record, "detalhamento__pagina_final")
+            publication_fields_tupla.append(("endPage", trata_string(publication_endPage)))
 
             # <field name="author"/>
             if record_node_authorships is not None:
@@ -215,8 +215,6 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
                     publication_fields_tupla.append(("researchArea.cnpq", monta_areas_do_conhecimento(grande_area=grande_area, area_do_conhecimento=area_do_conhecimento, sub_area=sub_area, especialidade=especialidade)))
 
 
-
-            
             # <field name="researchArea.capes" description="CAPES vocabullary code"/> <!-- nao precisa validar na lista de autoridade, mas deve ser captalizado corretamente. Deve concatenar toda a árvore em uma estrutura de diretorios. Ex.: Grande Area / Area / Sub-area / Especialidade -->
 			# TODO
             
@@ -264,7 +262,11 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
 			# TODO
 
 			# <field name="eventName"/> <!-- caso seja uma publicacao em anais de eventos -->
-            # TODO
+            publication_eventName = self.get_field_value(record, "detalhamento__nome_do_evento")
+            publication_fields_tupla.append(("eventName", trata_string(publication_eventName)))
+
+            publication_eventName2 = self.get_field_value(record, "detalhamento__nome_do_evento_ingles")
+            publication_fields_tupla.append(("eventName", trata_string(publication_eventName2)))
 
             # Monta a estrutura que o XMLWriter espera
             new_entity_publication = {
@@ -328,7 +330,10 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
                     } 
                     new_record["relations"].append(new_relation)
                     new_record["entities"].append(new_author)
-            
+
+            # Relacionamento com o Evento, deve ser feito aqui se for ter
+
+
             transformed_records.append(new_record)
         return transformed_records
 
@@ -383,5 +388,57 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
         
         
         return new_entity_person, author_ref, lattes_id_retorno, order
+
+
+    def __transform_event(self, journal_dict: dict, validator: JournalValidator = None) -> tuple[dict, str]:
+        """
+        Converte registros  de Revistas  
+        """
+        if validator is None:
+            return None, None
+        
+        issn = self.get_field_value(journal_dict, "detalhamento__issn")
+
+        if not self.has_value(issn):
+            return None, None
+        
+
+        journal_is_valid, key_journal= validator.is_valid(f"issn::{issn}")
+        if not journal_is_valid:
+            return None, None
+        
+        journal_SemanticIdentifiers_tupla = []
+        journal_fields_identifier_tupla = []
+        journal_fields_tupla = []
+        
+                
+        journal_SemanticIdentifiers_tupla.append(("issn", f"issn::{issn}"))
+        journal_fields_identifier_tupla.append(("identifier.issn", issn))
+            
+        # Gerando a referência deste registro para relacionamentos
+        journal_ref = self.creat_ref_identifier()
+
+    
+        new_entity_journal= {
+            "entity_attribs": {
+                "type": "Journal",
+                "ref": journal_ref
+            },
+            "semantic_identifiers":[
+                {"name": name, "value": value} for name, value in journal_SemanticIdentifiers_tupla if value is not None
+            ],
+            "fields_identifier": [
+                {"name": name, "value": value} for name, value in journal_fields_identifier_tupla if value is not None
+            ],
+            "fields": [
+                {"name": name, "value": value} for name, value in journal_fields_tupla if value is not None
+            ]
+        }
+        
+        if len(journal_SemanticIdentifiers_tupla) == 0:
+            return None, None
+        
+        
+        return new_entity_journal, journal_ref
       
     

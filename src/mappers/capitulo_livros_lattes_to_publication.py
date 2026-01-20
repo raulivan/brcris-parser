@@ -1,7 +1,7 @@
 import json
 import os
 from typing import List
-from util.text_validator import validar_url_regex
+from util.text_validator import validar_titulo, validar_url_regex
 from util.publication_type_mapping import BrCrisTypes, PublicationTypeMapping
 from util.helper_nbr_rene import nbr_title
 from validators.language_validator import LanguageValidator
@@ -61,7 +61,7 @@ class CapituloLivroPlataformaLattes2PublicationMapper(BaseMapper):
 
             # <field name="identifier.brcris" description="hash gerado com título + ano de publicação + tipo"/>
             part1 = self.get_field_value(record, "dados_basicos__titulo_do_capitulo_do_livro")
-            if part1 is None:
+            if validar_titulo(part1) == False:
                 continue
             part2 = self.get_field_value(record, "dados_basicos__ano")
             if part2 is None:
@@ -118,7 +118,7 @@ class CapituloLivroPlataformaLattes2PublicationMapper(BaseMapper):
 
             # <field name="identifier.isbn"/>
             publication_identifier_isb = self.get_field_value(record, "detalhamento__isbn")
-            publication_fields_identifier_tupla.append(("identifier.isb", trata_string(publication_identifier_isb)))
+            publication_fields_identifier_tupla.append(("identifier.isbn", trata_string(publication_identifier_isb)))
 
             # <field name="identifier.dark"/>
             # TODO

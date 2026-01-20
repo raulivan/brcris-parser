@@ -1,7 +1,7 @@
 import json
 import os
 from typing import List
-from util.text_validator import validar_url_regex
+from util.text_validator import validar_titulo, validar_url_regex
 from util.publication_type_mapping import PublicationTypeMapping
 from util.helper_nbr_rene import nbr_title
 from validators.language_validator import LanguageValidator
@@ -61,7 +61,7 @@ class ArtigoPlataformaLattes2PublicationMapper(BaseMapper):
 
             # <field name="identifier.brcris" description="hash gerado com título + ano de publicação + tipo"/>
             part1 = self.get_field_value(record, "dados_basicos__titulo_do_artigo")
-            if part1 is None:
+            if validar_titulo(part1) == False:
                 continue
             part2 = self.get_field_value(record, "dados_basicos__ano_do_artigo")
             if part2 is None:

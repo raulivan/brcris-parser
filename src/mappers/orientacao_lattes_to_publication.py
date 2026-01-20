@@ -1,6 +1,7 @@
 import json
 import os
 from typing import List
+from util.text_validator import validar_titulo
 from util.publication_type_mapping import PublicationTypeMapping
 from util.helper_nbr_rene import nbr_title
 from validators.language_validator import LanguageValidator
@@ -57,6 +58,9 @@ class OrientacaoPlataformaLattes2PublicationMapper(BaseMapper):
 
             #<field name="identifier.brcris" description="hash gerado com título + ano de publicação + tipo"/>
             part1 = self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__titulo")
+            if validar_titulo(part1) == False:
+                continue
+            
             part2 = self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__ano")
             temp_tipo = self.get_field_value(record, "dados_basicos_de_outras_orientacoes_concluidas__tipo")
             part3 = PublicationTypeMapping.get_brcris_type(temp_tipo, "LATTES")

@@ -40,7 +40,7 @@ def split_jsonl(input_file, chunk_size_mb=500, output_prefix='output_part_'):
         print(f"Processo concluído. Total de {file_count} arquivos gerados.")
 
 # --- Configuração ---
-ARQUIVO_ORIGEM = r'C:\IBICT-DATA\BRUTOS\lattes\capitulo_livro\capitulos.jsonl'
+ARQUIVO_ORIGEM = r'C:\IBICT-DATA\BRUTOS\lattes\eventos\eventos.jsonl'
 TAMANHO_POR_ARQUIVO_MB = 400  # 400MB
 
 
