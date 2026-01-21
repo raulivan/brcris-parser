@@ -1,0 +1,60 @@
+{
+    "id": "0000014832079134",
+    "nome_completo": "Vitor Silveira Pereira",
+    "registro": "LIVRO",
+    "tag": "LIVRO-PUBLICADO-OU-ORGANIZADO",
+    "sequencia_producao": "106",
+    "dados_basicos__ano": 2024,
+    "dados_basicos__doi": "",
+    "dados_basicos__flag_divulgacao_cientifica": true,
+    "dados_basicos__flag_relevancia": false,
+    "dados_basicos__home_page_do_trabalho": "https://www.gov.br/casaruibarbosa/pt-br/acesso-restrito/sobre-o-novo-portal/manual-do-novo-portal-da-fcrb/pdfs/PortaldaFCRB_2ed_abr2024.pdf",
+    "dados_basicos__idioma": "Português",
+    "dados_basicos__meio_de_divulgacao": "MEIO_DIGITAL",
+    "dados_basicos__natureza": "TEXTO_INTEGRAL",
+    "dados_basicos__pais_de_publicacao": "Brasil",
+    "dados_basicos__tipo": "LIVRO_PUBLICADO",
+    "dados_basicos__titulo_do_livro": "Manual sobre o novo portal da FCRB",
+    "dados_basicos__titulo_do_livro_ingles": "",
+    "detalhamento__cidade_da_editora": "Rio de Janeiro",
+    "detalhamento__isbn": "9786588295380",
+    "detalhamento__nome_da_editora": "Fundação Casa de Rui Barbosa",
+    "detalhamento__numero_da_edicao_revisao": "1",
+    "detalhamento__numero_da_serie": "",
+    "detalhamento__numero_de_paginas": "100",
+    "detalhamento__numero_de_volumes": "1",
+    "autores": [
+        {
+            "nome_completo_do_autor": "Eula Dantas Taveira Cabral",
+            "nome_para_citacao": "CABRAL, Eula D. T.",
+            "ordem_de_autoria": "1",
+            "nro_id_cnpq": ""
+        },
+        {
+            "nome_completo_do_autor": "Vitor Silveira Pereira",
+            "nome_para_citacao": "PEREIRA, V. S.",
+            "ordem_de_autoria": "2",
+            "nro_id_cnpq": "0000014832079134"
+        }
+    ],
+    "palavras_chave": [
+        "portal",
+        "novas tecnologias",
+        "Fundação Casa de Rui Barbosa",
+        "gov.br"
+    ],
+    "areas_do_conhecimento": [
+        {
+            "nome_grande_area_do_conhecimento": "CIENCIAS_SOCIAIS_APLICADAS",
+            "nome_da_area_do_conhecimento": "",
+            "nome_da_sub_area_do_conhecimento": "",
+            "nome_da_especialidade": ""
+        },
+        {
+            "nome_grande_area_do_conhecimento": "CIENCIAS_SOCIAIS_APLICADAS",
+            "nome_da_area_do_conhecimento": "Ciência da Informação",
+            "nome_da_sub_area_do_conhecimento": "",
+            "nome_da_especialidade": ""
+        }
+    ]
+}

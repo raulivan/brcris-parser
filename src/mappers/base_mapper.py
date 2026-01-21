@@ -22,11 +22,11 @@ class BaseMapper(ABC):
             return None
         
         value = record.get(field_name, None)
-        if field_name is str:
+        if value is str:
             if value == '':
                 return None
             
-            if str(valur).strip().lower() == 'null':
+            if str(value).strip().lower() == 'null':
                 return None
             
         return value

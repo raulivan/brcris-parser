@@ -7,7 +7,7 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Importando os validators
-
+from validators.course_validator import CourseValidator
 from validators.orcid_validator import OrcidValidator
 from validators.person_validator import PersonValidator
 from validators.journal_validator import JournalValidator
@@ -25,12 +25,12 @@ from readers.xml_reader import XMLReader
 from mappers.sucupira_to_program_and_course import Sucupira2ProgramAndCourseMapper
 from mappers.revista_open_alex_to_journal import RevistaOpenAlex2JournalMapper
 from mappers.publication_open_alex_to_publication import PublicationOpenAlex2PublicationMapper
-from mappers.orientacao_lattes_to_publication import OrientacaoPlataformaLattes2PublicationMapper
 from mappers.patentes_brcris_to_patent import PatentBrcris2PatentMapper
 from mappers.livros_lattes_to_publication import LivroPlataformaLattes2PublicationMapper
 from mappers.artigos_lattes_to_publication import ArtigoPlataformaLattes2PublicationMapper
 from mappers.capitulo_livros_lattes_to_publication import CapituloLivroPlataformaLattes2PublicationMapper
 from mappers.eventos_lattes_to_publication import EventosPlataformaLattes2PublicationMapper
+from mappers.orientacao_lattes_to_mestrado_publication import OrientacaoPlataformaLattes2MestradoPublicationMapper
 
 # Importando o novo writer
 from writers.xml_writer import XMLWriter # Importa o novo writer
@@ -38,6 +38,7 @@ from writers.xml_writer import XMLWriter # Importa o novo writer
 # Importando os dictionary builders
 from dictionary_builders.journal_dictionary import JournalDictionaryBuilder
 from dictionary_builders.orcid_csv_builder import OrcidCSVBuilder
+from dictionary_builders.course_dictionary import CourseDictionaryBuilder
 
 # Mapeia strings de configuração para as classes reais
 READER_FACTORY = {
@@ -57,7 +58,7 @@ MAPPER_FACTORY = {
     'sucupira_to_program_and_course_mapper':Sucupira2ProgramAndCourseMapper,
     'revista_open_alex_to_journal_mapper': RevistaOpenAlex2JournalMapper,
     'publication_open_alex_to_publication_mapper': PublicationOpenAlex2PublicationMapper,
-    'orientacao_lattes_to_publication_mapper': OrientacaoPlataformaLattes2PublicationMapper,
+    'orientacao_lattes_to_mestrado_publication_mapper': OrientacaoPlataformaLattes2MestradoPublicationMapper,
     'patentes_brcris_to_patent_mapper': PatentBrcris2PatentMapper,
     'livros_lattes_to_publication_mapper': LivroPlataformaLattes2PublicationMapper,
     'artigos_lattes_to_publication_mapper':ArtigoPlataformaLattes2PublicationMapper,
@@ -67,6 +68,7 @@ MAPPER_FACTORY = {
 
 DICTIONARY_BUILDERS = {
     'Journal':JournalDictionaryBuilder,
+    'Course': CourseDictionaryBuilder,
 }
 
 
@@ -86,6 +88,9 @@ def process_transformation(config_section: str):
 
     orcidValidator = OrcidValidator()
     orcidValidator.load_dataset(r'.\src\data\orcid_autoridade2026.csv')
+
+    courseValidator= CourseValidator()
+    courseValidator.load_dataset(r'.\src\data\couse_autoridade2026.csv')
 
     #Carrega o arquivo de configuração da  estrategia de carga dos dados
     config = configparser.ConfigParser()
@@ -131,7 +136,7 @@ def process_transformation(config_section: str):
 
             print(f"  Processando: {input_path}")
             source_data = reader.read(input_path)
-            transformed_data = mapper.transform(records=source_data,validators=[orgUnitValidator, journalValidator, languageValidator, personValidator, orcidValidator])
+            transformed_data = mapper.transform(records=source_data,validators=[orgUnitValidator, journalValidator, languageValidator, personValidator, orcidValidator, courseValidator])
             writer.write(mapper.get_source(), transformed_data, output_dir)
 
             # --- SUCESSO: Registrar no checkpoint ---
@@ -152,7 +157,7 @@ def dictionary_builder(entity, source_path, output_path):
     builder.process_xml_files(source_path, output_path)
     
 if __name__ == "__main__":
-    process_transformation('EVENTOS_PLATAFORMA_LATTES')
-    # dictionary_builder(entity='Journal',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\Journal")
+    process_transformation('ORIENTACOES_MESTRADO_PLATAFORMA_LATTES')
+    # dictionary_builder(entity='Course',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\SucupiraProgramaCurso")
     # OrcidCSVBuilder().make_csv_dataset(r'.\src\data\cabecalho_2024_20250110.csv')
 

@@ -1,0 +1,200 @@
+{
+    "id": "12",
+    "codigo": "12001015009P1",
+    "situacao": "EM FUNCIONAMENTO",
+    "siglaIes": "UFAM",
+    "nomeGrandeAreaConhecimento": "ENGENHARIAS",
+    "idAreaConhecimento": 35,
+    "nome": "ENGENHARIA DE PRODU\u00c7\u00c3O",
+    "nomeAreaAvaliacao": "ENGENHARIAS III",
+    "nomeModalidadeEnsino": "Educa\u00e7\u00e3o Presencial",
+    "nomeAreaConhecimento": "ENGENHARIA DE PRODU\u00c7\u00c3O",
+    "grau": "Mestrado Profissional",
+    "programaEmRede": 0,
+    "idGrandeAreaConhecimento": 3,
+    "idPrograma": 12,
+    "idModalidade": 2,
+    "idModalidadeEnsino": 1,
+    "idAreaAvaliacao": 13,
+    "conceito": "3",
+    "modalidade": "PROFISSIONAL",
+    "anoBase": 2025,
+    "online": {
+        "cursos": [
+            {
+                "grau": "Mestrado Profissional",
+                "nome": "ENGENHARIA DE PRODU\u00c7\u00c3O",
+                "codigo": "12001015009F4",
+                "conceito": "3",
+                "idCurso": 53140,
+                "situacao": "EM FUNCIONAMENTO",
+                "creditoTcc": 6,
+                "dataInicio": "1999-01-01T00:00:00",
+                "creditoOutro": 0,
+                "dataRecomendacao": "2001-08-17T00:00:00",
+                "areasConcentracao": [
+                    {
+                        "fim": null,
+                        "nome": "PESQUISA OPERACIONAL",
+                        "inicio": "2019-02-14T00:01:30.823000"
+                    },
+                    {
+                        "fim": null,
+                        "nome": "Tecnologias Emergentes",
+                        "inicio": "2021-03-13T17:43:56.774000"
+                    },
+                    {
+                        "fim": null,
+                        "nome": "GEST\u00c3O DA PRODU\u00c7\u00c3O E OPERA\u00c7\u00d5ES",
+                        "inicio": "2021-03-13T17:43:56.774000"
+                    }
+                ],
+                "creditoDisciplina": 24,
+                "cargaHorariaCredito": 15
+            }
+        ],
+        "situacao": "EM FUNCIONAMENTO",
+        "nomeUf": "Amazonas",
+        "nomeGrandeAreaConhecimento": "ENGENHARIAS",
+        "endBairro": "COROADO II",
+        "telDdd": "92 ",
+        "siglaCurso": "MP",
+        "nomeModalidadeEnsino": "Educa\u00e7\u00e3o Presencial",
+        "anoBase": 2025,
+        "endLogradouro": "Av.General Rodrigo Ot\u00e1vio Jord\u00e3o Ramos, 3000",
+        "siglaUf": "AM",
+        "dataHomologacao": "2025-05-22T23:04:57.534000",
+        "idPessoaCoordenador": 38540,
+        "regimeLetivo": "BIMESTRAL",
+        "contatoUrl": "https://www.ufam.edu.br",
+        "idPrograma": 12,
+        "nomeIngles": "Production Management",
+        "telNumero": "33054632",
+        "nomeCoordenador": "DERCIO LUIZ REIS",
+        "nomeRegiao": "Norte",
+        "idIes": 3869,
+        "codigo": "12001015009P1",
+        "siglaIes": "UFAM",
+        "endNumero": "6200",
+        "idAreaConhecimento": 35,
+        "nome": "ENGENHARIA DE PRODU\u00c7\u00c3O",
+        "linhasPesquisa": [
+            {
+                "id": 162766,
+                "fim": null,
+                "nome": "MODELAGEM, SIMULA\u00c7\u00c3O E OTIMIZA\u00c7\u00c3O DE PROCESSOS",
+                "inicio": "2024-01-01T00:00:00",
+                "idAreaConcentracao": 100003,
+                "nomeAreaConcentracao": "GEST\u00c3O DA PRODU\u00c7\u00c3O E OPERA\u00c7\u00d5ES"
+            },
+            {
+                "id": 162784,
+                "fim": null,
+                "nome": "GEST\u00c3O DE OPERA\u00c7\u00d5ES E PROCESSOS DA PRODU\u00c7\u00c3O E SERVI\u00c7OS",
+                "inicio": "2024-01-01T00:00:00",
+                "idAreaConcentracao": 100003,
+                "nomeAreaConcentracao": "GEST\u00c3O DA PRODU\u00c7\u00c3O E OPERA\u00c7\u00d5ES"
+            },
+            {
+                "id": 162767,
+                "fim": null,
+                "nome": "TECNOLOGIAS EMERGENTES APLICADAS AOS PROCESSOS INDUSTRIAIS E SERVI\u00c7OS",
+                "inicio": "2024-01-01T00:00:00",
+                "idAreaConcentracao": 97282,
+                "nomeAreaConcentracao": "Tecnologias Emergentes"
+            },
+            {
+                "id": 162768,
+                "fim": null,
+                "nome": "TECNOLOGIAS SOCIAIS",
+                "inicio": "2024-01-01T00:00:00",
+                "idAreaConcentracao": 97282,
+                "nomeAreaConcentracao": "Tecnologias Emergentes"
+            }
+        ],
+        "nomeAreaAvaliacao": "ENGENHARIAS III",
+        "endMunicipio": "Manaus",
+        "contatoEmail": "ppgep@ufam.edu.br",
+        "areasConcentracao": [
+            {
+                "id": 97282,
+                "fim": null,
+                "nome": "Tecnologias Emergentes",
+                "inicio": "2019-08-23T00:00:00",
+                "linhasPesquisa": [
+                    {
+                        "id": 162768,
+                        "fim": null,
+                        "nome": "TECNOLOGIAS SOCIAIS",
+                        "inicio": "2024-01-01T00:00:00",
+                        "idAreaConcentracao": 97282,
+                        "nomeAreaConcentracao": "Tecnologias Emergentes"
+                    },
+                    {
+                        "id": 162767,
+                        "fim": null,
+                        "nome": "TECNOLOGIAS EMERGENTES APLICADAS AOS PROCESSOS INDUSTRIAIS E SERVI\u00c7OS",
+                        "inicio": "2024-01-01T00:00:00",
+                        "idAreaConcentracao": 97282,
+                        "nomeAreaConcentracao": "Tecnologias Emergentes"
+                    }
+                ]
+            },
+            {
+                "id": 100003,
+                "fim": null,
+                "nome": "GEST\u00c3O DA PRODU\u00c7\u00c3O E OPERA\u00c7\u00d5ES",
+                "inicio": "2017-12-01T00:00:00",
+                "linhasPesquisa": [
+                    {
+                        "id": 162766,
+                        "fim": null,
+                        "nome": "MODELAGEM, SIMULA\u00c7\u00c3O E OTIMIZA\u00c7\u00c3O DE PROCESSOS",
+                        "inicio": "2024-01-01T00:00:00",
+                        "idAreaConcentracao": 100003,
+                        "nomeAreaConcentracao": "GEST\u00c3O DA PRODU\u00c7\u00c3O E OPERA\u00c7\u00d5ES"
+                    },
+                    {
+                        "id": 162784,
+                        "fim": null,
+                        "nome": "GEST\u00c3O DE OPERA\u00c7\u00d5ES E PROCESSOS DA PRODU\u00c7\u00c3O E SERVI\u00c7OS",
+                        "inicio": "2024-01-01T00:00:00",
+                        "idAreaConcentracao": 100003,
+                        "nomeAreaConcentracao": "GEST\u00c3O DA PRODU\u00c7\u00c3O E OPERA\u00c7\u00d5ES"
+                    }
+                ]
+            }
+        ],
+        "nomeAreaConhecimento": "ENGENHARIA DE PRODU\u00c7\u00c3O",
+        "grau": "Mestrado Profissional",
+        "telRamal": "0   ",
+        "programaEmRede": 0,
+        "idGrandeAreaConhecimento": 3,
+        "anoInicio": 1999,
+        "instituicoes": [
+            {
+                "fim": null,
+                "idIes": 3869,
+                "inicio": "1999-01-01T00:00:00",
+                "nomeUf": "Amazonas",
+                "telDdd": "92 ",
+                "nomeIes": "UNIVERSIDADE FEDERAL DO AMAZONAS",
+                "siglaUf": "AM",
+                "principal": 1,
+                "siglaIes": "UFAM",
+                "telRamal": "0   ",
+                "telNumero": "33054632",
+                "contatoUrl": "https://www.ufam.edu.br",
+                "nomeRegiao": "Norte",
+                "contatoEmail": "ppgep@ufam.edu.br"
+            }
+        ],
+        "idModalidade": 2,
+        "endComplemento": null,
+        "idModalidadeEnsino": 1,
+        "idAreaAvaliacao": 13,
+        "endCep": "69077000",
+        "conceito": "3",
+        "modalidade": "PROFISSIONAL"
+    }
+}

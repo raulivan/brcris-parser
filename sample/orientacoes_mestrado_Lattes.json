@@ -1,0 +1,40 @@
+{
+    "id": "0000111305956227",
+    "nome_completo": "Tecia Vieira Carvalho",
+    "registro": "ORIENTACAO",
+    "bloco": "ORIENTACOES-CONCLUIDAS",
+    "tag": "ORIENTACOES-CONCLUIDAS-PARA-MESTRADO",
+    "situacao": "concluida",
+    "nivel": "ORIENTACOES-CONCLUIDAS-PARA-MESTRADO",
+    "sequencia_producao": "423",
+    "dados_basicos_de_orientacoes_concluidas_para_mestrado__ano": 2016,
+    "dados_basicos_de_orientacoes_concluidas_para_mestrado__doi": "",
+    "dados_basicos_de_orientacoes_concluidas_para_mestrado__flag_relevancia": false,
+    "dados_basicos_de_orientacoes_concluidas_para_mestrado__home_page": "",
+    "dados_basicos_de_orientacoes_concluidas_para_mestrado__idioma": "Português",
+    "dados_basicos_de_orientacoes_concluidas_para_mestrado__natureza": "Dissertação de mestrado",
+    "dados_basicos_de_orientacoes_concluidas_para_mestrado__pais": "Brasil",
+    "dados_basicos_de_orientacoes_concluidas_para_mestrado__tipo": "NAO_INFORMADO",
+    "dados_basicos_de_orientacoes_concluidas_para_mestrado__titulo": "Relatório de estudo de caso comparativo das técnicas de avaliação e valoração de tecnologias frugais dos produtos criados pela Vent7 com as técnicas tradicionais",
+    "dados_basicos_de_orientacoes_concluidas_para_mestrado__titulo_ingles": "",
+    "detalhamento_de_orientacoes_concluidas_para_mestrado__codigo_agencia_financiadora": "",
+    "detalhamento_de_orientacoes_concluidas_para_mestrado__codigo_orgao": "",
+    "detalhamento_de_orientacoes_concluidas_para_mestrado__flag_bolsa": false,
+    "detalhamento_de_orientacoes_concluidas_para_mestrado__nome_da_agencia": "",
+    "detalhamento_de_orientacoes_concluidas_para_mestrado__nome_da_instituicao": "INSTITUTO FEDERAL DO CEARA - CAMPUS TIANGUA",
+    "detalhamento_de_orientacoes_concluidas_para_mestrado__nome_do_curso": "Propriedade Intelectual e Transferência de Tecnologia para a Inovação.",
+    "detalhamento_de_orientacoes_concluidas_para_mestrado__nome_do_curso_ingles": "",
+    "detalhamento_de_orientacoes_concluidas_para_mestrado__nome_orgao": "",
+    "detalhamento_de_orientacoes_concluidas_para_mestrado__numero_de_paginas": "",
+    "detalhamento_de_orientacoes_concluidas_para_mestrado__numero_id_orientado": "",
+    "detalhamento_de_orientacoes_concluidas_para_mestrado__tipo_de_orientacao": "ORIENTADOR_PRINCIPAL",
+    "curso": {
+        "codigo": "90000080"
+    },
+    "instituicao": {
+        "codigo": "JXVJ00000004"
+    },
+    "orientado": {
+        "nome": "Romulo Ferrer Lima Carneiro"
+    }
+}

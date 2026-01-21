@@ -1,0 +1,55 @@
+{
+    "id": "0000069445582595",
+    "nome_completo": "Dinalva da Silva Corrêa",
+    "registro": "CAPITULO",
+    "tag": "CAPITULO-DE-LIVRO-PUBLICADO",
+    "sequencia_producao": "50",
+    "dados_basicos__ano": 2015,
+    "dados_basicos__doi": "",
+    "dados_basicos__flag_divulgacao_cientifica": false,
+    "dados_basicos__flag_relevancia": true,
+    "dados_basicos__home_page_do_trabalho": "https://drive.google.com/file/d/0B-Gb7YnNZyoAbmplaTR6MnhSeFE/view",
+    "dados_basicos__idioma": "Português",
+    "dados_basicos__meio_de_divulgacao": "MEIO_DIGITAL",
+    "dados_basicos__pais_de_publicacao": "Brasil",
+    "dados_basicos__tipo": "Capítulo de livro publicado",
+    "dados_basicos__titulo_do_capitulo_do_livro": "Comunicação Lusófona: a diáspora da língua nos países afrianos de língua oficial portuguesaUGUESA",
+    "dados_basicos__titulo_do_capitulo_do_livro_ingles": "",
+    "detalhamento__cidade_da_editora": "BELÉM-PA",
+    "detalhamento__isbn": "9788565054270",
+    "detalhamento__nome_da_editora": "EditAEDI",
+    "detalhamento__numero_da_edicao_revisao": "1",
+    "detalhamento__numero_da_serie": "",
+    "detalhamento__numero_de_volumes": "",
+    "detalhamento__organizadores": "AGENOR SARRAF PACHECO; GENIO NASCIMENTO; JERONIMO DA SILVA E SILVA; MARIA ATAÍDE MALCHER",
+    "detalhamento__pagina_final": "597",
+    "detalhamento__pagina_inicial": "576",
+    "detalhamento__titulo_do_livro": "PESQUISAS EM ESTUDOS CULTURAIS NA AMAZÔNIA: CARTOGRAFIAS, LITERATURAS & SABERES INTERCULTURAIS",
+    "autores": [
+        {
+            "nome_completo_do_autor": "Dinalva da Silva Corrêa",
+            "nome_para_citacao": "CORREA, D. S.",
+            "ordem_de_autoria": "1",
+            "nro_id_cnpq": ""
+        }
+    ],
+    "palavras_chave": [
+        "LUSOFONIA",
+        "ESTUDOS CULTURAIS",
+        "DIÁSPORA"
+    ],
+    "areas_do_conhecimento": [
+        {
+            "nome_grande_area_do_conhecimento": "LINGUISTICA_LETRAS_E_ARTES",
+            "nome_da_area_do_conhecimento": "",
+            "nome_da_sub_area_do_conhecimento": "",
+            "nome_da_especialidade": ""
+        },
+        {
+            "nome_grande_area_do_conhecimento": "LINGUISTICA_LETRAS_E_ARTES",
+            "nome_da_area_do_conhecimento": "Letras",
+            "nome_da_sub_area_do_conhecimento": "Teoria Literária",
+            "nome_da_especialidade": ""
+        }
+    ]
+}

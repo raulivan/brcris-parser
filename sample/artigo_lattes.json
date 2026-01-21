@@ -1,0 +1,89 @@
+{
+    "id": "0000028008893431",
+    "nome_completo": "Verônica Palmiro da Silva e Lima",
+    "registro": "ARTIGO",
+    "tag": "ARTIGO-PUBLICADO",
+    "ordem_importancia": "",
+    "sequencia_producao": "27",
+    "dados_basicos__ano_do_artigo": 2013,
+    "dados_basicos__doi": "10.1007/s00268-013-2255-7",
+    "dados_basicos__flag_divulgacao_cientifica": false,
+    "dados_basicos__flag_relevancia": true,
+    "dados_basicos__home_page_do_trabalho": "[doi:10.1007/s00268-013-2255-7]",
+    "dados_basicos__idioma": "Inglês",
+    "dados_basicos__meio_de_divulgacao": "MEIO_DIGITAL",
+    "dados_basicos__natureza": "COMPLETO",
+    "dados_basicos__pais_de_publicacao": "",
+    "dados_basicos__titulo_do_artigo": "Preoperative Education in Cholecystectomy in the Context of a Multimodal Protocol of Perioperative Care: A Randomized, Controlled Trial",
+    "dados_basicos__titulo_do_artigo_ingles": "",
+    "detalhamento__fasciculo": "",
+    "detalhamento__issn": "03642313",
+    "detalhamento__local_de_publicacao": "",
+    "detalhamento__pagina_final": "362",
+    "detalhamento__pagina_inicial": "357",
+    "detalhamento__serie": "2",
+    "detalhamento__titulo_do_periodico_ou_revista": "WORLD JOURNAL OF SURGERY",
+    "detalhamento__volume": "38",
+    "autores": [
+        {
+            "nome_completo_do_autor": "AGUILAR-NASCIMENTO, JOSÉ E.",
+            "nome_para_citacao": "AGUILAR-NASCIMENTO, JOSÉ E.",
+            "ordem_de_autoria": "1",
+            "nro_id_cnpq": ""
+        },
+        {
+            "nome_completo_do_autor": "LEAL, FERNANDO S.",
+            "nome_para_citacao": "LEAL, FERNANDO S.",
+            "ordem_de_autoria": "2",
+            "nro_id_cnpq": ""
+        },
+        {
+            "nome_completo_do_autor": "DANTAS, DANIELA C. S.",
+            "nome_para_citacao": "DANTAS, DANIELA C. S.",
+            "ordem_de_autoria": "3",
+            "nro_id_cnpq": ""
+        },
+        {
+            "nome_completo_do_autor": "ANABUKI, NADIA T.",
+            "nome_para_citacao": "ANABUKI, NADIA T.",
+            "ordem_de_autoria": "4",
+            "nro_id_cnpq": ""
+        },
+        {
+            "nome_completo_do_autor": "SOUZA, AMANDA M. C.",
+            "nome_para_citacao": "SOUZA, AMANDA M. C.",
+            "ordem_de_autoria": "5",
+            "nro_id_cnpq": ""
+        },
+        {
+            "nome_completo_do_autor": "Verônica Palmiro da Silva e Lima",
+            "nome_para_citacao": "SILVA E LIMA, VERÔNICA P.",
+            "ordem_de_autoria": "6",
+            "nro_id_cnpq": ""
+        },
+        {
+            "nome_completo_do_autor": "TANAJURA, GUILHERME H.",
+            "nome_para_citacao": "TANAJURA, GUILHERME H.",
+            "ordem_de_autoria": "7",
+            "nro_id_cnpq": ""
+        },
+        {
+            "nome_completo_do_autor": "CANEVARI, MARIANA",
+            "nome_para_citacao": "CANEVARI, MARIANA",
+            "ordem_de_autoria": "8",
+            "nro_id_cnpq": ""
+        }
+    ],
+    "palavras_chave": [
+        "ACERTO",
+        "Cholecystectomy"
+    ],
+    "areas_do_conhecimento": [
+        {
+            "nome_grande_area_do_conhecimento": "CIENCIAS_DA_SAUDE",
+            "nome_da_area_do_conhecimento": "",
+            "nome_da_sub_area_do_conhecimento": "Cirurgia",
+            "nome_da_especialidade": "Cirurgia Gastroenterologia"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "id": "0000325690951570",
+    "nome_completo": "Ana Luiza Coelho Netto",
+    "registro": "ORIENTACAO",
+    "bloco": "ORIENTACOES-CONCLUIDAS",
+    "tag": "ORIENTACOES-CONCLUIDAS-PARA-DOUTORADO",
+    "situacao": "concluida",
+    "nivel": "ORIENTACOES-CONCLUIDAS-PARA-DOUTORADO",
+    "sequencia_producao": "785",
+    "dados_basicos_de_orientacoes_concluidas_para_doutorado__ano": 1999,
+    "dados_basicos_de_orientacoes_concluidas_para_doutorado__doi": "",
+    "dados_basicos_de_orientacoes_concluidas_para_doutorado__flag_relevancia": false,
+    "dados_basicos_de_orientacoes_concluidas_para_doutorado__home_page": "",
+    "dados_basicos_de_orientacoes_concluidas_para_doutorado__idioma": "Português",
+    "dados_basicos_de_orientacoes_concluidas_para_doutorado__natureza": "Tese de doutorado",
+    "dados_basicos_de_orientacoes_concluidas_para_doutorado__pais": "Brasil",
+    "dados_basicos_de_orientacoes_concluidas_para_doutorado__titulo": "O rastro do homem na floresta: sustentabilidade e funcionamento da Mata Atlântica sob manejo Caiçara",
+    "dados_basicos_de_orientacoes_concluidas_para_doutorado__titulo_ingles": "",
+    "detalhamento_de_orientacoes_concluidas_para_doutorado__codigo_agencia_financiadora": "002200000000",
+    "detalhamento_de_orientacoes_concluidas_para_doutorado__codigo_orgao": "",
+    "detalhamento_de_orientacoes_concluidas_para_doutorado__flag_bolsa": false,
+    "detalhamento_de_orientacoes_concluidas_para_doutorado__nome_da_agencia": "Conselho Nacional de Desenvolvimento Científico e Tecnológico",
+    "detalhamento_de_orientacoes_concluidas_para_doutorado__nome_da_instituicao": "Universidade Federal do Rio de Janeiro",
+    "detalhamento_de_orientacoes_concluidas_para_doutorado__nome_do_curso": "Geografia",
+    "detalhamento_de_orientacoes_concluidas_para_doutorado__nome_do_curso_ingles": "Geography",
+    "detalhamento_de_orientacoes_concluidas_para_doutorado__nome_orgao": "",
+    "detalhamento_de_orientacoes_concluidas_para_doutorado__numero_de_paginas": "150",
+    "detalhamento_de_orientacoes_concluidas_para_doutorado__numero_id_orientado": "9914278441730955",
+    "detalhamento_de_orientacoes_concluidas_para_doutorado__tipo_de_orientacao": "ORIENTADOR_PRINCIPAL",
+    "palavras_chave": [
+        "mata atlântica",
+        "manejo caiçara",
+        "Ilha Grande",
+        "Cilagem de nutrientes",
+        "intercepção florestal",
+        "sucessão florestal"
+    ],
+    "setores_de_atividade": [
+        "Produtos e Serviços Voltados Para A Defesa e Proteção do Meio Ambiente, Incluindo O Desenvolvimento Sustentado"
+    ],
+    "curso": {
+        "codigo": "31000240"
+    },
+    "instituicao": {
+        "codigo": "020200000009"
+    },
+    "orientado": {
+        "nome": "Rogerio Ribeiro de Oliveira"
+    }
+}

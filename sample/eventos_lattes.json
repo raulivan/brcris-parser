@@ -1,0 +1,61 @@
+{
+    "id": "0000014832079134",
+    "nome_completo": "Vitor Silveira Pereira",
+    "registro": "EVENTO",
+    "tag": "TRABALHO-EM-EVENTOS",
+    "sequencia_producao": "6",
+    "dados_basicos__ano_do_trabalho": 2013,
+    "dados_basicos__doi": "",
+    "dados_basicos__flag_divulgacao_cientifica": false,
+    "dados_basicos__flag_relevancia": false,
+    "dados_basicos__home_page_do_trabalho": "[http://portal.febab.org.br/anais/article/view/1402/1403]",
+    "dados_basicos__idioma": "Português",
+    "dados_basicos__meio_de_divulgacao": "VARIOS",
+    "dados_basicos__natureza": "COMPLETO",
+    "dados_basicos__pais_do_evento": "Brasil",
+    "dados_basicos__titulo_do_trabalho": "Estudo sobre a usabilidade do web site queremossaber.org.br",
+    "dados_basicos__titulo_do_trabalho_ingles": "",
+    "detalhamento__ano_de_realizacao": 2013,
+    "detalhamento__cidade_da_editora": "",
+    "detalhamento__cidade_do_evento": "Florianópolis",
+    "detalhamento__classificacao_do_evento": "NACIONAL",
+    "detalhamento__fasciculo": "",
+    "detalhamento__isbn": "2318-5546",
+    "detalhamento__nome_da_editora": "",
+    "detalhamento__nome_do_evento": "XXIV Congresso Brasileiro de Biblioteconomia, Documentação e Ciência da Informação",
+    "detalhamento__nome_do_evento_ingles": "",
+    "detalhamento__pagina_final": "2067",
+    "detalhamento__pagina_inicial": "2052",
+    "detalhamento__serie": "",
+    "detalhamento__titulo_dos_anais_ou_proceedings": "Anais do Congresso Brasileiro de Biblioteconomia, Documentação e Ciência da Informação - FEBAB",
+    "detalhamento__volume": "25",
+    "autores": [
+        {
+            "nome_completo_do_autor": "Maria Irene da Fonseca e Sá",
+            "nome_para_citacao": "SA, M. I. F. E.",
+            "ordem_de_autoria": "1",
+            "nro_id_cnpq": "7170723845748247"
+        },
+        {
+            "nome_completo_do_autor": "Vitor Silveira Pereira",
+            "nome_para_citacao": "PEREIRA, V. S.",
+            "ordem_de_autoria": "2",
+            "nro_id_cnpq": "0000014832079134"
+        }
+    ],
+    "palavras_chave": [
+        "Usabilidade",
+        "Arquitetura da informação",
+        "Lei de Acesso à Informação",
+        "Avaliação heurística",
+        "Heurísticas de Nielsen"
+    ],
+    "areas_do_conhecimento": [
+        {
+            "nome_grande_area_do_conhecimento": "CIENCIAS_SOCIAIS_APLICADAS",
+            "nome_da_area_do_conhecimento": "",
+            "nome_da_sub_area_do_conhecimento": "Biblioteconomia",
+            "nome_da_especialidade": ""
+        }
+    ]
+}
