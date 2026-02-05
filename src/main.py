@@ -2,9 +2,12 @@ import configparser
 import sys
 import os
 
-
 # Adiciona o diretório 'src' ao path para permitir importações relativas e não erro de caminhos
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+
+from src.validators.publication_artigo_validator import PublicationArtigoValidator
+from util.error_logger import setup_logger
 
 # Importando os validators
 from validators.course_validator import CourseValidator
@@ -13,6 +16,13 @@ from validators.person_validator import PersonValidator
 from validators.journal_validator import JournalValidator
 from validators.orgunit_validator import OrgUnitValidator
 from validators.language_validator import LanguageValidator
+from validators.publication_capitulo_livro_validator import PublicationCapituloLivroValidator
+from validators.publication_doi_validator import PublicationDOIValidator
+from validators.publication_eventos_validator import PublicationEventosValidator
+from validators.publication_formacao_validator import PublicationFormacaoValidator
+from validators.publication_livros_validator import PublicationLivrosValidator
+from validators.publication_orcid_validator import PublicationORCIDValidator
+from validators.publication_orientacoes_validator import PublicationOrientacoesValidator
 
 # Importando os readers
 from readers.csv_reader import CSVReader
@@ -31,14 +41,18 @@ from mappers.artigos_lattes_to_publication import ArtigoPlataformaLattes2Publica
 from mappers.capitulo_livros_lattes_to_publication import CapituloLivroPlataformaLattes2PublicationMapper
 from mappers.eventos_lattes_to_publication import EventosPlataformaLattes2PublicationMapper
 from mappers.orientacao_lattes_to_mestrado_publication import OrientacaoPlataformaLattes2MestradoPublicationMapper
+from mappers.orientacao_lattes_to_doutorado_publication import OrientacaoPlataformaLattes2DoutoradoPublicationMapper
+from mappers.formacao_lattes_to_publication import FormacaoPlataformaLattes2PublicationMapper
+from mappers.publication_oases_to_publication import PublicationOASIS2PublicationMapper
 
-# Importando o novo writer
-from writers.xml_writer import XMLWriter # Importa o novo writer
+# Importando o  writer
+from writers.xml_writer import XMLWriter 
 
 # Importando os dictionary builders
 from dictionary_builders.journal_dictionary import JournalDictionaryBuilder
 from dictionary_builders.orcid_csv_builder import OrcidCSVBuilder
 from dictionary_builders.course_dictionary import CourseDictionaryBuilder
+from dictionary_builders.publication_dictionary import PublicationDictionaryBuilder
 
 # Mapeia strings de configuração para as classes reais
 READER_FACTORY = {
@@ -63,16 +77,38 @@ MAPPER_FACTORY = {
     'livros_lattes_to_publication_mapper': LivroPlataformaLattes2PublicationMapper,
     'artigos_lattes_to_publication_mapper':ArtigoPlataformaLattes2PublicationMapper,
     'capitulo_livro_lattes_to_publication_mapper': CapituloLivroPlataformaLattes2PublicationMapper,
-    'evento_lattes_to_publication_mapper': EventosPlataformaLattes2PublicationMapper
+    'evento_lattes_to_publication_mapper': EventosPlataformaLattes2PublicationMapper,
+    'orientacao_lattes_to_doutorado_publication_mapper': OrientacaoPlataformaLattes2DoutoradoPublicationMapper,
+    'formacao_lattes_to_publication_mapper': FormacaoPlataformaLattes2PublicationMapper,
+    'publication_oasis_to_publication_mapper': PublicationOASIS2PublicationMapper
 }
 
 DICTIONARY_BUILDERS = {
     'Journal':JournalDictionaryBuilder,
     'Course': CourseDictionaryBuilder,
+    'Publication': PublicationDictionaryBuilder,
 }
+
+logger = setup_logger()
+
+def handle_uncaught_exception(exc_type, exc_value, exc_traceback):
+    """
+    Função para capturar qualquer erro não tratado que faria o programa crashar.
+    """
+    if issubclass(exc_type, KeyboardInterrupt):
+        # Permite que Ctrl+C funcione
+        sys.__excepthook__(exc_type, exc_value, exc_traceback)
+        return
+
+    logger.critical(
+        "Erro Fatal Não Tratado (Uncaught Exception)", 
+        exc_info=(exc_type, exc_value, exc_traceback)
+    )
 
 
 def process_transformation(config_section: str):
+    
+    
     #Carrega conjuntos de dado externos de validação
     orgUnitValidator = OrgUnitValidator()
     orgUnitValidator.load_dataset(r'.\src\data\orgunit2026.json')
@@ -91,6 +127,30 @@ def process_transformation(config_section: str):
 
     courseValidator= CourseValidator()
     courseValidator.load_dataset(r'.\src\data\couse_autoridade2026.csv')
+
+    publicationArtigoValidator = PublicationArtigoValidator()
+    publicationArtigoValidator.load_dataset(r'.\src\data\publication_artigo2026.csv')
+
+    publicationCapituloLivroValidator = PublicationCapituloLivroValidator()
+    publicationCapituloLivroValidator.load_dataset(r'.\src\data\publication_capitulo_livro2026.csv')
+
+    publicationDOIValidator = PublicationDOIValidator()
+    publicationDOIValidator.load_dataset(r'.\src\data\publication_doi2026.csv')
+
+    publicationEventosValidator = PublicationEventosValidator()
+    publicationEventosValidator.load_dataset(r'.\src\data\publication_eventos2026.csv')
+
+    publicationFormacaoValidator = PublicationFormacaoValidator()
+    publicationFormacaoValidator.load_dataset(r'.\src\data\publication_formacao2026.csv')
+
+    publicationLivrosValidator = PublicationLivrosValidator()
+    publicationLivrosValidator.load_dataset(r'.\src\data\publication_livros2026.csv')
+
+    publicationORCIDValidator = PublicationORCIDValidator()
+    publicationORCIDValidator.load_dataset(r'.\src\data\publication_orcid2026.csv')
+
+    publicationOrientacoesValidator = PublicationOrientacoesValidator()
+    publicationOrientacoesValidator.load_dataset(r'.\src\data\publication_orientacoes2026.csv')
 
     #Carrega o arquivo de configuração da  estrategia de carga dos dados
     config = configparser.ConfigParser()
@@ -136,7 +196,20 @@ def process_transformation(config_section: str):
 
             print(f"  Processando: {input_path}")
             source_data = reader.read(input_path)
-            transformed_data = mapper.transform(records=source_data,validators=[orgUnitValidator, journalValidator, languageValidator, personValidator, orcidValidator, courseValidator])
+            transformed_data = mapper.transform(records=source_data,logger=logger, validators=[orgUnitValidator, 
+                                                                                               journalValidator, 
+                                                                                               languageValidator, 
+                                                                                               personValidator, 
+                                                                                               orcidValidator, 
+                                                                                               courseValidator,
+                                                                                               publicationArtigoValidator,
+                                                                                               publicationCapituloLivroValidator,
+                                                                                               publicationDOIValidator,
+                                                                                               publicationEventosValidator,
+                                                                                               publicationFormacaoValidator,
+                                                                                               publicationLivrosValidator,
+                                                                                               publicationORCIDValidator,
+                                                                                               publicationOrientacoesValidator])
             writer.write(mapper.get_source(), transformed_data, output_dir)
 
             # --- SUCESSO: Registrar no checkpoint ---
@@ -157,7 +230,9 @@ def dictionary_builder(entity, source_path, output_path):
     builder.process_xml_files(source_path, output_path)
     
 if __name__ == "__main__":
-    process_transformation('ORIENTACOES_MESTRADO_PLATAFORMA_LATTES')
-    # dictionary_builder(entity='Course',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\SucupiraProgramaCurso")
+    sys.excepthook = handle_uncaught_exception
+
+    process_transformation('PUBLICATION_OASIS')
+    # dictionary_builder(entity='Publication',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\PublicationORCID")
     # OrcidCSVBuilder().make_csv_dataset(r'.\src\data\cabecalho_2024_20250110.csv')
 

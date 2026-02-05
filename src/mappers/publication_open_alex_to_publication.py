@@ -1,4 +1,5 @@
 import json
+from logging import Logger
 import os
 from typing import List
 from validators.orcid_validator import OrcidValidator
@@ -17,7 +18,7 @@ class PublicationOpenAlex2PublicationMapper(BaseMapper):
     def get_source(self) -> str:
         return "OpenAlex"
 
-    def transform(self, records: list[dict], validators: List[BaseValidator] = []) -> list[dict]:
+    def transform(self, records: list[dict], logger:Logger, validators: List[BaseValidator] = []) -> list[dict]:
         """
         Converte registros de entrada para uma estrutura de dicionário
         pronta para ser convertida em XML pelo XMLWriter.

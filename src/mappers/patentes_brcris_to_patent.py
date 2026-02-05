@@ -1,3 +1,4 @@
+from logging import Logger
 from xml.dom.minidom import Element
 import xml.etree.ElementTree as ET
 from typing import List
@@ -15,7 +16,7 @@ class PatentBrcris2PatentMapper(BaseMapper):
     def get_source(self) -> str:
         return "Lattes"
 
-    def transform(self, records: ET[Element[str]], validators: List[BaseValidator] = []) -> list[dict]:
+    def transform(self, records: ET[Element[str]], logger:Logger, validators: List[BaseValidator] = []) -> list[dict]:
         """
         Converte registros de entrada para uma estrutura de dicionário
         pronta para ser convertida em XML pelo XMLWriter.

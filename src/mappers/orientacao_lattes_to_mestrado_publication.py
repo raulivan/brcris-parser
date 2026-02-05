@@ -1,16 +1,17 @@
 import json
+from logging import Logger
 import os
 from typing import List
+from validators.person_validator import PersonValidator
 from validators.course_validator import CourseValidator
 from validators.orgunit_validator import OrgUnitValidator
 from util.text_validator import validar_titulo, validar_url_regex
-from util.publication_type_mapping import BrCrisTypes, PublicationTypeMapping
+from util.publication_type_mapping import BrCrisTypes
 from util.helper_nbr_rene import nbr_title
 from validators.language_validator import LanguageValidator
-from validators.journal_validator import JournalValidator
 from validators.base_validator import BaseValidator
 from util.unique_identifier_generator import brcrisid_generator
-from util.text_transformers import capitalizar_nome, get_code_for_url, monta_areas_do_conhecimento, translate_type_of_publication, trata_string, extract_doi_from_url
+from util.text_transformers import trata_string, extract_doi_from_url
 from .base_mapper import BaseMapper
 
 
@@ -20,7 +21,7 @@ class OrientacaoPlataformaLattes2MestradoPublicationMapper(BaseMapper):
     def get_source(self) -> str:
         return "PlataformaLattes"
 
-    def transform(self, records: list[dict], validators: List[BaseValidator] = []) -> list[dict]:
+    def transform(self, records: list[dict], logger:Logger, validators: List[BaseValidator] = []) -> list[dict]:
         """
         Converte registros de entrada para uma estrutura de dicionário
         pronta para ser convertida em XML pelo XMLWriter.
@@ -28,6 +29,9 @@ class OrientacaoPlataformaLattes2MestradoPublicationMapper(BaseMapper):
         if records is None:
             return None
 
+        person_validator = self.retrieve_validator_by_type(validators,PersonValidator)
+        if person_validator is None:
+            raise "PersonValidator not found in validators list"
             
         language_validator = self.retrieve_validator_by_type(validators,LanguageValidator)
         
@@ -150,7 +154,7 @@ class OrientacaoPlataformaLattes2MestradoPublicationMapper(BaseMapper):
             # TODO
 
             # <field name="alternativeTitle"/>
-            publication_alternative_title = self.get_field_value(record, "dados_basicos__titulo_do_artidados_basicos_de_orientacoes_concluidas_para_mestrado__titulo_inglesgo_ingles")
+            publication_alternative_title = self.get_field_value(record, "dados_basicos_de_orientacoes_concluidas_para_mestrado__titulo_ingles")
             if publication_alternative_title is not None and publication_alternative_title.strip() != "":
                 publication_alternative_title = nbr_title(publication_alternative_title)
                 if publication_alternative_title != publication_title:
@@ -165,7 +169,7 @@ class OrientacaoPlataformaLattes2MestradoPublicationMapper(BaseMapper):
 
             # <field name="degreeDate"/>
             publication_degreeDatee = self.get_field_value(record, "dados_basicos_de_orientacoes_concluidas_para_mestrado__ano")
-            publication_fields_tupla.append(("degreeDatee", trata_string(publication_degreeDatee)))
+            publication_fields_tupla.append(("degreeDate", trata_string(publication_degreeDatee)))
 
             # <field name="number"/>
             # TODO
@@ -321,18 +325,19 @@ class OrientacaoPlataformaLattes2MestradoPublicationMapper(BaseMapper):
                 
                 new_author, author_ref, id_lattes_autor, order_autoria = self.__transform_person(record_node_authorships)
                 if not new_author is None:
-                    new_relation = {
-                        "type": "Authorship",
-                        "fromEntityRef": publication_ref, # fromEntity="Publication"
-                        "toEntityRef":  author_ref, # toEntity="Person"
-                        "attributes":[
-                            {"name": "order", "value": order_autoria} if order_autoria is not None else None,
-                            # {"name": "affiliation", "value": affiliation} if affiliation is not None else None,
-                            # {"name": "cnpqCodOrgUnit", "value": affiliation} if affiliation is not None else None
-                        ]
-                    } 
-                    new_record["relations"].append(new_relation)
-                    new_record["entities"].append(new_author)
+                    if person_validator.is_valid(id_lattes_autor):
+                        new_relation = {
+                            "type": "Authorship",
+                            "fromEntityRef": publication_ref, # fromEntity="Publication"
+                            "toEntityRef":  author_ref, # toEntity="Person"
+                            "attributes":[
+                                {"name": "order", "value": order_autoria} if order_autoria is not None else None,
+                                # {"name": "affiliation", "value": affiliation} if affiliation is not None else None,
+                                # {"name": "cnpqCodOrgUnit", "value": affiliation} if affiliation is not None else None
+                            ]
+                        } 
+                        new_record["relations"].append(new_relation)
+                        new_record["entities"].append(new_author)
 
             # Relacionamento com a instituição
             orgunit_validator = self.retrieve_validator_by_type(validators,OrgUnitValidator)
@@ -505,13 +510,17 @@ class OrientacaoPlataformaLattes2MestradoPublicationMapper(BaseMapper):
             return None, None
         
         # Gera BRCRISid para validação
-        course_brcris_id_v1 = brcrisid_generator(course_name,course_name_instituicao, PUBLICATION_TYPE)        
+        course_brcris_id_v1 = brcrisid_generator(course_name,course_name_instituicao, 'Mestrado')        
         
         key_validacao = f"brcris_{course_brcris_id_v1}"
         course_is_valid, key_course = validator.is_valid(description=key_validacao)
             
         if not course_is_valid:
-            return None, None   
+            course_brcris_id_v1 = brcrisid_generator(course_name,course_name_instituicao, 'Mestrado/Doutorado')        
+            key_validacao = f"brcris_{course_brcris_id_v1}"
+            course_is_valid, key_course = validator.is_valid(description=key_validacao)
+            if not course_is_valid:
+                return None, None   
        
         course_SemanticIdentifiers_tupla.append(("brcris", f"brcris::{course_brcris_id_v1}"))
                                 

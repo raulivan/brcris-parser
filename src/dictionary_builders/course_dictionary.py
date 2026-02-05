@@ -10,11 +10,10 @@ class CourseDictionaryBuilder(BaseDictionaryBuilder):
     def process_xml_files(self, source_path, output_path):
         print(f"Iniciando varredura em: {source_path}")
 
-        with open(f'{output_path}\couse_autoridade.csv', mode='w', newline='', encoding='utf-8') as arquivo:
+        with open(f'{output_path}\couse_autoridade2026.csv', mode='w', newline='', encoding='utf-8') as arquivo:
             escritor = csv.writer(arquivo)
             escritor.writerow(['semanticIdentifier','grau', 'nome'])
 
-        # 1. Percorre o diretório e todas as subpastas
         for root, dirs, files in os.walk(source_path):
             with tqdm(total=len(files), desc="Manual Progress") as pbar:
                 for file in files:
@@ -23,7 +22,6 @@ class CourseDictionaryBuilder(BaseDictionaryBuilder):
                         file_path = os.path.join(root, file)
                         
                         try:
-                            # 2. Carrega e analisa o arquivo XML
                             tree = ET.parse(file_path)
                             xml_root = tree.getroot()
 

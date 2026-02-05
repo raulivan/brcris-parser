@@ -1,3 +1,4 @@
+from logging import Logger
 from typing import List, Optional
 from validators.orgunit_validator import OrgUnitValidator
 from validators.base_validator import BaseValidator
@@ -11,7 +12,7 @@ class Sucupira2ProgramAndCourseMapper(BaseMapper):
     def get_source(self) -> str:
         return "Sucupira"
 
-    def transform(self, records: list[dict], validators: List[BaseValidator] = []) -> list[dict]:
+    def transform(self, records: list[dict], logger:Logger, validators: List[BaseValidator] = []) -> list[dict]:
         """
         Converte registros  de entrada para uma estrutura de dicionário
         pronta para ser convertida em XML pelo XMLWriter.

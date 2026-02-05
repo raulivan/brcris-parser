@@ -1,5 +1,5 @@
+from logging import Logger
 from typing import List, Optional
-import uuid
 from abc import ABC, abstractmethod
 
 from validators.base_validator import BaseValidator
@@ -7,11 +7,12 @@ from util.unique_identifier_generator import uuid_based_identifier_generator
 
 class BaseMapper(ABC):
     @abstractmethod
-    def transform(self, records: list[dict], validators: List[BaseValidator] = []) -> list[dict]:
+    def transform(self, records: list[dict], logger:Logger, validators: List[BaseValidator] = []) -> list[dict]:
         """Transforma uma lista de registros de origem para o formato de destino."""
         pass
     
     def creat_ref_identifier(self) -> str:
+
         return uuid_based_identifier_generator()
     
     def get_field_value(self, record: dict, field_name: str) -> str:

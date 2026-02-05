@@ -1,4 +1,5 @@
 import json
+from logging import Logger
 import os
 from typing import List
 from util.text_validator import validar_titulo, validar_url_regex
@@ -18,7 +19,7 @@ class LivroPlataformaLattes2PublicationMapper(BaseMapper):
     def get_source(self) -> str:
         return "PlataformaLattes"
 
-    def transform(self, records: list[dict], validators: List[BaseValidator] = []) -> list[dict]:
+    def transform(self, records: list[dict], logger:Logger, validators: List[BaseValidator] = []) -> list[dict]:
         """
         Converte registros de entrada para uma estrutura de dicionário
         pronta para ser convertida em XML pelo XMLWriter.

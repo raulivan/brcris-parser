@@ -1,47 +1,43 @@
 import json
 import os
-import csv
 from typing import Dict, List, Tuple
-
-from util.text_transformers import get_code_for_url
 
 from .base_validator import BaseValidator, DatasetType
 
-class CourseValidator(BaseValidator):
+class PublicationOrientacoesValidator(BaseValidator):
     def __init__(self):
         super().__init__()
         
     def load_dataset(self, path:str):
         """
-        Lê o arquivo CSV, constrói o mapeamento {name: code} e armazena em self._dataset.
+        Lê o arquivo JSON, constrói o mapeamento {name: code} e armazena em self._dataset.
         Garante que a chave (name) seja limpa (strip/lower) para otimizar a busca.
         """
         if not os.path.exists(path):
             raise FileNotFoundError(f"O arquivo de dados não foi encontrado: {path}")
 
         try:
-            temp = None
-            with open(path, mode='r', encoding='utf-8') as f:
+            with open(path, 'r', encoding='utf-8') as f:
                 # O arquivo é um JSON array de objetos
-                temp = list(csv.DictReader(f))
+                data: List[Dict[str, str]] = json.load(f)
             
-
+            # Constrói o Dicionário de Mapeamento: {name_limpo: code}
             mapping: DatasetType = {}
-            for item in temp:
-                code = item['semanticIdentifier']
-                if code is None or code.strip() == '':  
-                    continue
-                clean_code = code.strip()
-                clean_code = clean_code.replace('brcris::','brcris_')
-                mapping[clean_code] = item['nome']
+            for item in data:
+                name = item.get("name")
+                code = item.get("code")
+                
+                if name and code:
+                    cleaned_code = code.strip().lower() 
+                    mapping[cleaned_code] = name
             
             self._dataset = mapping
-            print(f"Course carregadas com sucesso. Total de {len(self._dataset)} entradas.")
+            print(f"Journal carregadas com sucesso. Total de {len(self._dataset)} entradas.")
 
         except json.JSONDecodeError:
-            raise ValueError("Erro ao decodificar o arquivo CSV de Course. Verifique o formato.")
+            raise ValueError("Erro ao decodificar o arquivo JSON de Journal. Verifique o formato.")
         except Exception as e:
-            raise RuntimeError(f"Erro inesperado no carregamento de dados de Course: {e}")
+            raise RuntimeError(f"Erro inesperado no carregamento de dados de Journal: {e}")
     
     def is_valid(self, description: str) -> Tuple[bool, str]:
         """
@@ -58,10 +54,6 @@ class CourseValidator(BaseValidator):
 
         # self._dataset é o dict {name: code}
         found_code = self._dataset.get(search_key)
-
-        is_valid = found_code is not None
-        if is_valid == False:
-            return is_valid, None
         
         # Retorna o código (str) ou None
-        return is_valid, found_code
+        return found_code is not None, found_code
