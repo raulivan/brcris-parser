@@ -6,7 +6,7 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 
-from src.validators.publication_artigo_validator import PublicationArtigoValidator
+
 from util.error_logger import setup_logger
 
 # Importando os validators
@@ -23,6 +23,7 @@ from validators.publication_formacao_validator import PublicationFormacaoValidat
 from validators.publication_livros_validator import PublicationLivrosValidator
 from validators.publication_orcid_validator import PublicationORCIDValidator
 from validators.publication_orientacoes_validator import PublicationOrientacoesValidator
+from validators.publication_artigo_validator import PublicationArtigoValidator
 
 # Importando os readers
 from readers.csv_reader import CSVReader
@@ -129,28 +130,28 @@ def process_transformation(config_section: str):
     courseValidator.load_dataset(r'.\src\data\couse_autoridade2026.csv')
 
     publicationArtigoValidator = PublicationArtigoValidator()
-    publicationArtigoValidator.load_dataset(r'.\src\data\publication_artigo2026.csv')
+    publicationArtigoValidator.load_dataset(r'.\src\data\publication_artigo2026.json')
 
     publicationCapituloLivroValidator = PublicationCapituloLivroValidator()
-    publicationCapituloLivroValidator.load_dataset(r'.\src\data\publication_capitulo_livro2026.csv')
+    publicationCapituloLivroValidator.load_dataset(r'.\src\data\publication_capitulo_livro2026.json')
 
     publicationDOIValidator = PublicationDOIValidator()
-    publicationDOIValidator.load_dataset(r'.\src\data\publication_doi2026.csv')
+    publicationDOIValidator.load_dataset(r'.\src\data\publication_doi2026.json')
 
     publicationEventosValidator = PublicationEventosValidator()
-    publicationEventosValidator.load_dataset(r'.\src\data\publication_eventos2026.csv')
+    publicationEventosValidator.load_dataset(r'.\src\data\publication_eventos2026.json')
 
     publicationFormacaoValidator = PublicationFormacaoValidator()
-    publicationFormacaoValidator.load_dataset(r'.\src\data\publication_formacao2026.csv')
+    publicationFormacaoValidator.load_dataset(r'.\src\data\publication_formacao2026.json')
 
     publicationLivrosValidator = PublicationLivrosValidator()
-    publicationLivrosValidator.load_dataset(r'.\src\data\publication_livros2026.csv')
+    publicationLivrosValidator.load_dataset(r'.\src\data\publication_livros2026.json')
 
     publicationORCIDValidator = PublicationORCIDValidator()
-    publicationORCIDValidator.load_dataset(r'.\src\data\publication_orcid2026.csv')
+    publicationORCIDValidator.load_dataset(r'.\src\data\publication_orcid2026.json')
 
     publicationOrientacoesValidator = PublicationOrientacoesValidator()
-    publicationOrientacoesValidator.load_dataset(r'.\src\data\publication_orientacoes2026.csv')
+    publicationOrientacoesValidator.load_dataset(r'.\src\data\publication_orientacoes2026.json')
 
     #Carrega o arquivo de configuração da  estrategia de carga dos dados
     config = configparser.ConfigParser()
@@ -209,7 +210,8 @@ def process_transformation(config_section: str):
                                                                                                publicationFormacaoValidator,
                                                                                                publicationLivrosValidator,
                                                                                                publicationORCIDValidator,
-                                                                                               publicationOrientacoesValidator])
+                                                                                               publicationOrientacoesValidator
+                                                                                               ])
             writer.write(mapper.get_source(), transformed_data, output_dir)
 
             # --- SUCESSO: Registrar no checkpoint ---

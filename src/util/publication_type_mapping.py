@@ -41,6 +41,25 @@ class PublicationTypeMapping:
         "dataset": BrCrisTypes.DATASET
     }
 
+     # Mapeamento OpenAlex -> BrCris
+    OASIS_MAP = {
+        "article": BrCrisTypes.ARTIGO,
+        "masterthesis": BrCrisTypes.DISSERTACAO,
+        "doctoralthesis": BrCrisTypes.TESE,
+        "dataset": BrCrisTypes.DATASET,
+        "review": BrCrisTypes.ARTIGO,
+        "conferenceobject": BrCrisTypes.CONFERENCIA,
+
+        "original research": BrCrisTypes.PREPRINT,
+        "preprint": BrCrisTypes.PREPRINT,
+        
+        "proceedings": BrCrisTypes.CONFERENCIA,
+        
+        "book-chapter": BrCrisTypes.CAPITULO,
+        "book": BrCrisTypes.LIVRO,
+       
+    }
+
     @classmethod
     def get_brcris_type(cls, source_type: str, source_name: str) -> str:
         if not source_type:
@@ -53,5 +72,8 @@ class PublicationTypeMapping:
         
         if source_name == "OPENALEX":
             return cls.OPENALEX_MAP.get(source_type.lower(), BrCrisTypes.OUTRO)
+        
+        if source_name == "OASIS":
+            return cls.OASIS_MAP.get(source_type.lower(), BrCrisTypes.OUTRO)
         
         return BrCrisTypes.OUTRO
