@@ -1,0 +1,1155 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<GRUPO-DE-PESQUISA xmlns="http://www.cnpq.br/lmpl/2002/XSD/Grupo" NRO-ID-GRUPO="0000301510136952"
+                   ESTRATIFICACAO=""
+                   FORMATO-HORA-ATUALIZACAO="HHMMSS"
+                   HORA-ATUALIZACAO="144246"
+                   FORMATO-DATA-ATUALIZACAO="DDMMAAAA"
+                   DATA-ATUALIZACAO="25092018"
+                   SISTEMA-ORIGEM-XML="Lattes Extrator">
+   <IDENTIFICACAO-DO-GRUPO NRO-ID-CNPQ-INSTITUICAO="6335616297186751" CODIGO-AREA-PREDOMINANTE="40500004"
+                           NOME-DA-UNIDADE="Departamento de Nutrição"
+                           NOME-DO-ORGAO="Departamento de Nutrição"
+                           FLAG-INSTITUICAO-DE-ENSINO=""
+                           FLAG-AGENCIA-FOMENTO="N"
+                           SIGLA-DO-PAIS-DA-INSTITUICAO="BRA"
+                           NOME-DO-PAIS-DA-INSTITUICAO="BRA"
+                           UF-DA-INSTITUICAO="PE"
+                           SIGLA-DA-INSTITUICAO="UFPE"
+                           NOME-DA-INSTITUICAO="Universidade Federal de Pernambuco"
+                           AREA-PREDOMINANTE="Nutrição"
+                           GRANDE-AREA-PREDOMINANTE="Ciências da Saúde"
+                           ANO-DE-CRIACAO="1998"
+                           NOME-DO-GRUPO="Nutrição Clinica">
+      <LIDERES>
+         <PRIMEIRO-LIDER NRO-ID-CNPQ="4003459675307504" FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                         PAIS-DE-NASCIMENTO="BRA"
+                         NACIONALIDADE="B"
+                         NOME-COMPLETO="Ilma Kruze Grande de Arruda"/>
+         <SEGUNDO-LIDER NRO-ID-CNPQ="5766586498639655" FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                        PAIS-DE-NASCIMENTO="BRA"
+                        NACIONALIDADE="B"
+                        NOME-COMPLETO="Alcides da Silva Diniz"/>
+      </LIDERES>
+      <ENDERECO-INSTITUCIONAL-DO-GRUPO COD-PAIS-ISO-A3="BRA" COD-MUNICIPIO-IBGE="2611606" DDDFAX="81"
+                                       LONGITUDE="-34.94101499999999"
+                                       LATITUDE="-8.0452684"
+                                       CAIXA-POSTAL=""
+                                       LOCALIDADE="Recife"
+                                       NUMERO="s/n"
+                                       COMPLEMENTO=""
+                                       LOGRADOURO="Universidade Federal de Pernambuco UF/PE"
+                                       HOME-PAGE=""
+                                       E-MAIL="ilmakruze@hotmail.com"
+                                       FAX="21268473"
+                                       RAMAL=""
+                                       TELEFONE="21268475"
+                                       DDD="81"
+                                       CEP="50670901"
+                                       CIDADE="Recife"
+                                       UF="PE"
+                                       BAIRRO="Iputinga"/>
+      <REPERCUSSOES>À medida que se processa no Brasil a transição demográfica, assistimos uma rápida inversão na pirâmide etária, com grandes contingentes populacionais atingindo a idade adulta e a terceira idade. Este  fato,  associado às profundas mudanças de estilo de vida, torna evidente uma alteração no quadro nosológico, com incidências e prevalências crescentes das doenças crônico degenerativas. Assim se configura a transição epidemiológica e, em paralelo, a transição nutricional. Desta forma é evidente a importância de um Grupo de Pesquisa voltado à Nutrição Clínica, enfocando tanto as doenças crônico-degenerativas como a Nutrição na terceira idade. Os pesquisadores orientam nos programas de pós-graduação em nutrição, em gerontologia e no da saúde da criança e do adolescente; nos programas de residência uniprofissional (nutrição clínica) e multiprofissional. </REPERCUSSOES>
+      <REDES-DE-PESQUISA/>
+   </IDENTIFICACAO-DO-GRUPO>
+   <PESQUISADORES>
+      <PESQUISADOR NOME-CITACOES="Soares, BLM;DE MENDONÇASOARES, BRUNA LÚCIA"
+                   TITULACAO-MAXIMA="Mestrado"
+                   SEQUENCIA-PESQUISADOR="1"
+                   SEXO="F"
+                   NRO-ID-CNPQ="6636335523514279"
+                   FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                   PAIS-DE-NASCIMENTO="BRA"
+                   NACIONALIDADE="B"
+                   NOME-COMPLETO="Bruna Lúcia de Mendonça Soares">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Nutrição e saúde na terceira idade"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="2"
+                               SEQUENCIA-LINHA-DE-PESQUISA="1"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Análise Nutricional de População</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Ciência dos Alimentos</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Dietética</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Microbiologia Industrial e de Fermentação</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Prática Clínica</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </PESQUISADOR>
+      <PESQUISADOR NOME-CITACOES="LEMOS, M. C. C.;LEMOS, MARIA DA CONCEIÇÃO CHAVES DE;C. Chaves;Conceição Chaves;Chaves, Conceição"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEQUENCIA-PESQUISADOR="2"
+                   SEXO="F"
+                   NRO-ID-CNPQ="9348643442663534"
+                   FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                   PAIS-DE-NASCIMENTO="BRA"
+                   NACIONALIDADE="B"
+                   NOME-COMPLETO="Maria da Conceição Chaves de Lemos">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Nutrição e saúde na terceira idade"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="2"
+                               SEQUENCIA-LINHA-DE-PESQUISA="1"/>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos, epidemiológicos e terapêuticos da obesidade e dos transtornos alimentares"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="3"
+                               SEQUENCIA-LINHA-DE-PESQUISA="4"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Anemia e  fator de risco cardiovascular</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Avaliação do Estado Nutricional</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Dietética</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição Clínica</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </PESQUISADOR>
+      <PESQUISADOR NOME-CITACOES="MARQUES, A. P. O.;Ana Paula de Oliveira Marques;Marques Ana Paula de Oliveira;MARQUES, ANA PAULA DE OLIVEIRA;MARQUES, ANA PAULA DE OLIVIERA"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEQUENCIA-PESQUISADOR="3"
+                   SEXO="F"
+                   NRO-ID-CNPQ="3382322676433312"
+                   FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                   PAIS-DE-NASCIMENTO="BRA"
+                   NACIONALIDADE="B"
+                   NOME-COMPLETO="Ana Paula de Oliveira Marques">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Nutrição e saúde na terceira idade"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="1"/>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos, epidemiológicos e terapêuticos da obesidade e dos transtornos alimentares"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="2"
+                               SEQUENCIA-LINHA-DE-PESQUISA="4"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Análise Nutricional de População</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Epidemiologia</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Medicina Preventiva</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Saúde Coletiva</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Saúde do Idoso</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </PESQUISADOR>
+      <PESQUISADOR NOME-CITACOES="BURGOS, M. G. P. A.;BURGOS, MARIA GORETTI P. A.;DE ARAUJO BURGOS, MARIA GORETTI PESSOA"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEQUENCIA-PESQUISADOR="4"
+                   SEXO="F"
+                   NRO-ID-CNPQ="3035252142038237"
+                   FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                   PAIS-DE-NASCIMENTO="BRA"
+                   NACIONALIDADE="B"
+                   NOME-COMPLETO="Maria Goretti Pessoa de Araújo Burgos">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Bioquímica da Nutrição</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>DIETOTERAPIA</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>TERAPIA NUTRICIONAL</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </PESQUISADOR>
+      <PESQUISADOR NOME-CITACOES="PEREIRA, P. B.;COELHO, P.B.P;COELHO, P B P"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEQUENCIA-PESQUISADOR="5"
+                   SEXO="F"
+                   NRO-ID-CNPQ="4345313441556486"
+                   FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                   PAIS-DE-NASCIMENTO="BRA"
+                   NACIONALIDADE="B"
+                   NOME-COMPLETO="Patrícia Brazil Pereira Coelho">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos, epidemiológicos e terapêuticos da obesidade e dos transtornos alimentares"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="2"
+                               SEQUENCIA-LINHA-DE-PESQUISA="4"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Análise Nutricional de População</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Doenças cardiovasculares e Nutrição</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Doenças Crônicas não Transmissíveis</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>NUTRIÇÃO CLÍNICA</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>nutrição e avaliação do estado nutricional</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Terapia Nutricional</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </PESQUISADOR>
+      <PESQUISADOR NOME-CITACOES="MAIO, R;Regiane Maio;MAIO, REGIANE" TITULACAO-MAXIMA="Doutorado"
+                   SEQUENCIA-PESQUISADOR="6"
+                   SEXO="F"
+                   NRO-ID-CNPQ="2650781601815295"
+                   FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                   PAIS-DE-NASCIMENTO="BRA"
+                   NACIONALIDADE="B"
+                   NOME-COMPLETO="Regiane Maio">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Indicadores de qualidade da atenção à saúde"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="2"
+                               SEQUENCIA-LINHA-DE-PESQUISA="5"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Avaliação do Estado Nutricional</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Dietoterapia</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Metabolismo e Nutrição</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </PESQUISADOR>
+      <PESQUISADOR NOME-CITACOES="CAMPOS, F. A. C. S.;CAMPOS , F.;CAMPOS, F.S.;Campos, Florisbela de Arruda Câmara e Sique"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEQUENCIA-PESQUISADOR="7"
+                   SEXO="F"
+                   NRO-ID-CNPQ="6087175865444946"
+                   FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                   PAIS-DE-NASCIMENTO="BRA"
+                   NACIONALIDADE="B"
+                   NOME-COMPLETO="Florisbela de Arruda Camara e Siqueira Campos">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos, epidemiológicos e terapêuticos da obesidade e dos transtornos alimentares"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="4"/>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e epidemiológicos das carências nutricionais específicas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="2"
+                               SEQUENCIA-LINHA-DE-PESQUISA="2"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Análise Nutricional de População</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Bioquímica da Nutrição</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Dietética</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </PESQUISADOR>
+      <PESQUISADOR NOME-CITACOES="DINIZ, A. S.;Diniz, Alcides da S.;Diniz, A. d. S.;Alcides da Silva Diniz;Diniz Alcides da Silva;DINIZ, ALCIDES DA SILVA;DA SILVA DINIZ, ALCIDES"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEQUENCIA-PESQUISADOR="8"
+                   SEXO="M"
+                   NRO-ID-CNPQ="5766586498639655"
+                   FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                   PAIS-DE-NASCIMENTO="BRA"
+                   NACIONALIDADE="B"
+                   NOME-COMPLETO="Alcides da Silva Diniz">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e epidemiológicos das carências nutricionais específicas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="2"
+                               SEQUENCIA-LINHA-DE-PESQUISA="2"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Análise Nutricional de População</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Epidemiologia</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Medicina Preventiva</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Oftalmologia</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Saúde Materno-Infantil</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Saúde Pública</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </PESQUISADOR>
+      <PESQUISADOR NOME-CITACOES="ARRUDA, I. K. G.;ARRUDA, Ilma Kruze G de, Kruze, IKGA;Arruda, Ilma Kruze Grande de;KRUZE, ILMA;DE ARRUDA, ILMA KRUZE GRANDE;Ilma kruze Grande de Arruda"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEQUENCIA-PESQUISADOR="9"
+                   SEXO="F"
+                   NRO-ID-CNPQ="4003459675307504"
+                   FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                   PAIS-DE-NASCIMENTO="BRA"
+                   NACIONALIDADE="B"
+                   NOME-COMPLETO="Ilma Kruze Grande de Arruda">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos, epidemiológicos e terapêuticos da obesidade e dos transtornos alimentares"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="2"
+                               SEQUENCIA-LINHA-DE-PESQUISA="4"/>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e epidemiológicos das carências nutricionais específicas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="3"
+                               SEQUENCIA-LINHA-DE-PESQUISA="2"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Avaliação Nutricional</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Saúde Pública</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </PESQUISADOR>
+      <PESQUISADOR NOME-CITACOES="CABRAL, P. C.;Cabral, Poliana C;Cabral, Poliana Coelho;COELHO CABRAL, POLIANA;Coelho, Poliana Cabral;CABRAL, P C"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEQUENCIA-PESQUISADOR="10"
+                   SEXO="F"
+                   NRO-ID-CNPQ="9196345444973053"
+                   FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                   PAIS-DE-NASCIMENTO="BRA"
+                   NACIONALIDADE="B"
+                   NOME-COMPLETO="Poliana Coelho Cabral">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos, epidemiológicos e terapêuticos da obesidade e dos transtornos alimentares"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="2"
+                               SEQUENCIA-LINHA-DE-PESQUISA="4"/>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e epidemiológicos das carências nutricionais específicas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="3"
+                               SEQUENCIA-LINHA-DE-PESQUISA="2"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição Clínica</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição e Saúde Pública</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </PESQUISADOR>
+      <PESQUISADOR NOME-CITACOES="SEQUEIRA, L. A. S.;Sequeira, Leopoldina Augusta de Souza;Sequeira, Leopoldina Augusta de Sousa;Siqueira, Leopoldina;Sequeira-de-Andrade, L.A.S.;SEQUEIRA-DE-ANDRADE, LEOPOLDINA AUGUSTA SOUZA;Sequeira, Leopoldina A. S.;Sequeira-de-Andrade, Leopoldina Augusta Souza;Sequeira-de-Andrade, LA;Leopoldina A.S. Sequeira-de-Andrade"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEQUENCIA-PESQUISADOR="11"
+                   SEXO="F"
+                   NRO-ID-CNPQ="6298342887158524"
+                   FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                   PAIS-DE-NASCIMENTO="BRA"
+                   NACIONALIDADE="B"
+                   NOME-COMPLETO="Leopoldina Augusta Souza Sequeira-de-Andrade">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Nutrição e saúde na terceira idade"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="2"
+                               SEQUENCIA-LINHA-DE-PESQUISA="1"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Análise Nutricional de População</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Epidemiologia</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Saúde Pública</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </PESQUISADOR>
+   </PESQUISADORES>
+   <ESTUDANTES>
+      <ESTUDANTE NOME-CITACOES="FONSECA, K. T." NIVEL-DE-TREINAMENTO="Mestrado" BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="ILMA KRUZE GRANDE DE ARRUDA"
+                 NRO-ID-CNPQ-ORIENTADOR="4003459675307504"
+                 SEQUENCIA-ESTUDANTE="5569825"
+                 SEXO="F"
+                 NRO-ID-CNPQ="9074396390854483"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Keyla Torres Fonseca">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Epidemiologia</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Saúde Pública</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="AQUINO, N. B.;AQUINO, Nathalia Barbosa;Aquino, Nathalia Barbosa;Barbosa, N.A.;AQUINO, NATHALIA BARBOSA DE;Aquino, N. B. de"
+                 NIVEL-DE-TREINAMENTO=""
+                 BOLSA-NIVEL="B"
+                 BOLSA-CATEGORIA="Apoio Técnico em Extensão no País "
+                 NOME-DO-ORIENTADOR-NO-GRUPO="ILMA KRUZE GRANDE DE ARRUDA"
+                 NRO-ID-CNPQ-ORIENTADOR="4003459675307504"
+                 SEQUENCIA-ESTUDANTE="3008347"
+                 SEXO="F"
+                 NRO-ID-CNPQ="6254011573320816"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Nathalia Barbosa de Aquino">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Nutrição e saúde na terceira idade"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="1"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição em Saúde Pública</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="COELHO, R. R. A." NIVEL-DE-TREINAMENTO="Especialização"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="MARIA DA CONCEICAO CHAVES DE LEMOS"
+                 NRO-ID-CNPQ-ORIENTADOR="9348643442663534"
+                 SEQUENCIA-ESTUDANTE="3833856"
+                 SEXO="F"
+                 NRO-ID-CNPQ="3808918731227342"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Rafaela Rodrigues de Albuquerque Coelho">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Diabetes</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="COELHO, R. S." NIVEL-DE-TREINAMENTO="Mestrado" BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="MARIA GORETTI PESSOA DE ARAUJO BURGOS"
+                 NRO-ID-CNPQ-ORIENTADOR="3035252142038237"
+                 SEQUENCIA-ESTUDANTE="4476320"
+                 SEXO="F"
+                 NRO-ID-CNPQ="0128511195272721"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Raísa Santos Coelho">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="AMARAL, L. A." NIVEL-DE-TREINAMENTO="Mestrado" BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="MARIA DA CONCEICAO CHAVES DE LEMOS"
+                 NRO-ID-CNPQ-ORIENTADOR="9348643442663534"
+                 SEQUENCIA-ESTUDANTE="5410615"
+                 SEXO="F"
+                 NRO-ID-CNPQ="8365195033933217"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Lívia almeida amaral">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Nutrição e saúde na terceira idade"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="1"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="ANDRADE, J. L." NIVEL-DE-TREINAMENTO="" BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="MARIA DA CONCEICAO CHAVES DE LEMOS"
+                 NRO-ID-CNPQ-ORIENTADOR="9348643442663534"
+                 SEQUENCIA-ESTUDANTE="6157159"
+                 SEXO="F"
+                 NRO-ID-CNPQ="0443883824522689"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Juliana Lins de Andrade">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Nutrição e saúde na terceira idade"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="1"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO/>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="ANDRADE, H. I. C." NIVEL-DE-TREINAMENTO="Graduação"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="MARIA GORETTI PESSOA DE ARAUJO BURGOS"
+                 NRO-ID-CNPQ-ORIENTADOR="3035252142038237"
+                 SEQUENCIA-ESTUDANTE="5297298"
+                 SEXO="F"
+                 NRO-ID-CNPQ="0184375473944245"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Hannah Isabelle da Cunha Andrade">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO/>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="LIMA, C. F." NIVEL-DE-TREINAMENTO="Graduação" BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="MARIA GORETTI PESSOA DE ARAUJO BURGOS"
+                 NRO-ID-CNPQ-ORIENTADOR="3035252142038237"
+                 SEQUENCIA-ESTUDANTE="6226768"
+                 SEXO="F"
+                 NRO-ID-CNPQ="0305473259789620"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Clara Farah de Lima">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos, epidemiológicos e terapêuticos da obesidade e dos transtornos alimentares"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="4"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO/>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="PEDROSA, I. V." NIVEL-DE-TREINAMENTO="" BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="ILMA KRUZE GRANDE DE ARRUDA"
+                 NRO-ID-CNPQ-ORIENTADOR="4003459675307504"
+                 SEQUENCIA-ESTUDANTE="2367227"
+                 SEXO="F"
+                 NRO-ID-CNPQ="9958467239821232"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Isabella Valois Pedrosa Porto">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e epidemiológicos das carências nutricionais específicas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="2"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="SANTOS, P. A.;P. Alves Santos;Priscilla Santos"
+                 NIVEL-DE-TREINAMENTO=""
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="POLIANA COELHO CABRAL"
+                 NRO-ID-CNPQ-ORIENTADOR="9196345444973053"
+                 SEQUENCIA-ESTUDANTE="3128916"
+                 SEXO="F"
+                 NRO-ID-CNPQ="8681681332054043"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Priscilla Alves Santos">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Análise Nutricional de População</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Comportamento Alimentar</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Saúde Pública</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="ARAÚJO, L. M.;BARBOSA, L. M. A.;Lizelda Maria de Araújo;ARAÚJO, LIZELDA MARIA DE"
+                 NIVEL-DE-TREINAMENTO=""
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="ILMA KRUZE GRANDE DE ARRUDA"
+                 NRO-ID-CNPQ-ORIENTADOR="4003459675307504"
+                 SEQUENCIA-ESTUDANTE="2777184"
+                 SEXO="F"
+                 NRO-ID-CNPQ="5981147024847509"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Lizelda Maria de Araújo Barbosa">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Análise Nutricional de População</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Dietética</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição Clínica</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Saúde Materno-Infantil</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Técnicas Gastronômicas</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="ARAÚJO, J. G. C." NIVEL-DE-TREINAMENTO="" BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="ILMA KRUZE GRANDE DE ARRUDA"
+                 NRO-ID-CNPQ-ORIENTADOR="4003459675307504"
+                 SEQUENCIA-ESTUDANTE="2382009"
+                 SEXO="F"
+                 NRO-ID-CNPQ="2787660421907980"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Janaína Gabriela Coelho de Araújo">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Nutrição e saúde na terceira idade"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="1"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Saúde Materno-Infantil</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Saúde Pública</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="Fabíola Lima de Albuquerque;ALBUQUERQUE, F. L.;Albuquerque FL"
+                 NIVEL-DE-TREINAMENTO="Doutorado"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="ILMA KRUZE GRANDE DE ARRUDA"
+                 NRO-ID-CNPQ-ORIENTADOR="4003459675307504"
+                 SEQUENCIA-ESTUDANTE="3802841"
+                 SEXO="F"
+                 NRO-ID-CNPQ="2585368139148902"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Fabíola Lima de Albuquerque">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Cineantropoletria e desempenho humano</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Composição Corporal</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Exercício físico e sistema endócrino</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Saúde Pública</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="GADELHA, P. C. F. P.;PINHEIRO, P. C. F." NIVEL-DE-TREINAMENTO=""
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="ILMA KRUZE GRANDE DE ARRUDA"
+                 NRO-ID-CNPQ-ORIENTADOR="4003459675307504"
+                 SEQUENCIA-ESTUDANTE="595694"
+                 SEXO="F"
+                 NRO-ID-CNPQ="2533679164221346"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Patrícia Calado Ferreira Pinheiro Gadelha">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="TOMIYA, M.T.O.;TOMIYA, MARÍLIA TOKIKO OLIVEIRA;TOMIYA, MARILIA TOKILKO OLIVEIRA;OLIVEIRA TOMIYA, MARÍLIA TOKIKO"
+                 NIVEL-DE-TREINAMENTO="Doutorado"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="ALCIDES DA SILVA DINIZ"
+                 NRO-ID-CNPQ-ORIENTADOR="5766586498639655"
+                 SEQUENCIA-ESTUDANTE="2164213"
+                 SEXO="F"
+                 NRO-ID-CNPQ="4274595467858444"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Marília Tokiko Oliveira Tomiya">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição Clínica</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+      <ESTUDANTE NOME-CITACOES="MARINHO, E. A. L." NIVEL-DE-TREINAMENTO="" BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""
+                 NOME-DO-ORIENTADOR-NO-GRUPO="ILMA KRUZE GRANDE DE ARRUDA"
+                 NRO-ID-CNPQ-ORIENTADOR="4003459675307504"
+                 SEQUENCIA-ESTUDANTE="4400996"
+                 SEXO="F"
+                 NRO-ID-CNPQ="1895885001745405"
+                 FORMATO-DATA-DE-NASCIMENTO="DDMMAAAA"
+                 PAIS-DE-NASCIMENTO="BRA"
+                 NACIONALIDADE="B"
+                 NOME-COMPLETO="Everlane Alcântara de Lima Marinho">
+         <LINHAS-DE-PESQUISA-RH>
+            <LINHA-DE-PESQUISA NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                               SEQUENCIA-IDENTIFICADORA-DA-LINHA-DE-PESQUISA="1"
+                               SEQUENCIA-LINHA-DE-PESQUISA="3"/>
+         </LINHAS-DE-PESQUISA-RH>
+         <AREAS-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Nutrição Clínica</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Pediatria</AREA-DE-ATUACAO>
+            <AREA-DE-ATUACAO>Saúde Pública</AREA-DE-ATUACAO>
+         </AREAS-DE-ATUACAO>
+      </ESTUDANTE>
+   </ESTUDANTES>
+   <COLABORADORES-ESTRANGEIROS/>
+   <TECNICOS/>
+   <LINHAS-DE-PESQUISA>
+      <LINHA-DE-PESQUISA NRO-ID-CNPQ-LINHA-PESQUISA="9757447926080329"
+                         OBJETIVO-DA-LINHA-DE-PESQUISA="Não Informado"
+                         NOME-DA-LINHA-DE-PESQUISA="Nutrição e saúde na terceira idade"
+                         SEQUENCIA-LINHA-DE-PESQUISA="1">
+         <PALAVRAS-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="1">Terceira idade</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="2">Andropausa</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="3">Nutrição clínica</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="4">Dietoterapia</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="5">Hábitos alimentares</PALAVRA-CHAVE>
+         </PALAVRAS-CHAVE>
+         <PESQUISADORES-LINHA>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="3382322676433312" NOME-COMPLETO="Ana Paula de Oliveira Marques"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="183722"
+                               SEQUENCIA-PESQUISADOR="1"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="6636335523514279" NOME-COMPLETO="Bruna Lúcia de Mendonça Soares"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="3128326"
+                               SEQUENCIA-PESQUISADOR="2"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="9348643442663534"
+                               NOME-COMPLETO="Maria da Conceição Chaves de Lemos"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="2239552"
+                               SEQUENCIA-PESQUISADOR="3"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="6298342887158524"
+                               NOME-COMPLETO="Leopoldina Augusta Souza Sequeira-de-Andrade"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="57487"
+                               SEQUENCIA-PESQUISADOR="4"/>
+         </PESQUISADORES-LINHA>
+         <ESTUDANTES-LINHA>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="2787660421907980"
+                             NOME-COMPLETO="Janaína Gabriela Coelho de Araújo"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="2382009"
+                             SEQUENCIA-ESTUDANTE="1"/>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="8365195033933217" NOME-COMPLETO="Lívia almeida amaral"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="5410615"
+                             SEQUENCIA-ESTUDANTE="2"/>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="0443883824522689" NOME-COMPLETO="Juliana Lins de Andrade"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="6157159"
+                             SEQUENCIA-ESTUDANTE="3"/>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="6254011573320816" NOME-COMPLETO="Nathalia Barbosa de Aquino"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="3008347"
+                             SEQUENCIA-ESTUDANTE="4"/>
+         </ESTUDANTES-LINHA>
+         <AREAS-DO-CONHECIMENTO>
+            <AREA-DO-CONHECIMENTO COD-AREA-DO-CONHECIMENTO="70300003" CODIGO-ESPECIALIDADE="" CODIGO-SUB-AREA=""
+                                  CODIGO-AREA="70300003"
+                                  CODIGO-GRANDE-AREA="70000000"
+                                  NOME-DA-ESPECIALIDADE-DO-CONHECIMENTO=""
+                                  NOME-DA-SUB-AREA-DO-CONHECIMENTO=""
+                                  NOME-DA-AREA-DO-CONHECIMENTO="Antropologia"
+                                  NOME-GRANDE-AREA-DO-CONHECIMENTO="Ciências Humanas"
+                                  SEQUENCIA-AREA-DO-CONHECIMENTO="1095"/>
+            <AREA-DO-CONHECIMENTO COD-AREA-DO-CONHECIMENTO="40502007" CODIGO-ESPECIALIDADE=""
+                                  CODIGO-SUB-AREA="40502007"
+                                  CODIGO-AREA="40500004"
+                                  CODIGO-GRANDE-AREA="40000001"
+                                  NOME-DA-ESPECIALIDADE-DO-CONHECIMENTO=""
+                                  NOME-DA-SUB-AREA-DO-CONHECIMENTO="Dietética"
+                                  NOME-DA-AREA-DO-CONHECIMENTO="Nutrição"
+                                  NOME-GRANDE-AREA-DO-CONHECIMENTO="Ciências da Saúde"
+                                  SEQUENCIA-AREA-DO-CONHECIMENTO="722"/>
+            <AREA-DO-CONHECIMENTO COD-AREA-DO-CONHECIMENTO="40500004" CODIGO-ESPECIALIDADE="" CODIGO-SUB-AREA=""
+                                  CODIGO-AREA="40500004"
+                                  CODIGO-GRANDE-AREA="40000001"
+                                  NOME-DA-ESPECIALIDADE-DO-CONHECIMENTO=""
+                                  NOME-DA-SUB-AREA-DO-CONHECIMENTO=""
+                                  NOME-DA-AREA-DO-CONHECIMENTO="Nutrição"
+                                  NOME-GRANDE-AREA-DO-CONHECIMENTO="Ciências da Saúde"
+                                  SEQUENCIA-AREA-DO-CONHECIMENTO="720"/>
+         </AREAS-DO-CONHECIMENTO>
+         <SETORES-DE-APLICACAO>
+            <SETOR-DE-APLICACAO ORIGEM-CNAE="CNAE II" CODIGO-CNAE="Q.86.5"
+                                SUBSETOR="Atividades de atenção à saúde humana"
+                                SETOR="Saúde humana e serviços sociais"
+                                SEQUENCIA-SETOR-DE-APLICACAO="2791"/>
+         </SETORES-DE-APLICACAO>
+      </LINHA-DE-PESQUISA>
+      <LINHA-DE-PESQUISA NRO-ID-CNPQ-LINHA-PESQUISA="6840212005969530"
+                         OBJETIVO-DA-LINHA-DE-PESQUISA="Não Informado"
+                         NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e epidemiológicos das carências nutricionais específicas"
+                         SEQUENCIA-LINHA-DE-PESQUISA="2">
+         <PALAVRAS-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="1">Anemia</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="2">Xeroftalmia</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="3">Hipovitaminose A</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="4">Deficiência de zinco</PALAVRA-CHAVE>
+         </PALAVRAS-CHAVE>
+         <PESQUISADORES-LINHA>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="5766586498639655" NOME-COMPLETO="Alcides da Silva Diniz"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="2414"
+                               SEQUENCIA-PESQUISADOR="1"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="4003459675307504" NOME-COMPLETO="Ilma Kruze Grande de Arruda"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="221096"
+                               SEQUENCIA-PESQUISADOR="2"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="9196345444973053" NOME-COMPLETO="Poliana Coelho Cabral"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="238036"
+                               SEQUENCIA-PESQUISADOR="3"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="6087175865444946"
+                               NOME-COMPLETO="Florisbela de Arruda Camara e Siqueira Campos"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="13631"
+                               SEQUENCIA-PESQUISADOR="4"/>
+         </PESQUISADORES-LINHA>
+         <ESTUDANTES-LINHA>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="9958467239821232" NOME-COMPLETO="Isabella Valois Pedrosa Porto"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="2367227"
+                             SEQUENCIA-ESTUDANTE="1"/>
+         </ESTUDANTES-LINHA>
+         <AREAS-DO-CONHECIMENTO>
+            <AREA-DO-CONHECIMENTO COD-AREA-DO-CONHECIMENTO="40503003" CODIGO-ESPECIALIDADE=""
+                                  CODIGO-SUB-AREA="40503003"
+                                  CODIGO-AREA="40500004"
+                                  CODIGO-GRANDE-AREA="40000001"
+                                  NOME-DA-ESPECIALIDADE-DO-CONHECIMENTO=""
+                                  NOME-DA-SUB-AREA-DO-CONHECIMENTO="Análise Nutricional de População"
+                                  NOME-DA-AREA-DO-CONHECIMENTO="Nutrição"
+                                  NOME-GRANDE-AREA-DO-CONHECIMENTO="Ciências da Saúde"
+                                  SEQUENCIA-AREA-DO-CONHECIMENTO="723"/>
+            <AREA-DO-CONHECIMENTO COD-AREA-DO-CONHECIMENTO="40501000" CODIGO-ESPECIALIDADE=""
+                                  CODIGO-SUB-AREA="40501000"
+                                  CODIGO-AREA="40500004"
+                                  CODIGO-GRANDE-AREA="40000001"
+                                  NOME-DA-ESPECIALIDADE-DO-CONHECIMENTO=""
+                                  NOME-DA-SUB-AREA-DO-CONHECIMENTO="Bioquímica da Nutrição"
+                                  NOME-DA-AREA-DO-CONHECIMENTO="Nutrição"
+                                  NOME-GRANDE-AREA-DO-CONHECIMENTO="Ciências da Saúde"
+                                  SEQUENCIA-AREA-DO-CONHECIMENTO="721"/>
+         </AREAS-DO-CONHECIMENTO>
+         <SETORES-DE-APLICACAO>
+            <SETOR-DE-APLICACAO ORIGEM-CNAE="CNAE II" CODIGO-CNAE="Q.86.5"
+                                SUBSETOR="Atividades de atenção à saúde humana"
+                                SETOR="Saúde humana e serviços sociais"
+                                SEQUENCIA-SETOR-DE-APLICACAO="2791"/>
+         </SETORES-DE-APLICACAO>
+      </LINHA-DE-PESQUISA>
+      <LINHA-DE-PESQUISA NRO-ID-CNPQ-LINHA-PESQUISA="9805224683133361" OBJETIVO-DA-LINHA-DE-PESQUISA="a"
+                         NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos e terapêuticos de enfermidades crônico-degenerativas"
+                         SEQUENCIA-LINHA-DE-PESQUISA="3">
+         <PALAVRAS-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="1">Dietoterapia</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="2">Diabetes mellitus</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="3">Hipertensão</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="4">Nefropatias</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="5">Avaliação nutricional</PALAVRA-CHAVE>
+         </PALAVRAS-CHAVE>
+         <PESQUISADORES-LINHA>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="2650781601815295" NOME-COMPLETO="Regiane Maio"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="410707"
+                               SEQUENCIA-PESQUISADOR="1"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="3035252142038237"
+                               NOME-COMPLETO="Maria Goretti Pessoa de Araújo Burgos"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="237889"
+                               SEQUENCIA-PESQUISADOR="2"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="5766586498639655" NOME-COMPLETO="Alcides da Silva Diniz"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="2414"
+                               SEQUENCIA-PESQUISADOR="3"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="9196345444973053" NOME-COMPLETO="Poliana Coelho Cabral"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="238036"
+                               SEQUENCIA-PESQUISADOR="4"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="4003459675307504" NOME-COMPLETO="Ilma Kruze Grande de Arruda"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="221096"
+                               SEQUENCIA-PESQUISADOR="5"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="6636335523514279" NOME-COMPLETO="Bruna Lúcia de Mendonça Soares"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="3128326"
+                               SEQUENCIA-PESQUISADOR="6"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="4345313441556486" NOME-COMPLETO="Patrícia Brazil Pereira Coelho"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="726183"
+                               SEQUENCIA-PESQUISADOR="7"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="9348643442663534"
+                               NOME-COMPLETO="Maria da Conceição Chaves de Lemos"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="2239552"
+                               SEQUENCIA-PESQUISADOR="8"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="6298342887158524"
+                               NOME-COMPLETO="Leopoldina Augusta Souza Sequeira-de-Andrade"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="57487"
+                               SEQUENCIA-PESQUISADOR="9"/>
+         </PESQUISADORES-LINHA>
+         <ESTUDANTES-LINHA>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="1895885001745405"
+                             NOME-COMPLETO="Everlane Alcântara de Lima Marinho"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="4400996"
+                             SEQUENCIA-ESTUDANTE="1"/>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="9074396390854483" NOME-COMPLETO="Keyla Torres Fonseca"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="5569825"
+                             SEQUENCIA-ESTUDANTE="2"/>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="0184375473944245" NOME-COMPLETO="Hannah Isabelle da Cunha Andrade"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="5297298"
+                             SEQUENCIA-ESTUDANTE="3"/>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="3808918731227342"
+                             NOME-COMPLETO="Rafaela Rodrigues de Albuquerque Coelho"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="3833856"
+                             SEQUENCIA-ESTUDANTE="4"/>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="0128511195272721" NOME-COMPLETO="Raísa Santos Coelho"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="4476320"
+                             SEQUENCIA-ESTUDANTE="5"/>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="8681681332054043" NOME-COMPLETO="Priscilla Alves Santos"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="3128916"
+                             SEQUENCIA-ESTUDANTE="6"/>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="5981147024847509" NOME-COMPLETO="Lizelda Maria de Araújo Barbosa"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="2777184"
+                             SEQUENCIA-ESTUDANTE="7"/>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="2533679164221346"
+                             NOME-COMPLETO="Patrícia Calado Ferreira Pinheiro Gadelha"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="595694"
+                             SEQUENCIA-ESTUDANTE="8"/>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="2585368139148902" NOME-COMPLETO="Fabíola Lima de Albuquerque"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="3802841"
+                             SEQUENCIA-ESTUDANTE="9"/>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="4274595467858444" NOME-COMPLETO="Marília Tokiko Oliveira Tomiya"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="2164213"
+                             SEQUENCIA-ESTUDANTE="10"/>
+         </ESTUDANTES-LINHA>
+         <AREAS-DO-CONHECIMENTO>
+            <AREA-DO-CONHECIMENTO COD-AREA-DO-CONHECIMENTO="40101002" CODIGO-ESPECIALIDADE=""
+                                  CODIGO-SUB-AREA="40101002"
+                                  CODIGO-AREA="40100006"
+                                  CODIGO-GRANDE-AREA="40000001"
+                                  NOME-DA-ESPECIALIDADE-DO-CONHECIMENTO=""
+                                  NOME-DA-SUB-AREA-DO-CONHECIMENTO="Clínica Médica"
+                                  NOME-DA-AREA-DO-CONHECIMENTO="Medicina"
+                                  NOME-GRANDE-AREA-DO-CONHECIMENTO="Ciências da Saúde"
+                                  SEQUENCIA-AREA-DO-CONHECIMENTO="658"/>
+            <AREA-DO-CONHECIMENTO COD-AREA-DO-CONHECIMENTO="40502007" CODIGO-ESPECIALIDADE=""
+                                  CODIGO-SUB-AREA="40502007"
+                                  CODIGO-AREA="40500004"
+                                  CODIGO-GRANDE-AREA="40000001"
+                                  NOME-DA-ESPECIALIDADE-DO-CONHECIMENTO=""
+                                  NOME-DA-SUB-AREA-DO-CONHECIMENTO="Dietética"
+                                  NOME-DA-AREA-DO-CONHECIMENTO="Nutrição"
+                                  NOME-GRANDE-AREA-DO-CONHECIMENTO="Ciências da Saúde"
+                                  SEQUENCIA-AREA-DO-CONHECIMENTO="722"/>
+         </AREAS-DO-CONHECIMENTO>
+         <SETORES-DE-APLICACAO>
+            <SETOR-DE-APLICACAO ORIGEM-CNAE="CNAE II" CODIGO-CNAE="Q.86.5"
+                                SUBSETOR="Atividades de atenção à saúde humana"
+                                SETOR="Saúde humana e serviços sociais"
+                                SEQUENCIA-SETOR-DE-APLICACAO="2791"/>
+         </SETORES-DE-APLICACAO>
+      </LINHA-DE-PESQUISA>
+      <LINHA-DE-PESQUISA NRO-ID-CNPQ-LINHA-PESQUISA="1554937772274960"
+                         OBJETIVO-DA-LINHA-DE-PESQUISA="Não Informado"
+                         NOME-DA-LINHA-DE-PESQUISA="Aspectos clínicos, epidemiológicos e terapêuticos da obesidade e dos transtornos alimentares"
+                         SEQUENCIA-LINHA-DE-PESQUISA="4">
+         <PALAVRAS-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="1">Obesidade</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="2">Bulimia</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="3">Avaliação nutricional</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="4">Cirurgia bariátrica</PALAVRA-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="5">Anorexia Nervosa</PALAVRA-CHAVE>
+         </PALAVRAS-CHAVE>
+         <PESQUISADORES-LINHA>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="3382322676433312" NOME-COMPLETO="Ana Paula de Oliveira Marques"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="183722"
+                               SEQUENCIA-PESQUISADOR="1"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="4003459675307504" NOME-COMPLETO="Ilma Kruze Grande de Arruda"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="221096"
+                               SEQUENCIA-PESQUISADOR="2"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="9196345444973053" NOME-COMPLETO="Poliana Coelho Cabral"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="238036"
+                               SEQUENCIA-PESQUISADOR="3"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="6087175865444946"
+                               NOME-COMPLETO="Florisbela de Arruda Camara e Siqueira Campos"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="13631"
+                               SEQUENCIA-PESQUISADOR="4"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="4345313441556486" NOME-COMPLETO="Patrícia Brazil Pereira Coelho"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="726183"
+                               SEQUENCIA-PESQUISADOR="5"/>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="9348643442663534"
+                               NOME-COMPLETO="Maria da Conceição Chaves de Lemos"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="2239552"
+                               SEQUENCIA-PESQUISADOR="6"/>
+         </PESQUISADORES-LINHA>
+         <ESTUDANTES-LINHA>
+            <ESTUDANTE-LINHA NRO-ID-CNPQ="0305473259789620" NOME-COMPLETO="Clara Farah de Lima"
+                             SEQUENCIA-IDENTIFICADORA-DO-ESTUDANTE="6226768"
+                             SEQUENCIA-ESTUDANTE="1"/>
+         </ESTUDANTES-LINHA>
+         <AREAS-DO-CONHECIMENTO>
+            <AREA-DO-CONHECIMENTO COD-AREA-DO-CONHECIMENTO="40503003" CODIGO-ESPECIALIDADE=""
+                                  CODIGO-SUB-AREA="40503003"
+                                  CODIGO-AREA="40500004"
+                                  CODIGO-GRANDE-AREA="40000001"
+                                  NOME-DA-ESPECIALIDADE-DO-CONHECIMENTO=""
+                                  NOME-DA-SUB-AREA-DO-CONHECIMENTO="Análise Nutricional de População"
+                                  NOME-DA-AREA-DO-CONHECIMENTO="Nutrição"
+                                  NOME-GRANDE-AREA-DO-CONHECIMENTO="Ciências da Saúde"
+                                  SEQUENCIA-AREA-DO-CONHECIMENTO="723"/>
+            <AREA-DO-CONHECIMENTO COD-AREA-DO-CONHECIMENTO="40502007" CODIGO-ESPECIALIDADE=""
+                                  CODIGO-SUB-AREA="40502007"
+                                  CODIGO-AREA="40500004"
+                                  CODIGO-GRANDE-AREA="40000001"
+                                  NOME-DA-ESPECIALIDADE-DO-CONHECIMENTO=""
+                                  NOME-DA-SUB-AREA-DO-CONHECIMENTO="Dietética"
+                                  NOME-DA-AREA-DO-CONHECIMENTO="Nutrição"
+                                  NOME-GRANDE-AREA-DO-CONHECIMENTO="Ciências da Saúde"
+                                  SEQUENCIA-AREA-DO-CONHECIMENTO="722"/>
+         </AREAS-DO-CONHECIMENTO>
+         <SETORES-DE-APLICACAO>
+            <SETOR-DE-APLICACAO ORIGEM-CNAE="CNAE II" CODIGO-CNAE="Q.86.5"
+                                SUBSETOR="Atividades de atenção à saúde humana"
+                                SETOR="Saúde humana e serviços sociais"
+                                SEQUENCIA-SETOR-DE-APLICACAO="2791"/>
+         </SETORES-DE-APLICACAO>
+      </LINHA-DE-PESQUISA>
+      <LINHA-DE-PESQUISA NRO-ID-CNPQ-LINHA-PESQUISA="6893597008733985" OBJETIVO-DA-LINHA-DE-PESQUISA="a"
+                         NOME-DA-LINHA-DE-PESQUISA="Indicadores de qualidade da atenção à saúde"
+                         SEQUENCIA-LINHA-DE-PESQUISA="5">
+         <PALAVRAS-CHAVE>
+            <PALAVRA-CHAVE SEQUENCIA-PALAVRA-CHAVE="1">Indicadores de qualidade, saúde, avaliação</PALAVRA-CHAVE>
+         </PALAVRAS-CHAVE>
+         <PESQUISADORES-LINHA>
+            <PESQUISADOR-LINHA NRO-ID-CNPQ="2650781601815295" NOME-COMPLETO="Regiane Maio"
+                               SEQUENCIA-IDENTIFICADORA-DO-PESQUISADOR="410707"
+                               SEQUENCIA-PESQUISADOR="1"/>
+         </PESQUISADORES-LINHA>
+         <ESTUDANTES-LINHA/>
+         <AREAS-DO-CONHECIMENTO>
+            <AREA-DO-CONHECIMENTO COD-AREA-DO-CONHECIMENTO="40503003" CODIGO-ESPECIALIDADE=""
+                                  CODIGO-SUB-AREA="40503003"
+                                  CODIGO-AREA="40500004"
+                                  CODIGO-GRANDE-AREA="40000001"
+                                  NOME-DA-ESPECIALIDADE-DO-CONHECIMENTO=""
+                                  NOME-DA-SUB-AREA-DO-CONHECIMENTO="Análise Nutricional de População"
+                                  NOME-DA-AREA-DO-CONHECIMENTO="Nutrição"
+                                  NOME-GRANDE-AREA-DO-CONHECIMENTO="Ciências da Saúde"
+                                  SEQUENCIA-AREA-DO-CONHECIMENTO="723"/>
+         </AREAS-DO-CONHECIMENTO>
+         <SETORES-DE-APLICACAO>
+            <SETOR-DE-APLICACAO ORIGEM-CNAE="CNAE II" CODIGO-CNAE="Q.86.6"
+                                SUBSETOR="Atividades de atenção à saúde humana"
+                                SETOR="Saúde humana e serviços sociais"
+                                SEQUENCIA-SETOR-DE-APLICACAO="2791"/>
+         </SETORES-DE-APLICACAO>
+      </LINHA-DE-PESQUISA>
+   </LINHAS-DE-PESQUISA>
+   <EMPRESAS>
+      <EMPRESA NRO-ID-CNPQ-INSTITUICAO="3047225432841522"
+               RAZAO-SOCIAL-DA-EMPRESA="Instituto de Medicina Integral Professor Fernando Figueira"
+               NATUREZA-JURIDICA="Associação Privada"
+               SEGMENTO-ECONOMICO=""
+               CNPJ="10988301000129"
+               LOCALIDADE="Recife"
+               CIDADE="Recife"
+               UF="PE"
+               SIGLA-DA-EMPRESA="IMIP"
+               NOME-DA-EMPRESA="Instituto de Medicina Integral Professor Fernando Figueira ">
+         <SETORES-DE-ATIVIDADE-ECONOMICA>
+            <SETOR-DE-ATIVIDADE-ECONOMICA ORIGEM-CNAE="CNAE II" CODIGO-CNAE="Q.86.9"
+                                          SUBSETOR="Atividades de atenção à saúde humana não especificadas anteriormente"
+                                          SETOR="Atividades de atenção à saúde humana"
+                                          GRANDE-SETOR="Saúde humana e serviços sociais"
+                                          SEQUENCIA-SETOR-DE-ATIVIDADE="0"/>
+            <SETOR-DE-ATIVIDADE-ECONOMICA ORIGEM-CNAE="CNAE II" CODIGO-CNAE="Q.87.1"
+                                          SUBSETOR="Atividades de assistência a idosos, deficientes físicos, imunodeprimidos e convalescentes, e de infra-estrutura e apoio a pacientes prestadas em residências coletivas e particulares"
+                                          SETOR="Atividades de atenção à saúde humana integradas com assistência social, prestadas em residências coletivas e particulares"
+                                          GRANDE-SETOR="Saúde humana e serviços sociais"
+                                          SEQUENCIA-SETOR-DE-ATIVIDADE="1"/>
+            <SETOR-DE-ATIVIDADE-ECONOMICA ORIGEM-CNAE="CNAE II" CODIGO-CNAE="Q.86.3"
+                                          SUBSETOR="Atividades de atenção ambulatorial executadas por médicos e odontólogos"
+                                          SETOR="Atividades de atenção à saúde humana"
+                                          GRANDE-SETOR="Saúde humana e serviços sociais"
+                                          SEQUENCIA-SETOR-DE-ATIVIDADE="2"/>
+         </SETORES-DE-ATIVIDADE-ECONOMICA>
+         <TIPOS-DE-RELACAO>
+            <TIPO-DE-RELACAO SEQUENCIA-TIPO-DE-RELACAO="10">Pesquisa científica sem considerações de uso imediato dos resultados</TIPO-DE-RELACAO>
+            <TIPO-DE-RELACAO SEQUENCIA-TIPO-DE-RELACAO="11">Pesquisa científica com considerações de uso imediato dos resultados</TIPO-DE-RELACAO>
+            <TIPO-DE-RELACAO SEQUENCIA-TIPO-DE-RELACAO="23">Outros tipos predominantes de relacionamento que não se enquadrem em nenhum dos anteriores.</TIPO-DE-RELACAO>
+         </TIPOS-DE-RELACAO>
+         <TIPOS-DE-REMUNERACAO>
+            <TIPO-DE-REMUNERACAO SEQUENCIA-TIPO-DE-REMUNERACAO="18">Parceria com transfêrencia de recursos de qualquer espécie nos dois sentidos</TIPO-DE-REMUNERACAO>
+            <TIPO-DE-REMUNERACAO SEQUENCIA-TIPO-DE-REMUNERACAO="19">Outras formas de remuneração que não se enquadrem em nenhuma das anteriores.</TIPO-DE-REMUNERACAO>
+         </TIPOS-DE-REMUNERACAO>
+      </EMPRESA>
+   </EMPRESAS>
+   <EQUIPAMENTOS/>
+   <SOFTWARES/>
+   <EGRESSOS>
+      <EGRESSO DATA-SAIDA="25092018" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="PESQUISADOR"
+               NRO-ID-CNPQ="7493400639407235"
+               NOME-DO-EGRESSO="Edmundo Machado Ferraz"/>
+      <EGRESSO DATA-SAIDA="29092014" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="PESQUISADOR"
+               NRO-ID-CNPQ="3748181726668874"
+               NOME-DO-EGRESSO="Miguel Arcanjo dos Santos Júnior"/>
+      <EGRESSO DATA-SAIDA="25092018" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="PESQUISADOR"
+               NRO-ID-CNPQ="6155357153766606"
+               NOME-DO-EGRESSO="Tânia Campos Fell Amado"/>
+      <EGRESSO DATA-SAIDA="25092018" DATA-ENTRADA="13102016"
+               TP-PARTICIPACAO-EGRESSO="PESQUISADOR"
+               NRO-ID-CNPQ="3902158559291810"
+               NOME-DO-EGRESSO="Hilton de Castro Chaves Júnior"/>
+      <EGRESSO DATA-SAIDA="16102014" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="4334513382640730"
+               NOME-DO-EGRESSO="Ana Paula Campos Pereira"/>
+      <EGRESSO DATA-SAIDA="29092014" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="4955507764365233"
+               NOME-DO-EGRESSO="Sabrina Joany Felizardo Neves"/>
+      <EGRESSO DATA-SAIDA="13102016" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="9967019167997930"
+               NOME-DO-EGRESSO="Mellina Neyla de Lima Albuquerque"/>
+      <EGRESSO DATA-SAIDA="16102014" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="7591036980073907"
+               NOME-DO-EGRESSO="Marina de Moraes Vasconcelos Petribú"/>
+      <EGRESSO DATA-SAIDA="29092014" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="3130999007786844"
+               NOME-DO-EGRESSO="Luciana Marques Andreto"/>
+      <EGRESSO DATA-SAIDA="13102016" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="4742883156073121"
+               NOME-DO-EGRESSO="Carmina Silva dos Santos"/>
+      <EGRESSO DATA-SAIDA="16102014" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="6024011368288025"
+               NOME-DO-EGRESSO="Rafaella Felix Moura"/>
+      <EGRESSO DATA-SAIDA="29092014" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="6899693115027932"
+               NOME-DO-EGRESSO="Marcele Batista Madeiro da Costa"/>
+      <EGRESSO DATA-SAIDA="13102016" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="9299973957107328"
+               NOME-DO-EGRESSO="Rafaela Magalhães Soares"/>
+      <EGRESSO DATA-SAIDA="29092014" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="5853688253865431"
+               NOME-DO-EGRESSO="Ana Carolina Ramos de Araújo"/>
+      <EGRESSO DATA-SAIDA="29092014" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="3043014508831819"
+               NOME-DO-EGRESSO="Lanni Sarmento da Rocha"/>
+      <EGRESSO DATA-SAIDA="16102014" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="9714328351275656"
+               NOME-DO-EGRESSO="Fátima Lúcia Machado Braga"/>
+      <EGRESSO DATA-SAIDA="29092014" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="0449463456141164"
+               NOME-DO-EGRESSO="Claudileide de Sá Silva"/>
+      <EGRESSO DATA-SAIDA="29092014" DATA-ENTRADA="03082011"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="7269565155890987"
+               NOME-DO-EGRESSO="Palena Cabral da Silva"/>
+      <EGRESSO DATA-SAIDA="13102016" DATA-ENTRADA="22122014"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="7542856911818056"
+               NOME-DO-EGRESSO="Ingrid Oliveira da Costa"/>
+      <EGRESSO DATA-SAIDA="25092018" DATA-ENTRADA="13102016"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="8098771277092043"
+               NOME-DO-EGRESSO="Renata Costa Rangel"/>
+      <EGRESSO DATA-SAIDA="25092018" DATA-ENTRADA="13102016"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="5408104783015305"
+               NOME-DO-EGRESSO="Thayanne Breckenfeld Meneses"/>
+      <EGRESSO DATA-SAIDA="16092017" DATA-ENTRADA="26102016"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="9419014734756864"
+               NOME-DO-EGRESSO="Midori Cabral Sugaya"/>
+      <EGRESSO DATA-SAIDA="25092018" DATA-ENTRADA="26102016"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="8868976819186131"
+               NOME-DO-EGRESSO="Emylle Thais Melo dos Santos"/>
+      <EGRESSO DATA-SAIDA="25092018" DATA-ENTRADA="26102016"
+               TP-PARTICIPACAO-EGRESSO="ESTUDANTE"
+               NRO-ID-CNPQ="3807864212452400"
+               NOME-DO-EGRESSO="Larissa de Lima Vila Nova"/>
+   </EGRESSOS>
+</GRUPO-DE-PESQUISA>

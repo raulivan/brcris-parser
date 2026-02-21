@@ -7,6 +7,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 
 
+
+
 from util.error_logger import setup_logger
 
 # Importando os validators
@@ -31,6 +33,7 @@ from readers.json_reader import JSONReader
 from readers.jsonl_reader import JSONLReader
 from readers.jsonl_gz_reader import JSONLGZReader
 from readers.xml_reader import XMLReader
+from readers.xml_zip_reader import ZipXMLReader
 
 # Importando os mappersa
 from mappers.sucupira_to_program_and_course import Sucupira2ProgramAndCourseMapper
@@ -45,6 +48,7 @@ from mappers.orientacao_lattes_to_mestrado_publication import OrientacaoPlatafor
 from mappers.orientacao_lattes_to_doutorado_publication import OrientacaoPlataformaLattes2DoutoradoPublicationMapper
 from mappers.formacao_lattes_to_publication import FormacaoPlataformaLattes2PublicationMapper
 from mappers.publication_oases_to_publication import PublicationOASIS2PublicationMapper
+from mappers.relacionamento_grupo_pesquisa import RelacionamentoGrupoPesquisaMapper
 
 # Importando o  writer
 from writers.xml_writer import XMLWriter 
@@ -62,6 +66,7 @@ READER_FACTORY = {
     'jsonl': JSONLReader,
     'jsonl.gz': JSONLGZReader,
     'xml': XMLReader,
+    'xml.zip': ZipXMLReader,
     
 }
 
@@ -81,7 +86,8 @@ MAPPER_FACTORY = {
     'evento_lattes_to_publication_mapper': EventosPlataformaLattes2PublicationMapper,
     'orientacao_lattes_to_doutorado_publication_mapper': OrientacaoPlataformaLattes2DoutoradoPublicationMapper,
     'formacao_lattes_to_publication_mapper': FormacaoPlataformaLattes2PublicationMapper,
-    'publication_oasis_to_publication_mapper': PublicationOASIS2PublicationMapper
+    'publication_oasis_to_publication_mapper': PublicationOASIS2PublicationMapper,
+    'relacionamento_grupo_pesquisa_mapper': RelacionamentoGrupoPesquisaMapper,
 }
 
 DICTIONARY_BUILDERS = {
@@ -115,43 +121,43 @@ def process_transformation(config_section: str):
     orgUnitValidator.load_dataset(r'.\src\data\orgunit2026.json')
 
     journalValidator = JournalValidator()
-    journalValidator.load_dataset(r'.\src\data\journals2026.json')
+    # journalValidator.load_dataset(r'.\src\data\journals2026.json')
 
     languageValidator = LanguageValidator()
-    languageValidator.load_dataset(r'.\src\data\language2026.json')
+    # languageValidator.load_dataset(r'.\src\data\language2026.json')
 
     personValidator = PersonValidator()
     personValidator.load_dataset(r'.\src\data\ids_lattes2026.csv')
 
     orcidValidator = OrcidValidator()
-    orcidValidator.load_dataset(r'.\src\data\orcid_autoridade2026.csv')
+    # orcidValidator.load_dataset(r'.\src\data\orcid_autoridade2026.csv')
 
     courseValidator= CourseValidator()
-    courseValidator.load_dataset(r'.\src\data\couse_autoridade2026.csv')
+    # courseValidator.load_dataset(r'.\src\data\couse_autoridade2026.csv')
 
     publicationArtigoValidator = PublicationArtigoValidator()
-    publicationArtigoValidator.load_dataset(r'.\src\data\publication_artigo2026.json')
+    # publicationArtigoValidator.load_dataset(r'.\src\data\publication_artigo2026.json')
 
     publicationCapituloLivroValidator = PublicationCapituloLivroValidator()
-    publicationCapituloLivroValidator.load_dataset(r'.\src\data\publication_capitulo_livro2026.json')
+    # publicationCapituloLivroValidator.load_dataset(r'.\src\data\publication_capitulo_livro2026.json')
 
     publicationDOIValidator = PublicationDOIValidator()
-    publicationDOIValidator.load_dataset(r'.\src\data\publication_doi2026.json')
+    # publicationDOIValidator.load_dataset(r'.\src\data\publication_doi2026.json')
 
     publicationEventosValidator = PublicationEventosValidator()
-    publicationEventosValidator.load_dataset(r'.\src\data\publication_eventos2026.json')
+    # publicationEventosValidator.load_dataset(r'.\src\data\publication_eventos2026.json')
 
     publicationFormacaoValidator = PublicationFormacaoValidator()
-    publicationFormacaoValidator.load_dataset(r'.\src\data\publication_formacao2026.json')
+    # publicationFormacaoValidator.load_dataset(r'.\src\data\publication_formacao2026.json')
 
     publicationLivrosValidator = PublicationLivrosValidator()
-    publicationLivrosValidator.load_dataset(r'.\src\data\publication_livros2026.json')
+    # publicationLivrosValidator.load_dataset(r'.\src\data\publication_livros2026.json')
 
     publicationORCIDValidator = PublicationORCIDValidator()
-    publicationORCIDValidator.load_dataset(r'.\src\data\publication_orcid2026.json')
+    # publicationORCIDValidator.load_dataset(r'.\src\data\publication_orcid2026.json')
 
     publicationOrientacoesValidator = PublicationOrientacoesValidator()
-    publicationOrientacoesValidator.load_dataset(r'.\src\data\publication_orientacoes2026.json')
+    # publicationOrientacoesValidator.load_dataset(r'.\src\data\publication_orientacoes2026.json')
 
     #Carrega o arquivo de configuração da  estrategia de carga dos dados
     config = configparser.ConfigParser()
@@ -234,7 +240,7 @@ def dictionary_builder(entity, source_path, output_path):
 if __name__ == "__main__":
     sys.excepthook = handle_uncaught_exception
 
-    process_transformation('PUBLICATION_OASIS')
+    process_transformation('RELACIONAMENTO_GRUPO_PESQUISA')
     # dictionary_builder(entity='Publication',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\PublicationORCID")
     # OrcidCSVBuilder().make_csv_dataset(r'.\src\data\cabecalho_2024_20250110.csv')
 

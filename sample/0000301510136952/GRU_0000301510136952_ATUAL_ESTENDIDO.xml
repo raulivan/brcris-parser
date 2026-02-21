@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<GRUPO-DE-PESQUISA NRO-ID-GRUPO="0000301510136952" ANO-CENSO="ATUAL">
+   <PESQUISADORES>
+      <PESQUISADOR NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                   NOME-COMPLETO="Bruna Lúcia de Mendonça Soares"
+                   STA-ORIENTADOR-DOUTORADO="Não"
+                   STA-ORIENTADOR-MESTRADO="Não"
+                   STA-ORIENTADOR-PIBIC="Não"
+                   STA-ORIENTADOR-IC="Não"
+                   NRO-ID-CNPQ="6636335523514279"
+                   TITULACAO-MAXIMA="Mestrado"
+                   SEXO="F"
+                   BOLSA-NIVEL=""
+                   BOLSA-CATEGORIA=""/>
+      <PESQUISADOR NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                   NOME-COMPLETO="Maria da Conceição Chaves de Lemos"
+                   STA-ORIENTADOR-DOUTORADO="Sim"
+                   STA-ORIENTADOR-MESTRADO="Sim"
+                   STA-ORIENTADOR-PIBIC="Não"
+                   STA-ORIENTADOR-IC="Sim"
+                   NRO-ID-CNPQ="9348643442663534"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEXO="F"
+                   BOLSA-NIVEL=""
+                   BOLSA-CATEGORIA=""/>
+      <PESQUISADOR NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                   NOME-COMPLETO="Ana Paula de Oliveira Marques"
+                   STA-ORIENTADOR-DOUTORADO="Sim"
+                   STA-ORIENTADOR-MESTRADO="Sim"
+                   STA-ORIENTADOR-PIBIC="Não"
+                   STA-ORIENTADOR-IC="Sim"
+                   NRO-ID-CNPQ="3382322676433312"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEXO="F"
+                   BOLSA-NIVEL=""
+                   BOLSA-CATEGORIA="">
+         <DOCENTE-PROGRAMAS>
+            <DOCENTE-PROGRAMA CONCEITO-CAPES="3" AREA-PROGRAMA="Saúde Coletiva"
+                              GRANDE-AREA-PROGRAMA="Ciências da Saúde"
+                              NOME-PROGRAMA="Saúde Coletiva"
+                              CODIGO-PROGRAMA="25001019051P4"/>
+         </DOCENTE-PROGRAMAS>
+      </PESQUISADOR>
+      <PESQUISADOR NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                   NOME-COMPLETO="Maria Goretti Pessoa de Araújo Burgos"
+                   STA-ORIENTADOR-DOUTORADO="Sim"
+                   STA-ORIENTADOR-MESTRADO="Sim"
+                   STA-ORIENTADOR-PIBIC="Não"
+                   STA-ORIENTADOR-IC="Sim"
+                   NRO-ID-CNPQ="3035252142038237"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEXO="F"
+                   BOLSA-NIVEL=""
+                   BOLSA-CATEGORIA=""/>
+      <PESQUISADOR NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                   NOME-COMPLETO="Patrícia Brazil Pereira Coelho"
+                   STA-ORIENTADOR-DOUTORADO="Não"
+                   STA-ORIENTADOR-MESTRADO="Não"
+                   STA-ORIENTADOR-PIBIC="Não"
+                   STA-ORIENTADOR-IC="Não"
+                   NRO-ID-CNPQ="4345313441556486"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEXO="F"
+                   BOLSA-NIVEL=""
+                   BOLSA-CATEGORIA=""/>
+      <PESQUISADOR NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA" NOME-COMPLETO="Regiane Maio"
+                   STA-ORIENTADOR-DOUTORADO="Não"
+                   STA-ORIENTADOR-MESTRADO="Não"
+                   STA-ORIENTADOR-PIBIC="Não"
+                   STA-ORIENTADOR-IC="Não"
+                   NRO-ID-CNPQ="2650781601815295"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEXO="F"
+                   BOLSA-NIVEL=""
+                   BOLSA-CATEGORIA=""/>
+      <PESQUISADOR NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                   NOME-COMPLETO="Florisbela de Arruda Camara e Siqueira Campos"
+                   STA-ORIENTADOR-DOUTORADO="Sim"
+                   STA-ORIENTADOR-MESTRADO="Sim"
+                   STA-ORIENTADOR-PIBIC="Não"
+                   STA-ORIENTADOR-IC="Sim"
+                   NRO-ID-CNPQ="6087175865444946"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEXO="F"
+                   BOLSA-NIVEL=""
+                   BOLSA-CATEGORIA="">
+         <DOCENTE-PROGRAMAS>
+            <DOCENTE-PROGRAMA CONCEITO-CAPES="4" AREA-PROGRAMA="Nutrição"
+                              GRANDE-AREA-PROGRAMA="Ciências da Saúde"
+                              NOME-PROGRAMA="Nutrição"
+                              CODIGO-PROGRAMA="25001019028P2"/>
+         </DOCENTE-PROGRAMAS>
+      </PESQUISADOR>
+      <PESQUISADOR NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                   NOME-COMPLETO="Alcides da Silva Diniz"
+                   STA-ORIENTADOR-DOUTORADO="Sim"
+                   STA-ORIENTADOR-MESTRADO="Sim"
+                   STA-ORIENTADOR-PIBIC="Não"
+                   STA-ORIENTADOR-IC="Sim"
+                   NRO-ID-CNPQ="5766586498639655"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEXO="M"
+                   BOLSA-NIVEL=""
+                   BOLSA-CATEGORIA="">
+         <DOCENTE-PROGRAMAS>
+            <DOCENTE-PROGRAMA CONCEITO-CAPES="4" AREA-PROGRAMA="Pediatria"
+                              GRANDE-AREA-PROGRAMA="Ciências da Saúde"
+                              NOME-PROGRAMA="Saúde da Criança e do Adolescente"
+                              CODIGO-PROGRAMA="25001019026P0"/>
+            <DOCENTE-PROGRAMA CONCEITO-CAPES="4" AREA-PROGRAMA="Nutrição"
+                              GRANDE-AREA-PROGRAMA="Ciências da Saúde"
+                              NOME-PROGRAMA="Nutrição"
+                              CODIGO-PROGRAMA="25001019028P2"/>
+         </DOCENTE-PROGRAMAS>
+      </PESQUISADOR>
+      <PESQUISADOR NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                   NOME-COMPLETO="Ilma Kruze Grande de Arruda"
+                   STA-ORIENTADOR-DOUTORADO="Sim"
+                   STA-ORIENTADOR-MESTRADO="Sim"
+                   STA-ORIENTADOR-PIBIC="Não"
+                   STA-ORIENTADOR-IC="Sim"
+                   NRO-ID-CNPQ="4003459675307504"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEXO="F"
+                   BOLSA-NIVEL="2"
+                   BOLSA-CATEGORIA="Produtividade em Pesquisa">
+         <DOCENTE-PROGRAMAS>
+            <DOCENTE-PROGRAMA CONCEITO-CAPES="4" AREA-PROGRAMA="Nutrição"
+                              GRANDE-AREA-PROGRAMA="Ciências da Saúde"
+                              NOME-PROGRAMA="Nutrição"
+                              CODIGO-PROGRAMA="25001019028P2"/>
+         </DOCENTE-PROGRAMAS>
+      </PESQUISADOR>
+      <PESQUISADOR NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                   NOME-COMPLETO="Poliana Coelho Cabral"
+                   STA-ORIENTADOR-DOUTORADO="Sim"
+                   STA-ORIENTADOR-MESTRADO="Sim"
+                   STA-ORIENTADOR-PIBIC="Não"
+                   STA-ORIENTADOR-IC="Sim"
+                   NRO-ID-CNPQ="9196345444973053"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEXO="F"
+                   BOLSA-NIVEL=""
+                   BOLSA-CATEGORIA="">
+         <DOCENTE-PROGRAMAS>
+            <DOCENTE-PROGRAMA CONCEITO-CAPES="4" AREA-PROGRAMA="Nutrição"
+                              GRANDE-AREA-PROGRAMA="Ciências da Saúde"
+                              NOME-PROGRAMA="Nutrição"
+                              CODIGO-PROGRAMA="25001019028P2"/>
+         </DOCENTE-PROGRAMAS>
+      </PESQUISADOR>
+      <PESQUISADOR NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                   NOME-COMPLETO="Leopoldina Augusta Souza Sequeira-de-Andrade"
+                   STA-ORIENTADOR-DOUTORADO="Sim"
+                   STA-ORIENTADOR-MESTRADO="Sim"
+                   STA-ORIENTADOR-PIBIC="Não"
+                   STA-ORIENTADOR-IC="Sim"
+                   NRO-ID-CNPQ="6298342887158524"
+                   TITULACAO-MAXIMA="Doutorado"
+                   SEXO="F"
+                   BOLSA-NIVEL=""
+                   BOLSA-CATEGORIA=""/>
+   </PESQUISADORES>
+   <ESTUDANTES>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA" NOME-COMPLETO="Keyla Torres Fonseca"
+                 NRO-ID-CNPQ="9074396390854483"
+                 NIVEL-DE-TREINAMENTO="Mestrado"
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                 NOME-COMPLETO="Nathalia Barbosa de Aquino"
+                 NRO-ID-CNPQ="6254011573320816"
+                 NIVEL-DE-TREINAMENTO=""
+                 SEXO="F"
+                 BOLSA-NIVEL="B"
+                 BOLSA-CATEGORIA="Apoio Técnico em Extensão no País "/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                 NOME-COMPLETO="Rafaela Rodrigues de Albuquerque Coelho"
+                 NRO-ID-CNPQ="3808918731227342"
+                 NIVEL-DE-TREINAMENTO="Especialização"
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA" NOME-COMPLETO="Raísa Santos Coelho"
+                 NRO-ID-CNPQ="0128511195272721"
+                 NIVEL-DE-TREINAMENTO="Mestrado"
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA" NOME-COMPLETO="Lívia almeida amaral"
+                 NRO-ID-CNPQ="8365195033933217"
+                 NIVEL-DE-TREINAMENTO="Mestrado"
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                 NOME-COMPLETO="Juliana Lins de Andrade"
+                 NRO-ID-CNPQ="0443883824522689"
+                 NIVEL-DE-TREINAMENTO=""
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                 NOME-COMPLETO="Hannah Isabelle da Cunha Andrade"
+                 NRO-ID-CNPQ="0184375473944245"
+                 NIVEL-DE-TREINAMENTO="Graduação"
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA" NOME-COMPLETO="Clara Farah de Lima"
+                 NRO-ID-CNPQ="0305473259789620"
+                 NIVEL-DE-TREINAMENTO="Graduação"
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                 NOME-COMPLETO="Isabella Valois Pedrosa Porto"
+                 NRO-ID-CNPQ="9958467239821232"
+                 NIVEL-DE-TREINAMENTO=""
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                 NOME-COMPLETO="Priscilla Alves Santos"
+                 NRO-ID-CNPQ="8681681332054043"
+                 NIVEL-DE-TREINAMENTO="Especialização"
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                 NOME-COMPLETO="Lizelda Maria de Araújo Barbosa"
+                 NRO-ID-CNPQ="5981147024847509"
+                 NIVEL-DE-TREINAMENTO=""
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                 NOME-COMPLETO="Janaína Gabriela Coelho de Araújo"
+                 NRO-ID-CNPQ="2787660421907980"
+                 NIVEL-DE-TREINAMENTO="Outros"
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                 NOME-COMPLETO="Fabíola Lima de Albuquerque"
+                 NRO-ID-CNPQ="2585368139148902"
+                 NIVEL-DE-TREINAMENTO="Doutorado"
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                 NOME-COMPLETO="Patrícia Calado Ferreira Pinheiro Gadelha"
+                 NRO-ID-CNPQ="2533679164221346"
+                 NIVEL-DE-TREINAMENTO=""
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                 NOME-COMPLETO="Marília Tokiko Oliveira Tomiya"
+                 NRO-ID-CNPQ="4274595467858444"
+                 NIVEL-DE-TREINAMENTO="Doutorado"
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+      <ESTUDANTE NACIONALIDADE="B" PAIS-DE-NASCIMENTO="BRA"
+                 NOME-COMPLETO="Everlane Alcântara de Lima Marinho"
+                 NRO-ID-CNPQ="1895885001745405"
+                 NIVEL-DE-TREINAMENTO=""
+                 SEXO="F"
+                 BOLSA-NIVEL=""
+                 BOLSA-CATEGORIA=""/>
+   </ESTUDANTES>
+   <EMPRESAS>
+      <EMPRESA CNPJ="10988301000129" NATUREZA-JURIDICA="Associação Privada"
+               NOME-DA-EMPRESA="Instituto de Medicina Integral Professor Fernando Figueira "/>
+   </EMPRESAS>
+</GRUPO-DE-PESQUISA>
