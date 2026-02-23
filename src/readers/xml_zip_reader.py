@@ -1,7 +1,7 @@
 import zipfile
 from typing import Generator
 from .base_reader import BaseReader
-import xml.etree.ElementTree as ET
+
 
 class ZipXMLReader(BaseReader):
     def read(self, file_path: str) -> Generator[str, None, None]:
@@ -24,11 +24,11 @@ class ZipXMLReader(BaseReader):
                         # Abre especificamente o arquivo XML atual de dentro do ZIP
                         with zip_ref.open(file_info) as xml_file:
                             xml_content = xml_file.read().decode('ISO-8859-1')
-                            tree = ET.fromstring(xml_content)
+                            
                             # tree = ET.parse(file_path)
                            
                             
-                            yield tree
+                            yield xml_content
                             
                     except UnicodeDecodeError:
                         print(f"Erro de codificação ao ler {file_info.filename}. Talvez não seja UTF-8.")
