@@ -118,9 +118,9 @@ class RelacionamentoGrupoPesquisaMapper(BaseMapper):
                                 "type": "MemberResearchGroup",
                                 "fromEntityRef": person_ref, # fromEntity="Person"
                                 "toEntityRef":  grupo_ref, # toEntity="ResearchGroup"
-                                "attributes":[
-                                {"name": "role", "value": cargo} if cargo is not None else None
-                            ]
+                            #     "attributes":[
+                            #     {"name": "role", "value": cargo} if cargo is not None else None
+                            # ]
                             } 
                             new_record["relations"].append(new_relation)
                             new_record["entities"].append(new_person)
@@ -137,9 +137,9 @@ class RelacionamentoGrupoPesquisaMapper(BaseMapper):
                                 "type": "MemberResearchGroup",
                                 "fromEntityRef": person_ref, # fromEntity="Person"
                                 "toEntityRef":  grupo_ref, # toEntity="ResearchGroup"
-                                "attributes":[
-                                {"name": "scholarshipHolder", "value": "True"}
-                            ]
+                            #     "attributes":[
+                            #     {"name": "scholarshipHolder", "value": "True"}
+                            # ]
                             } 
                             new_record["relations"].append(new_relation)
                             new_record["entities"].append(new_person)
