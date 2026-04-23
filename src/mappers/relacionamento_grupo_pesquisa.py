@@ -48,8 +48,6 @@ class RelacionamentoGrupoPesquisaMapper(BaseMapper):
             
 
             # Recuperando informações de identificação do grupo de pesquisa
-            ano_cricao = None
-            nome_grupo = None
             id_grupo = root.attrib.get('NRO-ID-GRUPO')
             if (id_grupo is None) or (str(id_grupo).strip() == ""):
                 continue
@@ -94,16 +92,15 @@ class RelacionamentoGrupoPesquisaMapper(BaseMapper):
 
             if tag_lideres is not None:
                 for lider in tag_lideres:
-                    new_person, person_ref, nro_id_cnpq, cargo = self.__transform_person(lider)
+                    new_person, person_ref, nro_id_cnpq, cargo = self.__transform_person(lider,person_validator)
                     if not new_person is None:
-                        if person_validator.is_valid(nro_id_cnpq):
-                            new_relation = {
-                                "type": "LeaderResearchGroup",
-                                "fromEntityRef": person_ref, # fromEntity="Person"
-                                "toEntityRef":  grupo_ref, # toEntity="ResearchGroup"
-                            } 
-                            new_record["relations"].append(new_relation)
-                            new_record["entities"].append(new_person)
+                        new_relation = {
+                            "type": "LeaderResearchGroup",
+                            "fromEntityRef": person_ref, # fromEntity="Person"
+                            "toEntityRef":  grupo_ref, # toEntity="ResearchGroup"
+                        } 
+                        new_record["relations"].append(new_relation)
+                        new_record["entities"].append(new_person)
                     
 
             # 02 - Pesquisadores membros do grupos
@@ -111,38 +108,36 @@ class RelacionamentoGrupoPesquisaMapper(BaseMapper):
 
             if tag_pesquisadores is not None:
                 for pesquisador in tag_pesquisadores:
-                    new_person, person_ref, nro_id_cnpq, cargo = self.__transform_person(pesquisador)
+                    new_person, person_ref, nro_id_cnpq, cargo = self.__transform_person(pesquisador, person_validator)
                     if not new_person is None:
-                        if person_validator.is_valid(nro_id_cnpq):
-                            new_relation = {
-                                "type": "MemberResearchGroup",
-                                "fromEntityRef": person_ref, # fromEntity="Person"
-                                "toEntityRef":  grupo_ref, # toEntity="ResearchGroup"
-                            #     "attributes":[
-                            #     {"name": "role", "value": cargo} if cargo is not None else None
-                            # ]
-                            } 
-                            new_record["relations"].append(new_relation)
-                            new_record["entities"].append(new_person)
+                        new_relation = {
+                            "type": "MemberResearchGroup",
+                            "fromEntityRef": person_ref, # fromEntity="Person"
+                            "toEntityRef":  grupo_ref, # toEntity="ResearchGroup"
+                        #     "attributes":[
+                        #     {"name": "role", "value": cargo} if cargo is not None else None
+                        # ]
+                        } 
+                        new_record["relations"].append(new_relation)
+                        new_record["entities"].append(new_person)
 
             # 03 - Estudantes membros do grupos
             tag_estudantes = root.find('.//ns:ESTUDANTES', namespaces)
 
             if tag_estudantes is not None:
                 for estudante in tag_estudantes:
-                    new_person, person_ref, nro_id_cnpq, cargo = self.__transform_person(estudante)
+                    new_person, person_ref, nro_id_cnpq, cargo = self.__transform_person(estudante, person_validator)
                     if not new_person is None:
-                        if person_validator.is_valid(nro_id_cnpq):
-                            new_relation = {
-                                "type": "MemberResearchGroup",
-                                "fromEntityRef": person_ref, # fromEntity="Person"
-                                "toEntityRef":  grupo_ref, # toEntity="ResearchGroup"
-                            #     "attributes":[
-                            #     {"name": "scholarshipHolder", "value": "True"}
-                            # ]
-                            } 
-                            new_record["relations"].append(new_relation)
-                            new_record["entities"].append(new_person)
+                        new_relation = {
+                            "type": "MemberResearchGroup",
+                            "fromEntityRef": person_ref, # fromEntity="Person"
+                            "toEntityRef":  grupo_ref, # toEntity="ResearchGroup"
+                        #     "attributes":[
+                        #     {"name": "scholarshipHolder", "value": "True"}
+                        # ]
+                        } 
+                        new_record["relations"].append(new_relation)
+                        new_record["entities"].append(new_person)
 
 
             # 03 - Estudantes Orgunits parte dp grupo
@@ -167,7 +162,7 @@ class RelacionamentoGrupoPesquisaMapper(BaseMapper):
             transformed_records.append(new_record)
         return transformed_records
     
-    def __transform_person(self, tag_pessoa:ET[str]) -> tuple[dict, str]:
+    def __transform_person(self, tag_pessoa:ET[str], validator:PersonValidator) -> tuple[dict, str]:
         """
         Converte registros  de autores  
         """
@@ -178,6 +173,11 @@ class RelacionamentoGrupoPesquisaMapper(BaseMapper):
 
         # Extrai o valor do atributo NRO-ID-CNPQ
         nro_id_cnpq = tag_pessoa.attrib.get('NRO-ID-CNPQ')
+
+        is_valida, localizado = validator.is_valid(nro_id_cnpq)
+        if is_valida == False:
+            return None, None, None, None 
+
         nome_da_tag = tag_pessoa.tag.split('}')[-1]
         if 'LIDER' in str(nome_da_tag):
             nome_da_tag = 'Líder'

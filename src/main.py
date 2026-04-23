@@ -9,6 +9,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 
 
+
 from util.error_logger import setup_logger
 
 # Importando os validators
@@ -58,6 +59,7 @@ from dictionary_builders.journal_dictionary import JournalDictionaryBuilder
 from dictionary_builders.orcid_csv_builder import OrcidCSVBuilder
 from dictionary_builders.course_dictionary import CourseDictionaryBuilder
 from dictionary_builders.publication_dictionary import PublicationDictionaryBuilder
+from dictionary_builders.person_off_conjunto import PersonDictionaryBuilder
 
 # Mapeia strings de configuração para as classes reais
 READER_FACTORY = {
@@ -94,6 +96,7 @@ DICTIONARY_BUILDERS = {
     'Journal':JournalDictionaryBuilder,
     'Course': CourseDictionaryBuilder,
     'Publication': PublicationDictionaryBuilder,
+    'Person': PersonDictionaryBuilder,
 }
 
 logger = setup_logger()
@@ -240,7 +243,7 @@ def dictionary_builder(entity, source_path, output_path):
 if __name__ == "__main__":
     sys.excepthook = handle_uncaught_exception
 
-    process_transformation('RELACIONAMENTO_GRUPO_PESQUISA')
-    # dictionary_builder(entity='Publication',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\PublicationORCID")
+    # process_transformation('RELACIONAMENTO_GRUPO_PESQUISA')
+    dictionary_builder(entity='Person',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\RelacionamentoGruposPesquisa")
     # OrcidCSVBuilder().make_csv_dataset(r'.\src\data\cabecalho_2024_20250110.csv')
 

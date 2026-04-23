@@ -22,6 +22,8 @@ O fluxo de transformação é orquestrado pelo `src/main.py` e configurado atrav
     .\venv\Scripts\Activate
 
     pip install -r requirements.txt
+
+    pip freeze > requirements.txt
     ```
 
 2. **Corrigir erro**
