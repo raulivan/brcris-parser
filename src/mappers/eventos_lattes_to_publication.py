@@ -19,7 +19,7 @@ class EventosPlataformaLattes2PublicationMapper(BaseMapper):
     def get_source(self) -> str:
         return "PlataformaLattes"
 
-    def transform(self, records: list[dict], logger:Logger, validators: List[BaseValidator] = []) -> list[dict]:
+    def transform(self, records: list[dict], logger:Logger, validators: List[BaseValidator] = [], relaciona_dono_curriculo: bool = True, relaciona_coautor:bool = True) -> list[dict]:
         """
         Converte registros de entrada para uma estrutura de dicionário
         pronta para ser convertida em XML pelo XMLWriter.
@@ -301,6 +301,14 @@ class EventosPlataformaLattes2PublicationMapper(BaseMapper):
                         continue
                     if id_curriculo_atual == id_lattes_autor:
                         gerou_para_dono_Curriculo = True
+                    
+                    if relaciona_dono_curriculo == False:
+                        if id_curriculo_atual == id_lattes_autor:
+                            continue
+                    
+                    if relaciona_coautor == False:
+                        if id_curriculo_atual != id_lattes_autor:
+                            continue
         
                     new_relation = {
                         "type": "Authorship",
@@ -315,24 +323,24 @@ class EventosPlataformaLattes2PublicationMapper(BaseMapper):
                     new_record["relations"].append(new_relation)
                     new_record["entities"].append(new_author)
 
-            if gerou_para_dono_Curriculo == False:
-                # publication_fields_tupla.append(("author", self.get_field_value(record, "nome_completo")))
-                new_author, author_ref, id_lattes_autor, order_autoria = self.__transform_person(record)
-                if new_author is not None:
-                    new_relation = {
-                        "type": "Authorship",
-                        "fromEntityRef": publication_ref, # fromEntity="Publication"
-                        "toEntityRef":  author_ref, # toEntity="Person"
-                        "attributes":[
-                            # {"name": "order", "value": order_autoria} if order_autoria is not None else None,
-                            # {"name": "affiliation", "value": affiliation} if affiliation is not None else None,
-                            # {"name": "cnpqCodOrgUnit", "value": affiliation} if affiliation is not None else None
-                        ]
-                    } 
-                    new_record["relations"].append(new_relation)
-                    new_record["entities"].append(new_author)
+            if relaciona_dono_curriculo == True:
+                if gerou_para_dono_Curriculo == False:
+                    # publication_fields_tupla.append(("author", self.get_field_value(record, "nome_completo")))
+                    new_author, author_ref, id_lattes_autor, order_autoria = self.__transform_person(record)
+                    if new_author is not None:
+                        new_relation = {
+                            "type": "Authorship",
+                            "fromEntityRef": publication_ref, # fromEntity="Publication"
+                            "toEntityRef":  author_ref, # toEntity="Person"
+                            "attributes":[
+                                # {"name": "order", "value": order_autoria} if order_autoria is not None else None,
+                                # {"name": "affiliation", "value": affiliation} if affiliation is not None else None,
+                                # {"name": "cnpqCodOrgUnit", "value": affiliation} if affiliation is not None else None
+                            ]
+                        } 
+                        new_record["relations"].append(new_relation)
+                        new_record["entities"].append(new_author)
 
-            # Relacionamento com o Evento, deve ser feito aqui se for ter
 
 
             transformed_records.append(new_record)

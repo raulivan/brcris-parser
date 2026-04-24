@@ -22,7 +22,7 @@ class FormacaoPlataformaLattes2PublicationMapper(BaseMapper):
     def get_source(self) -> str:
         return "PlataformaLattes"
 
-    def transform(self, records: list[dict], logger:Logger, validators: List[BaseValidator] = []) -> list[dict]:
+    def transform(self, records: list[dict], logger:Logger, validators: List[BaseValidator] = [], relaciona_dono_curriculo: bool = True, relaciona_coautor:bool = True) -> list[dict]:
         """
         Converte registros de entrada para uma estrutura de dicionário
         pronta para ser convertida em XML pelo XMLWriter.
@@ -280,56 +280,61 @@ class FormacaoPlataformaLattes2PublicationMapper(BaseMapper):
                 }
 
                 # Relacionamento com o dono do curriculo
-                new_author, author_ref, id_lattes_autor, order_autoria = self.__transform_person(record, person_validator)
-                if not new_author is None:
-                    if person_validator.is_valid(id_lattes_autor):
-                        new_relation = {
-                            "type": "Authorship",
-                            "fromEntityRef": publication_ref, # fromEntity="Publication"
-                            "toEntityRef":  author_ref, # toEntity="Person"
-                            "attributes":[
-                                # {"name": "order", "value": order_autoria} if order_autoria is not None else None,
-                                # {"name": "affiliation", "value": affiliation} if affiliation is not None else None,
-                                # {"name": "cnpqCodOrgUnit", "value": affiliation} if affiliation is not None else None
-                            ]
-                        } 
-                        new_record["relations"].append(new_relation)
-                        new_record["entities"].append(new_author)
+                id_curriculo_atual = self.get_field_value(record, "id")
+                if relaciona_dono_curriculo == True:
+                    new_author, author_ref, id_lattes_autor, order_autoria = self.__transform_person(record, person_validator)
+                    if not new_author is None:
+                        
+                        if person_validator.is_valid(id_lattes_autor):
+                            new_relation = {
+                                "type": "Authorship",
+                                "fromEntityRef": publication_ref, # fromEntity="Publication"
+                                "toEntityRef":  author_ref, # toEntity="Person"
+                                "attributes":[
+                                    # {"name": "order", "value": order_autoria} if order_autoria is not None else None,
+                                    # {"name": "affiliation", "value": affiliation} if affiliation is not None else None,
+                                    # {"name": "cnpqCodOrgUnit", "value": affiliation} if affiliation is not None else None
+                                ]
+                            } 
+                            new_record["relations"].append(new_relation)
+                            new_record["entities"].append(new_author)
 
                 
                 # Relacionamento orientador
-                if record_node_orientador is not None:
-                    new_adivisoring, adivisoring_ref, id_lattes_autor, order_autoria = self.__transform_person(record_node_orientador, person_validator)
-                    if new_adivisoring is not None:
-                        new_relation = {
-                            "type": "Adivisoring",
-                            "fromEntityRef": publication_ref, # fromEntity="Publication"
-                            "toEntityRef":  adivisoring_ref, # toEntity="Person"
-                            "attributes":[
-                                # {"name": "order", "value": order_autoria} if order_autoria is not None else None,
-                                # {"name": "affiliation", "value": affiliation} if affiliation is not None else None,
-                                # {"name": "cnpqCodOrgUnit", "value": affiliation} if affiliation is not None else None
-                            ]
-                        } 
-                        new_record["relations"].append(new_relation)
-                        new_record["entities"].append(new_adivisoring)
+                if relaciona_coautor == True:
+                    if record_node_orientador is not None:
+                        new_adivisoring, adivisoring_ref, id_lattes_autor, order_autoria = self.__transform_person(record_node_orientador, person_validator)
+                        if new_adivisoring is not None:
+                            new_relation = {
+                                "type": "Adivisoring",
+                                "fromEntityRef": publication_ref, # fromEntity="Publication"
+                                "toEntityRef":  adivisoring_ref, # toEntity="Person"
+                                "attributes":[
+                                    # {"name": "order", "value": order_autoria} if order_autoria is not None else None,
+                                    # {"name": "affiliation", "value": affiliation} if affiliation is not None else None,
+                                    # {"name": "cnpqCodOrgUnit", "value": affiliation} if affiliation is not None else None
+                                ]
+                            } 
+                            new_record["relations"].append(new_relation)
+                            new_record["entities"].append(new_adivisoring)
                     
                 # Relacionamento co-orientador
-                if  record_node_co_orientador is not None:
-                    new_coadivisoring, coadivisoring_ref, id_lattes_autor, order_autoria = self.__transform_person(record_node_co_orientador, person_validator)
-                    if new_coadivisoring is not None:
-                        new_relation = {
-                            "type": "CoAdivisoring",
-                            "fromEntityRef": publication_ref, # fromEntity="Publication"
-                            "toEntityRef":  coadivisoring_ref, # toEntity="Person"
-                            "attributes":[
-                                # {"name": "order", "value": order_autoria} if order_autoria is not None else None,
-                                # {"name": "affiliation", "value": affiliation} if affiliation is not None else None,
-                                # {"name": "cnpqCodOrgUnit", "value": affiliation} if affiliation is not None else None
-                            ]
-                        } 
-                        new_record["relations"].append(new_relation)
-                        new_record["entities"].append(new_coadivisoring)
+                if relaciona_coautor == True:
+                    if  record_node_co_orientador is not None:
+                        new_coadivisoring, coadivisoring_ref, id_lattes_autor, order_autoria = self.__transform_person(record_node_co_orientador, person_validator)
+                        if new_coadivisoring is not None:
+                            new_relation = {
+                                "type": "CoAdivisoring",
+                                "fromEntityRef": publication_ref, # fromEntity="Publication"
+                                "toEntityRef":  coadivisoring_ref, # toEntity="Person"
+                                "attributes":[
+                                    # {"name": "order", "value": order_autoria} if order_autoria is not None else None,
+                                    # {"name": "affiliation", "value": affiliation} if affiliation is not None else None,
+                                    # {"name": "cnpqCodOrgUnit", "value": affiliation} if affiliation is not None else None
+                                ]
+                            } 
+                            new_record["relations"].append(new_relation)
+                            new_record["entities"].append(new_coadivisoring)
     
 
                 # Relacionamento com a instituição

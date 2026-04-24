@@ -251,7 +251,7 @@ def dictionary_builder(entity, source_path, output_path):
 if __name__ == "__main__":
     sys.excepthook = handle_uncaught_exception
 
-    process_transformation('ARTIGOS_PLATAFORMA_LATTES')
+    process_transformation('FORMACAO_PLATAFORMA_LATTES')
     # dictionary_builder(entity='Person',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\RelacionamentoGruposPesquisa")
     # OrcidCSVBuilder().make_csv_dataset(r'.\src\data\cabecalho_2024_20250110.csv')
 
