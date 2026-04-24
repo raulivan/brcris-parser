@@ -16,7 +16,7 @@ class PatentBrcris2PatentMapper(BaseMapper):
     def get_source(self) -> str:
         return "Lattes"
 
-    def transform(self, records: ET[Element[str]], logger:Logger, validators: List[BaseValidator] = []) -> list[dict]:
+    def transform(self, records: ET, logger:Logger, validators: List[BaseValidator] = []) -> list[dict]:
         """
         Converte registros de entrada para uma estrutura de dicionário
         pronta para ser convertida em XML pelo XMLWriter.

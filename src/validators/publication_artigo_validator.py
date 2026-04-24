@@ -32,7 +32,7 @@ class PublicationArtigoValidator(BaseValidator):
                     mapping[cleaned_code] = name
             
             self._dataset = mapping
-            print(f"Journal carregadas com sucesso. Total de {len(self._dataset)} entradas.")
+            print(f"Artigos carregadas com sucesso. Total de {len(self._dataset)} entradas.")
 
         except json.JSONDecodeError:
             raise ValueError("Erro ao decodificar o arquivo JSON de Journal. Verifique o formato.")

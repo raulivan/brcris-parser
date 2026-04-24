@@ -162,7 +162,7 @@ class RelacionamentoGrupoPesquisaMapper(BaseMapper):
             transformed_records.append(new_record)
         return transformed_records
     
-    def __transform_person(self, tag_pessoa:ET[str], validator:PersonValidator) -> tuple[dict, str]:
+    def __transform_person(self, tag_pessoa:ET, validator:PersonValidator) -> tuple[dict, str]:
         """
         Converte registros  de autores  
         """
@@ -213,7 +213,7 @@ class RelacionamentoGrupoPesquisaMapper(BaseMapper):
         
         return new_entity_person, author_ref, nro_id_cnpq, nome_da_tag
     
-    def __transform_orgunit(self, orgunit_dict:ET[str], validator:OrgUnitValidator) -> tuple[dict, str]:
+    def __transform_orgunit(self, orgunit_dict:ET, validator:OrgUnitValidator) -> tuple[dict, str]:
         
         
         orgunit_SemanticIdentifiers_tupla = []

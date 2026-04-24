@@ -3,8 +3,6 @@ import os
 import csv
 from typing import Dict, List, Tuple
 
-from util.text_transformers import get_code_for_url
-
 from .base_validator import BaseValidator, DatasetType
 
 class CourseValidator(BaseValidator):

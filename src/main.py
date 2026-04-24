@@ -124,43 +124,43 @@ def process_transformation(config_section: str):
     orgUnitValidator.load_dataset(r'.\src\data\orgunit2026.json')
 
     journalValidator = JournalValidator()
-    # journalValidator.load_dataset(r'.\src\data\journals2026.json')
+    journalValidator.load_dataset(r'.\src\data\journals2026.json')
 
     languageValidator = LanguageValidator()
-    # languageValidator.load_dataset(r'.\src\data\language2026.json')
+    languageValidator.load_dataset(r'.\src\data\language2026.json')
 
     personValidator = PersonValidator()
     personValidator.load_dataset(r'.\src\data\ids_lattes2026.csv')
 
     orcidValidator = OrcidValidator()
-    # orcidValidator.load_dataset(r'.\src\data\orcid_autoridade2026.csv')
+    orcidValidator.load_dataset(r'.\src\data\orcid_autoridade2026.csv')
 
     courseValidator= CourseValidator()
-    # courseValidator.load_dataset(r'.\src\data\couse_autoridade2026.csv')
+    courseValidator.load_dataset(r'.\src\data\couse_autoridade2026.csv')
 
     publicationArtigoValidator = PublicationArtigoValidator()
-    # publicationArtigoValidator.load_dataset(r'.\src\data\publication_artigo2026.json')
+    publicationArtigoValidator.load_dataset(r'.\src\data\publication_artigo2026.json')
 
     publicationCapituloLivroValidator = PublicationCapituloLivroValidator()
-    # publicationCapituloLivroValidator.load_dataset(r'.\src\data\publication_capitulo_livro2026.json')
+    publicationCapituloLivroValidator.load_dataset(r'.\src\data\publication_capitulo_livro2026.json')
 
     publicationDOIValidator = PublicationDOIValidator()
-    # publicationDOIValidator.load_dataset(r'.\src\data\publication_doi2026.json')
+    publicationDOIValidator.load_dataset(r'.\src\data\publication_doi2026.json')
 
     publicationEventosValidator = PublicationEventosValidator()
-    # publicationEventosValidator.load_dataset(r'.\src\data\publication_eventos2026.json')
+    publicationEventosValidator.load_dataset(r'.\src\data\publication_eventos2026.json')
 
     publicationFormacaoValidator = PublicationFormacaoValidator()
-    # publicationFormacaoValidator.load_dataset(r'.\src\data\publication_formacao2026.json')
+    publicationFormacaoValidator.load_dataset(r'.\src\data\publication_formacao2026.json')
 
     publicationLivrosValidator = PublicationLivrosValidator()
-    # publicationLivrosValidator.load_dataset(r'.\src\data\publication_livros2026.json')
+    publicationLivrosValidator.load_dataset(r'.\src\data\publication_livros2026.json')
 
     publicationORCIDValidator = PublicationORCIDValidator()
-    # publicationORCIDValidator.load_dataset(r'.\src\data\publication_orcid2026.json')
+    publicationORCIDValidator.load_dataset(r'.\src\data\publication_orcid2026.json')
 
     publicationOrientacoesValidator = PublicationOrientacoesValidator()
-    # publicationOrientacoesValidator.load_dataset(r'.\src\data\publication_orientacoes2026.json')
+    publicationOrientacoesValidator.load_dataset(r'.\src\data\publication_orientacoes2026.json')
 
     #Carrega o arquivo de configuração da  estrategia de carga dos dados
     config = configparser.ConfigParser()
@@ -174,6 +174,10 @@ def process_transformation(config_section: str):
     # Carrega os diretórios de entrada e saída
     input_dir = config.get(config_section, 'input_files')
     output_dir = config.get(config_section, 'output_files')
+
+    # Carrega os parametros de relacionamentos
+    relaciona_dono_curriculo = config.get(config_section, 'relaciona_dono_curriculo') == 'S'
+    relaciona_coautor = config.get(config_section, 'relaciona_coautor') == 'S'
 
     # Cria o diretório de saída caso o memso nãoexista pra evitar erros
     os.makedirs(output_dir, exist_ok=True)
@@ -206,7 +210,9 @@ def process_transformation(config_section: str):
 
             print(f"  Processando: {input_path}")
             source_data = reader.read(input_path)
-            transformed_data = mapper.transform(records=source_data,logger=logger, validators=[orgUnitValidator, 
+            transformed_data = mapper.transform(records=source_data,
+                                                logger=logger, 
+                                                validators=[orgUnitValidator, 
                                                                                                journalValidator, 
                                                                                                languageValidator, 
                                                                                                personValidator, 
@@ -220,7 +226,9 @@ def process_transformation(config_section: str):
                                                                                                publicationLivrosValidator,
                                                                                                publicationORCIDValidator,
                                                                                                publicationOrientacoesValidator
-                                                                                               ])
+                                                                                               ],
+                                            relaciona_dono_curriculo= relaciona_dono_curriculo, 
+                                            relaciona_coautor= relaciona_coautor)
             writer.write(mapper.get_source(), transformed_data, output_dir)
 
             # --- SUCESSO: Registrar no checkpoint ---
@@ -243,7 +251,7 @@ def dictionary_builder(entity, source_path, output_path):
 if __name__ == "__main__":
     sys.excepthook = handle_uncaught_exception
 
-    # process_transformation('RELACIONAMENTO_GRUPO_PESQUISA')
-    dictionary_builder(entity='Person',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\RelacionamentoGruposPesquisa")
+    process_transformation('ARTIGOS_PLATAFORMA_LATTES')
+    # dictionary_builder(entity='Person',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\RelacionamentoGruposPesquisa")
     # OrcidCSVBuilder().make_csv_dataset(r'.\src\data\cabecalho_2024_20250110.csv')
 

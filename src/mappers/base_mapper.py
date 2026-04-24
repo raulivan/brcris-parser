@@ -7,7 +7,7 @@ from util.unique_identifier_generator import uuid_based_identifier_generator
 
 class BaseMapper(ABC):
     @abstractmethod
-    def transform(self, records: list[dict], logger:Logger, validators: List[BaseValidator] = []) -> list[dict]:
+    def transform(self, records: list[dict], logger:Logger, validators: List[BaseValidator] = [], relaciona_dono_curriculo: bool = True, relaciona_coautor:bool = True) -> list[dict]:
         """Transforma uma lista de registros de origem para o formato de destino."""
         pass
     
