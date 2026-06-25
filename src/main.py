@@ -6,10 +6,6 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 
-
-
-
-
 from util.error_logger import setup_logger
 
 # Importando os validators
@@ -35,6 +31,7 @@ from readers.jsonl_reader import JSONLReader
 from readers.jsonl_gz_reader import JSONLGZReader
 from readers.xml_reader import XMLReader
 from readers.xml_zip_reader import ZipXMLReader
+from readers.map_json_file_path_reader import MapJsonFilePathReader
 
 # Importando os mappersa
 from mappers.sucupira_to_program_and_course import Sucupira2ProgramAndCourseMapper
@@ -50,6 +47,7 @@ from mappers.orientacao_lattes_to_doutorado_publication import OrientacaoPlatafo
 from mappers.formacao_lattes_to_publication import FormacaoPlataformaLattes2PublicationMapper
 from mappers.publication_oases_to_publication import PublicationOASIS2PublicationMapper
 from mappers.relacionamento_grupo_pesquisa import RelacionamentoGrupoPesquisaMapper
+from mappers.grupo_pesquisa_to_research_group import GrupoPesquisaResearchGroupMapper
 
 # Importando o  writer
 from writers.xml_writer import XMLWriter 
@@ -69,6 +67,7 @@ READER_FACTORY = {
     'jsonl.gz': JSONLGZReader,
     'xml': XMLReader,
     'xml.zip': ZipXMLReader,
+    'map.json.file.path': MapJsonFilePathReader,
     
 }
 
@@ -90,6 +89,7 @@ MAPPER_FACTORY = {
     'formacao_lattes_to_publication_mapper': FormacaoPlataformaLattes2PublicationMapper,
     'publication_oasis_to_publication_mapper': PublicationOASIS2PublicationMapper,
     'relacionamento_grupo_pesquisa_mapper': RelacionamentoGrupoPesquisaMapper,
+    'grupo_pesquisa_research_group_mapper': GrupoPesquisaResearchGroupMapper,
 }
 
 DICTIONARY_BUILDERS = {
@@ -121,46 +121,46 @@ def process_transformation(config_section: str):
     
     #Carrega conjuntos de dado externos de validação
     orgUnitValidator = OrgUnitValidator()
-    orgUnitValidator.load_dataset(r'.\src\data\orgunit2026.json')
+    orgUnitValidator.load_dataset(r'.\src\autoridades\orgunit2026.json')
 
-    journalValidator = JournalValidator()
-    journalValidator.load_dataset(r'.\src\data\journals2026.json')
+    # journalValidator = JournalValidator()
+    # journalValidator.load_dataset(r'.\src\autoridades\journals2026.json')
 
-    languageValidator = LanguageValidator()
-    languageValidator.load_dataset(r'.\src\data\language2026.json')
+    # languageValidator = LanguageValidator()
+    # languageValidator.load_dataset(r'.\src\autoridades\language2026.json')
 
-    personValidator = PersonValidator()
-    personValidator.load_dataset(r'.\src\data\ids_lattes2026.csv')
+    # personValidator = PersonValidator()
+    # personValidator.load_dataset(r'.\src\autoridades\ids_lattes2026.csv')
 
-    orcidValidator = OrcidValidator()
-    orcidValidator.load_dataset(r'.\src\data\orcid_autoridade2026.csv')
+    # orcidValidator = OrcidValidator()
+    # orcidValidator.load_dataset(r'.\src\autoridades\orcid_autoridade2026.csv')
 
-    courseValidator= CourseValidator()
-    courseValidator.load_dataset(r'.\src\data\couse_autoridade2026.csv')
+    # courseValidator= CourseValidator()
+    # courseValidator.load_dataset(r'.\src\autoridades\couse_autoridade2026.csv')
 
-    publicationArtigoValidator = PublicationArtigoValidator()
-    publicationArtigoValidator.load_dataset(r'.\src\data\publication_artigo2026.json')
+    # publicationArtigoValidator = PublicationArtigoValidator()
+    # publicationArtigoValidator.load_dataset(r'.\src\autoridades\publication_artigo2026.json')
 
-    publicationCapituloLivroValidator = PublicationCapituloLivroValidator()
-    publicationCapituloLivroValidator.load_dataset(r'.\src\data\publication_capitulo_livro2026.json')
+    # publicationCapituloLivroValidator = PublicationCapituloLivroValidator()
+    # publicationCapituloLivroValidator.load_dataset(r'.\src\autoridades\publication_capitulo_livro2026.json')
 
-    publicationDOIValidator = PublicationDOIValidator()
-    publicationDOIValidator.load_dataset(r'.\src\data\publication_doi2026.json')
+    # publicationDOIValidator = PublicationDOIValidator()
+    # publicationDOIValidator.load_dataset(r'.\src\autoridades\publication_doi2026.json')
 
-    publicationEventosValidator = PublicationEventosValidator()
-    publicationEventosValidator.load_dataset(r'.\src\data\publication_eventos2026.json')
+    # publicationEventosValidator = PublicationEventosValidator()
+    # publicationEventosValidator.load_dataset(r'.\src\autoridades\publication_eventos2026.json')
 
-    publicationFormacaoValidator = PublicationFormacaoValidator()
-    publicationFormacaoValidator.load_dataset(r'.\src\data\publication_formacao2026.json')
+    # publicationFormacaoValidator = PublicationFormacaoValidator()
+    # publicationFormacaoValidator.load_dataset(r'.\src\autoridades\publication_formacao2026.json')
 
-    publicationLivrosValidator = PublicationLivrosValidator()
-    publicationLivrosValidator.load_dataset(r'.\src\data\publication_livros2026.json')
+    # publicationLivrosValidator = PublicationLivrosValidator()
+    # publicationLivrosValidator.load_dataset(r'.\src\autoridades\publication_livros2026.json')
 
-    publicationORCIDValidator = PublicationORCIDValidator()
-    publicationORCIDValidator.load_dataset(r'.\src\data\publication_orcid2026.json')
+    # publicationORCIDValidator = PublicationORCIDValidator()
+    # publicationORCIDValidator.load_dataset(r'.\src\autoridades\publication_orcid2026.json')
 
-    publicationOrientacoesValidator = PublicationOrientacoesValidator()
-    publicationOrientacoesValidator.load_dataset(r'.\src\data\publication_orientacoes2026.json')
+    # publicationOrientacoesValidator = PublicationOrientacoesValidator()
+    # publicationOrientacoesValidator.load_dataset(r'.\src\autoridades\publication_orientacoes2026.json')
 
     #Carrega o arquivo de configuração da  estrategia de carga dos dados
     config = configparser.ConfigParser()
@@ -207,26 +207,30 @@ def process_transformation(config_section: str):
             if filename in processed_files:
                 print(f"  {input_path} já processado antriormenter. Pulando...")
                 continue
+            
+            with open('processamento.log', 'a') as f:
+                f.write(f"Entrada: {filename}\n")
+
 
             print(f"  Processando: {input_path}")
             source_data = reader.read(input_path)
             transformed_data = mapper.transform(records=source_data,
                                                 logger=logger, 
                                                 validators=[orgUnitValidator, 
-                                                                                               journalValidator, 
-                                                                                               languageValidator, 
-                                                                                               personValidator, 
-                                                                                               orcidValidator, 
-                                                                                               courseValidator,
-                                                                                               publicationArtigoValidator,
-                                                                                               publicationCapituloLivroValidator,
-                                                                                               publicationDOIValidator,
-                                                                                               publicationEventosValidator,
-                                                                                               publicationFormacaoValidator,
-                                                                                               publicationLivrosValidator,
-                                                                                               publicationORCIDValidator,
-                                                                                               publicationOrientacoesValidator
-                                                                                               ],
+                                                        #    journalValidator, 
+                                                        #    languageValidator, 
+                                                            # personValidator, 
+                                                            # orcidValidator, 
+                                                        #    courseValidator,
+                                                        #    publicationArtigoValidator,
+                                                        #    publicationCapituloLivroValidator,
+                                                        #    publicationDOIValidator,
+                                                        #    publicationEventosValidator,
+                                                        #    publicationFormacaoValidator,
+                                                        #    publicationLivrosValidator,
+                                                        #    publicationORCIDValidator,
+                                                        #    publicationOrientacoesValidator
+                                                            ],
                                             relaciona_dono_curriculo= relaciona_dono_curriculo, 
                                             relaciona_coautor= relaciona_coautor)
             writer.write(mapper.get_source(), transformed_data, output_dir)
@@ -251,7 +255,7 @@ def dictionary_builder(entity, source_path, output_path):
 if __name__ == "__main__":
     sys.excepthook = handle_uncaught_exception
 
-    process_transformation('FORMACAO_PLATAFORMA_LATTES')
+    process_transformation('GRUPO_PESQUISA')
     # dictionary_builder(entity='Person',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\RelacionamentoGruposPesquisa")
     # OrcidCSVBuilder().make_csv_dataset(r'.\src\data\cabecalho_2024_20250110.csv')
 

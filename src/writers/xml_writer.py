@@ -96,6 +96,9 @@ class XMLWriter(BaseWriter):
                 
                 with open(output_path, "wb") as f:
                     f.write(pretty_xml)
+
+                with open('processamento.log', 'a') as f:
+                    f.write(f"-- Saida: {output_path}\n")
             except Exception as e:
                 print(f"Erro ao escrever o arquivo XML: {e}")
                 continue
