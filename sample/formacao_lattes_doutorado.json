@@ -1,0 +1,61 @@
+[
+    {
+        "id": "0000036350356979",
+        "nome_completo": "Maura da Silva Costa Furtado",
+        "registro": "FORMACAO",
+        "bloco": "FORMACAO-ACADEMICA-TITULACAO",
+        "tag": "DOUTORADO",
+        "nivel": "4",
+        "ano_de_conclusao": 2023,
+        "ano_de_inicio": 2019,
+        "ano_de_obtencao_do_titulo": 2023,
+        "codigo_agencia_financiadora": "",
+        "codigo_instituicao_co_tutela": "",
+        "codigo_instituicao_dout": "",
+        "codigo_instituicao_outra_co_tutela": "",
+        "codigo_instituicao_outra_dout": "",
+        "codigo_instituicao_outra_sanduiche": "",
+        "codigo_instituicao_sanduiche": "",
+        "codigo_orgao": "",
+        "flag_bolsa": false,
+        "nome_agencia": "",
+        "nome_curso_ingles": "Ecology",
+        "nome_do_orientador_co_tutela": "",
+        "nome_do_orientador_sanduiche": "",
+        "nome_orgao": "",
+        "nome_orientador_dout": "",
+        "sequencia_formacao": "5",
+        "status_do_curso": "concluido",
+        "tipo_doutorado": "n",
+        "titulo_da_dissertacao_tese": "VARIAÇÃO ESPAÇO-TEMPORAL DAS PESCARIAS DE PEQUENA ESCALA DO BAIXO AMAZONAS, BRASIL",
+        "titulo_da_dissertacao_tese_ingles": "",
+        "status_oasisbr": "",
+        "id_oasis": "",
+        "palavras_chave": [
+            "Captura pesqueira",
+            "Esforço de pesca",
+            "CPUE",
+            "Variabilidade climática",
+            "Espaço-tempo"
+        ],
+        "curso": {
+            "nome": "Ecologia Aquática e Pesca",
+            "codigo": "60036940",
+            "codigo_capes": "15001016052P2",
+            "codigo_area": "20500009"
+        },
+        "instituicao": {
+            "nome": "universidade federal do pará",
+            "codigo": "004400000000",
+            "orgunit_id": "BRCRIS-00003134",
+            "orgunit_nome": "Universidade Federal do Pará"
+        },
+        "orientador": {
+            "nome": "Victoria Judith Isaac",
+            "id": "3696530797888724"
+        },
+        "co_orientador": {
+            "nome": "Joaquim Carlos Barbosa Queiroz"
+        }
+    }
+]

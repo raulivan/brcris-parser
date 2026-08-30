@@ -3,6 +3,7 @@ from logging import Logger
 from typing import List
 
 # Importando os validators
+from validators.orgunit_validator import OrgUnitValidator
 from validators.base_validator import BaseValidator
 from validators.person_validator import PersonValidator
 from validators.course_validator import CourseValidator
@@ -33,7 +34,10 @@ class FormacaoPlataformaLattes2PublicationMapper(BaseMapper):
         person_validator = self.retrieve_validator_by_type(validators,PersonValidator)
         if person_validator is None:
             raise "PersonValidator not found in validators list"
-            
+
+        orgunit_validator = self.retrieve_validator_by_type(validators,OrgUnitValidator)
+        if orgunit_validator is None:
+            raise "orgunit_validator not found in validators list"
         
         # Relacionamento com cursos
         transformed_records = []
@@ -86,8 +90,8 @@ class FormacaoPlataformaLattes2PublicationMapper(BaseMapper):
                 if part2 is None:
                     continue
 
-                brcris_id_v1 = brcrisid_generator(part1,str(part2),part3)
-                brcris_id_v2 = brcrisid_generator(part1,str(part2),part3,useReplaceHtmlChars=True)
+                brcris_id_v1 = brcrisid_generator(part1,str(part2),PUBLICATION_TYPE)
+                brcris_id_v2 = brcrisid_generator(part1,str(part2),PUBLICATION_TYPE,useReplaceHtmlChars=True)
 
                 publication_SemanticIdentifiers_tupla.append(("brcris", f"brcris::{brcris_id_v1}"))
                 publication_fields_identifier_tupla.append(("identifier.brcris", brcris_id_v1))
@@ -424,7 +428,7 @@ class FormacaoPlataformaLattes2PublicationMapper(BaseMapper):
     
 
 
-    def __transform_orgunit(self, orgunit_dict: dict) -> tuple[dict, str]:
+    def __transform_orgunit(self, orgunit_dict: dict, validator: OrgUnitValidator = None) -> tuple[dict, str]:
         """
         Converte registros  de cursos  
         """

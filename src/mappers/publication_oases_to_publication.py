@@ -30,7 +30,7 @@ class PublicationOASIS2PublicationMapper(BaseMapper):
     def get_source(self) -> str:
         return "OASIS"
 
-    def transform(self, records: list[dict], logger:Logger, validators: List[BaseValidator] = []) -> list[dict]:
+    def transform(self, records: list[dict], logger:Logger, validators: List[BaseValidator] = [], relaciona_dono_curriculo: bool = True, relaciona_coautor:bool = True) -> list[dict]:
         """
         Converte registros de entrada para uma estrutura de dicionário
         pronta para ser convertida em XML pelo XMLWriter.

@@ -1,0 +1,94 @@
+[
+    {
+        "id": "0000014832079134",
+        "nome_completo": "Vitor Silveira Pereira",
+        "registro": "FORMACAO",
+        "bloco": "FORMACAO-ACADEMICA-TITULACAO",
+        "tag": "MESTRADO-PROFISSIONALIZANTE",
+        "nivel": "9",
+        "ano_de_conclusao": 2024,
+        "ano_de_inicio": 2022,
+        "ano_de_obtencao_do_titulo": 2024,
+        "codigo_agencia_financiadora": "",
+        "codigo_orgao": "",
+        "flag_bolsa": false,
+        "nome_agencia": "",
+        "nome_curso_ingles": "",
+        "nome_do_co_orientador": "",
+        "nome_orgao": "",
+        "numero_id_orientador": "",
+        "sequencia_formacao": "45",
+        "status_do_curso": "concluido",
+        "titulo_da_dissertacao_tese": "O crowdsourcing aplicado à paleografia digital: estudo de caso para a série Correspondência Pessoal do fundo José de Alencar do Arquivo-Museu de Literatura Brasileira",
+        "titulo_da_dissertacao_tese_ingles": "",
+        "palavras_chave": [
+            "Paleografia digital",
+            "crowdsourcing",
+            "Manuscritos"
+        ],
+        "curso": {
+            "nome": "Memória e Acervos",
+            "codigo": "60801883",
+            "codigo_capes": "33301000001F2",
+            "codigo_area": "60700009"
+        },
+        "instituicao": {
+            "nome": "Fundação Casa de Rui Barbosa",
+            "codigo": "092700000005",
+            "orgunit_id": "BRCRIS-00003282",
+            "orgunit_nome": "Fundacao Casa de Rui Barbosa"
+        },
+        "orientador": {
+            "nome": "Ana Ligia Silva Medeiros"
+        }
+    },
+    {
+        "id": "0000028008893431",
+        "nome_completo": "Verônica Palmiro da Silva e Lima",
+        "registro": "FORMACAO",
+        "bloco": "FORMACAO-ACADEMICA-TITULACAO",
+        "tag": "MESTRADO",
+        "nivel": "3",
+        "ano_de_conclusao": 2021,
+        "ano_de_inicio": 2019,
+        "ano_de_obtencao_do_titulo": 2021,
+        "codigo_agencia_financiadora": "",
+        "codigo_instituicao_dout": "",
+        "codigo_instituicao_outra_dout": "",
+        "codigo_orgao": "",
+        "flag_bolsa": false,
+        "nome_agencia": "",
+        "nome_curso_ingles": "",
+        "nome_do_co_orientador": "",
+        "nome_orgao": "",
+        "nome_orientador_dout": "",
+        "sequencia_formacao": "20",
+        "status_do_curso": "concluido",
+        "tipo_mestrado": "N",
+        "titulo_da_dissertacao_tese": "Efeitos do tabagismo na atividade de doença e resposta à terapia imunobiológica na espondilite anquilosante. Dados do BiobadaBrasil.",
+        "titulo_da_dissertacao_tese_ingles": "",
+        "status_oasisbr": "",
+        "id_oasis": "",
+        "palavras_chave": [
+            "ESPONDILITE ANQUILOSANTE",
+            "tabagismo",
+            "BiobadaBrasil"
+        ],
+        "curso": {
+            "nome": "Ambiente e Saúde",
+            "codigo": "60784687",
+            "codigo_capes": "50008013006P4",
+            "codigo_area": "40000001"
+        },
+        "instituicao": {
+            "nome": "Universidade de Cuiabá",
+            "codigo": "885300000006",
+            "orgunit_id": "BRCRIS-00003196",
+            "orgunit_nome": "Universidade de Cuiabá"
+        },
+        "orientador": {
+            "nome": "Vander Fernandes",
+            "id": "4874541682028654"
+        }
+    }
+]

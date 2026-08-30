@@ -1,17 +1,12 @@
 import json
 from logging import Logger
-import os
 from typing import List
-from validators.person_validator import PersonValidator
-from validators.course_validator import CourseValidator
 from validators.orgunit_validator import OrgUnitValidator
-from util.text_validator import validar_titulo, validar_url_regex
-from util.publication_type_mapping import BrCrisTypes
+from util.text_validator import validar_titulo
 from util.helper_nbr_rene import nbr_title
-from validators.language_validator import LanguageValidator
 from validators.base_validator import BaseValidator
 from util.unique_identifier_generator import brcrisid_generator
-from util.text_transformers import trata_string, extract_doi_from_url
+from util.text_transformers import trata_string
 from .base_mapper import BaseMapper
 
 
@@ -70,6 +65,10 @@ class GrupoPesquisaResearchGroupMapper(BaseMapper):
 
             print(f"Processando registro: {grupo_ref}")
 
+            # Ignorar grupos excluídos
+            situacao_grupo = self.__get_key_value_in_section(grupo_dict["secoes"],"identificação", "Situação do grupo")
+            if situacao_grupo == 'Excluído':
+                continue
 
             # <field name="identifier.brcris" description="baseado no nome do grupo + ano de criação"/>
             part1 = self.get_field_value(grupo_dict, "nome")
@@ -225,6 +224,7 @@ class GrupoPesquisaResearchGroupMapper(BaseMapper):
             nomes_orgunit_lideres = self.__get_key_value_in_section(grupo_dict["secoes"],"identificação", "Instituição do grupo")
             nomes_orgunit_lideres = nomes_orgunit_lideres.split(";")
             for nome_orgunit in nomes_orgunit_lideres:
+                nome_orgunit = nome_orgunit.split('-')[0].strip()
                 new_orgunit, orgunit_ref = self.__transform_orgunit(nome_orgunit, orgunit_validator)
                 if not new_orgunit is None:
                     new_relation = {

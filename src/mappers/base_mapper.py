@@ -32,6 +32,31 @@ class BaseMapper(ABC):
             
         return value
     
+    def get_csv_field_value(self, record: list[str], index: int) -> str:
+        if record == None:
+            return None
+        
+        if len(record) == 0:
+            return None
+        
+        if index >= len(record):
+            return None
+        
+        if index < 0:
+            return None 
+
+        
+        value = record[index]
+        if value is str:
+            value =  value.strip()
+            if value == '':
+                return None
+            
+            if str(value).strip().lower() == 'null':
+                return None
+            
+        return str(value).strip()
+    
     def has_value(self, node):
         # 1. Checagem contra None (Está correto: 'is' para singletons)
         if node is None:

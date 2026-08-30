@@ -6,6 +6,7 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 
+from dictionary_builders.brcrisid_dicionario import BrCrisIdDicionario
 from util.error_logger import setup_logger
 
 # Importando os validators
@@ -48,6 +49,8 @@ from mappers.formacao_lattes_to_publication import FormacaoPlataformaLattes2Publ
 from mappers.publication_oases_to_publication import PublicationOASIS2PublicationMapper
 from mappers.relacionamento_grupo_pesquisa import RelacionamentoGrupoPesquisaMapper
 from mappers.grupo_pesquisa_to_research_group import GrupoPesquisaResearchGroupMapper
+from mappers.bibliotecas_to_orgunit import BibliotecasOrgunitMapper
+
 
 # Importando o  writer
 from writers.xml_writer import XMLWriter 
@@ -90,6 +93,7 @@ MAPPER_FACTORY = {
     'publication_oasis_to_publication_mapper': PublicationOASIS2PublicationMapper,
     'relacionamento_grupo_pesquisa_mapper': RelacionamentoGrupoPesquisaMapper,
     'grupo_pesquisa_research_group_mapper': GrupoPesquisaResearchGroupMapper,
+    'bibliotecas_to_orgunit_mapper': BibliotecasOrgunitMapper
 }
 
 DICTIONARY_BUILDERS = {
@@ -126,17 +130,17 @@ def process_transformation(config_section: str):
     # journalValidator = JournalValidator()
     # journalValidator.load_dataset(r'.\src\autoridades\journals2026.json')
 
-    # languageValidator = LanguageValidator()
-    # languageValidator.load_dataset(r'.\src\autoridades\language2026.json')
+    languageValidator = LanguageValidator()
+    languageValidator.load_dataset(r'.\src\autoridades\language2026.json')
 
-    # personValidator = PersonValidator()
-    # personValidator.load_dataset(r'.\src\autoridades\ids_lattes2026.csv')
+    personValidator = PersonValidator()
+    personValidator.load_dataset(r'C:\workspace\brcris-parser\src\data\ids_lattes2026.csv')
 
-    # orcidValidator = OrcidValidator()
-    # orcidValidator.load_dataset(r'.\src\autoridades\orcid_autoridade2026.csv')
+    orcidValidator = OrcidValidator()
+    orcidValidator.load_dataset(r'C:\workspace\brcris-parser\src\data\orcid_autoridade2026.csv')
 
-    # courseValidator= CourseValidator()
-    # courseValidator.load_dataset(r'.\src\autoridades\couse_autoridade2026.csv')
+    courseValidator= CourseValidator()
+    courseValidator.load_dataset(r'C:\workspace\brcris-parser\src\data\couse_autoridade2026.csv')
 
     # publicationArtigoValidator = PublicationArtigoValidator()
     # publicationArtigoValidator.load_dataset(r'.\src\autoridades\publication_artigo2026.json')
@@ -218,10 +222,10 @@ def process_transformation(config_section: str):
                                                 logger=logger, 
                                                 validators=[orgUnitValidator, 
                                                         #    journalValidator, 
-                                                        #    languageValidator, 
-                                                            # personValidator, 
-                                                            # orcidValidator, 
-                                                        #    courseValidator,
+                                                           languageValidator, 
+                                                            personValidator, 
+                                                            orcidValidator, 
+                                                           courseValidator,
                                                         #    publicationArtigoValidator,
                                                         #    publicationCapituloLivroValidator,
                                                         #    publicationDOIValidator,
@@ -255,7 +259,10 @@ def dictionary_builder(entity, source_path, output_path):
 if __name__ == "__main__":
     sys.excepthook = handle_uncaught_exception
 
-    process_transformation('GRUPO_PESQUISA')
+    # process_transformation('ORIENTACOES_DOUTORADO_PLATAFORMA_LATTES')
+    # process_transformation('FORMACAO_PLATAFORMA_LATTES')
+    # process_transformation('PUBLICATION_OASIS')
     # dictionary_builder(entity='Person',output_path='.\src\data\output',source_path=r"C:\IBICT-DATA\2025\RelacionamentoGruposPesquisa")
     # OrcidCSVBuilder().make_csv_dataset(r'.\src\data\cabecalho_2024_20250110.csv')
 
+    BrCrisIdDicionario().process_xml_files(entity_type="Publication",source_path=r"C:\IBICT-DATA\higor\PublicacaoFormacaoLattes",output_path="DicionarioBrCrisIdFormacaoPublicacao.csv")
